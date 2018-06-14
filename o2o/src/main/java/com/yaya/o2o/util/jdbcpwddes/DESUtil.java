@@ -76,8 +76,8 @@ public class DESUtil {
 
     // 测试
     public static void main(String[] args) {
-        System.out.println(getEncryptString("duck"));
-        System.out.println(getEncryptString("24865"));
+        System.out.println(getEncryptString("testusername"));
+        System.out.println(getEncryptString("testpassword"));
     }
 }
 

@@ -1,10 +1,9 @@
 package com.yaya.o2o.enums;
 
 public enum WechatAuthStateEnum {
+
     //默认为public static final
-    LOGINFAIL(-1, "open输入有误"),
-    SUCCESS(0, "操作成功"),
-    NULL_AUTH_INFO(-1003, "wechatauth信息为空");
+    SUCCESS(1, "操作成功"), NULL_AUTH_INFO(-1, "空");
 
     private int state;
 

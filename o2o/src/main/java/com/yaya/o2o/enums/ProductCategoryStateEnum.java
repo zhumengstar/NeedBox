@@ -2,9 +2,7 @@ package com.yaya.o2o.enums;
 
 public enum ProductCategoryStateEnum {
 
-    SUCCESS(1, "创建成功"),
-    INNER_ERROR(-1001, "操作失败"),
-    EMPTY_LIST(-1002, "添加数少于1");
+    SUCCESS(1, "创建成功"), INNER_ERROR(0, "错误"), EMPTY_LIST(-1, "空");
 
     private int state;
 
