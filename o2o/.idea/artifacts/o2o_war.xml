@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="o2o:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="myo2o-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="o2o:war exploded" />
+    </root>
+  </artifact>
+</component>
