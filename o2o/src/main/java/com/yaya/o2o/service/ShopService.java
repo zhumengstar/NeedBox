@@ -6,5 +6,5 @@ import com.yaya.o2o.entity.Shop;
 import java.io.File;
 
 public interface ShopService {
-    ShopExecution addShop(Shop shop,File shopImg);
+    ShopExecution addShop(Shop shop, File shopImg);
 }

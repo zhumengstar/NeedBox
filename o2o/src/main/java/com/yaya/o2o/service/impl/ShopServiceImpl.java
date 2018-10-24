@@ -4,22 +4,25 @@ import com.yaya.o2o.dao.ShopDao;
 import com.yaya.o2o.dto.ShopExecution;
 import com.yaya.o2o.entity.Shop;
 import com.yaya.o2o.enums.ShopStateEnum;
+import com.yaya.o2o.exceptions.ShopOperationException;
 import com.yaya.o2o.service.ShopService;
 import com.yaya.o2o.util.ImgUtil;
 import com.yaya.o2o.util.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import java.io.File;
 import java.util.Date;
 
+@Service
 public class ShopServiceImpl implements ShopService {
     @Autowired
     private ShopDao shopDao;
 
     @Override
     @Transactional
-    public ShopExecution addShop(Shop shop, File shopImg) {
+    public ShopExecution addShop(Shop shop, CommonsMultipartFile shopImg) {
         //空值判断
         if(shop == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
@@ -32,28 +35,28 @@ public class ShopServiceImpl implements ShopService {
             //添加店铺信息
             int effectedNum = shopDao.insertShop(shop);
             if(effectedNum <= 0) {
-                throw new RuntimeException("店铺创建失败");
+                throw new ShopOperationException("店铺创建失败");
             } else {
                 if(shopImg != null) {
                     //存储图片
                     try {
                         addShopImg(shop, shopImg);
                     } catch (Exception e) {
-                        throw new RuntimeException("addShopImg error:" + e.getMessage());
+                        throw new ShopOperationException("addShopImg error:" + e.getMessage());
                     }
                     //更新店铺的图片地址
                     effectedNum = shopDao.updateShop(shop);
                     if(effectedNum <= 0) {
-                        throw new RuntimeException("更新图片地址失败");
+                        throw new ShopOperationException("更新图片地址失败");
                     }
                 }
             }
         } catch (Exception e) {
-            throw new RuntimeException("addShop error:" + e.getMessage());
+            throw new ShopOperationException("addShop error:" + e.getMessage());
         }
         return new ShopExecution(ShopStateEnum.CHECK, shop);
     }
-    private void addShopImg(Shop shop, File shopImg) {
+    private void addShopImg(Shop shop, CommonsMultipartFile shopImg) {
         //获取shop图片目录的相对值路径
         String dest = PathUtil.getShopImagePath(shop.getShopId());
         String shopImgAddr = ImgUtil.generateThumbnail(shopImg, dest);

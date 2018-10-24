@@ -15,7 +15,7 @@ public class ImgUtil {
     private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
     private static final SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
     private static final Random r = new Random();
-    public static void generateThumbnail(CommonsMultipartFile thumbnail, String targetAddr) {
+    public static String generateThumbnail(CommonsMultipartFile thumbnail, String targetAddr) {
         //1.为了防止图片重名，不采用用户上传的文件名，系统内部采用随机命名的方式
         String realFileName = getRandomFileName();
         //2.获取用户上传的文件扩展名，用于拼接新的文件名
@@ -33,6 +33,7 @@ public class ImgUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return relativeAddr;
     }
     //生成随机文件名，当前年月日小时分钟秒+五位随机数
     public static String getRandomFileName() {
