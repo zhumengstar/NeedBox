@@ -10,11 +10,10 @@ public class PathUtil {
         } else {
             basePath = "/home/hehanyue/image/";
         }
-        return basePath.replace("/" , seperator);;
+        return basePath.replace("/" , seperator);
     }
     public static String getShopImagePath(long shopId) {
         String imagePath = "/upload/item/shop/" + shopId + "/";
-        int aaa = 1;
         return imagePath.replace("/", seperator);
-    }}}}}}}}}}}}}}}}}}}}}}}
+    }
 }
