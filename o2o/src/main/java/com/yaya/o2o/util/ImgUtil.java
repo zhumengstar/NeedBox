@@ -2,7 +2,6 @@ package com.yaya.o2o.util;
 
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.imageio.ImageIO;
 import java.io.File;
@@ -15,7 +14,7 @@ public class ImgUtil {
     private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
     private static final SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
     private static final Random r = new Random();
-    public static String generateThumbnail(CommonsMultipartFile thumbnail, String targetAddr) {
+    public static String generateThumbnail(File thumbnail, String targetAddr) {
         //1.为了防止图片重名，不采用用户上传的文件名，系统内部采用随机命名的方式
         String realFileName = getRandomFileName();
         //2.获取用户上传的文件扩展名，用于拼接新的文件名
@@ -27,7 +26,7 @@ public class ImgUtil {
         File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
         //5.给源文件加水印后输出到目标文件
         try {
-            Thumbnails.of(thumbnail.getInputStream()).size(200, 200)
+            Thumbnails.of(thumbnail).size(200, 200)
             .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
                     .outputQuality(0.8f).toFile(dest);
         } catch (IOException e) {
@@ -42,8 +41,8 @@ public class ImgUtil {
         return nowTimeStr + rannum;
     }
     //获取输入文件流的扩展名
-    public static String getFileExtension(CommonsMultipartFile cFile) {
-        String originalFileName = cFile.getOriginalFilename();
+    public static String getFileExtension(File thumbnail) {
+        String originalFileName = thumbnail.getName();
         return originalFileName.substring(originalFileName.lastIndexOf("."));
     }
     //创建目标路径所涉及到的目录，
@@ -57,7 +56,7 @@ public class ImgUtil {
     public static void main(String[] args) throws IOException {
         System.out.println(basePath);
         Thumbnails.of(new File("/home/hehanyue/image/xiaohuangren.jpeg"))
-                .size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f).outputQuality(0.8f)
+                .size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f).outputQuality(0.8f)
                 .toFile("/home/hehanyue/image/xiaohuangrennew.jpeg");
     }
 }

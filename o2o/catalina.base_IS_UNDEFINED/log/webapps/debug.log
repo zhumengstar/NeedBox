@@ -1,0 +1,6 @@
+2018-10-27 19:21:12.834 [main] DEBUG com.yaya.o2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2018-10-27 19:21:12.879 [main] DEBUG com.yaya.o2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), test1(String), null, null, 2018-10-27 19:21:12.778(Timestamp), 2018-10-27 19:21:12.778(Timestamp), 0(Integer), 审核中...(String)
+2018-10-27 19:21:12.909 [main] DEBUG com.yaya.o2o.dao.ShopDao.insertShop -<==    Updates: 1
+2018-10-27 19:21:13.064 [main] DEBUG com.yaya.o2o.dao.ShopDao.updateShop -==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2018-10-27 19:21:13.068 [main] DEBUG com.yaya.o2o.dao.ShopDao.updateShop -==> Parameters: 测试的店铺1(String), test1(String), test1(String), test1(String), /upload/item/shop/3/2018102719211216244.jpeg(String), 2018-10-27 19:21:12.778(Timestamp), 0(Integer), 审核中...(String), 2(Integer), 1(Long), 3(Long)
+2018-10-27 19:21:13.075 [main] DEBUG com.yaya.o2o.dao.ShopDao.updateShop -<==    Updates: 1
