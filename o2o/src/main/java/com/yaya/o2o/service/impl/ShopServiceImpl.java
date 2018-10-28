@@ -6,7 +6,7 @@ import com.yaya.o2o.entity.Shop;
 import com.yaya.o2o.enums.ShopStateEnum;
 import com.yaya.o2o.exceptions.ShopOperationException;
 import com.yaya.o2o.service.ShopService;
-import com.yaya.o2o.util.ImgUtil;
+import com.yaya.o2o.util.ImageUtil;
 import com.yaya.o2o.util.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,7 +59,7 @@ public class ShopServiceImpl implements ShopService {
     private void addShopImg(Shop shop, File shopImg) {
         //获取shop图片目录的相对值路径
         String dest = PathUtil.getShopImagePath(shop.getShopId());
-        String shopImgAddr = ImgUtil.generateThumbnail(shopImg, dest);
+        String shopImgAddr = ImageUtil.generateThumbnail(shopImg, dest);
         shop.setShopImg(shopImgAddr);
     }
 }
