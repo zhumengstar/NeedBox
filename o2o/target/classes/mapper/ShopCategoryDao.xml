@@ -7,15 +7,20 @@
         SELECT
         shop_category_id,
         shop_category_name,
+        shop_category_desc,
         shop_category_img,
         priority,
         create_time,
+        last_edit_time,
         parent_id
         FROM
         tb_shop_category
         <where>
+            <if test="shopCategoryCondition != null">
+                and parent_id is not null
+            </if>
             <if test="shopCategoryCondition.parent != null">
-                and parent_id = #{shopCategoryConditon.parent.shopCategoryId}
+                and parent_id = #{shopCategoryCondition.parent.shopCategoryId}
             </if>
         </where>
         ORDER BY

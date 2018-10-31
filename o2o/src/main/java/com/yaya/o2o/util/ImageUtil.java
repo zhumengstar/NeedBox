@@ -6,6 +6,7 @@ import net.coobird.thumbnailator.geometry.Positions;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -16,7 +17,7 @@ public class ImageUtil {
     private static final Random r = new Random();
     //生成缩略图
     //参数:图片文件,保存路径
-    public static String generateThumbnail(File thumbnail, String targetAddr) {
+    public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr) {
         //1.目标目录，不存在创建
         makeDirPath(targetAddr);
 
@@ -25,7 +26,7 @@ public class ImageUtil {
         String realFileName = getRandomFileName();
         //3.获取用户上传的文件扩展名，用于拼接新的文件名
         //文件扩展名
-        String extension = getFileExtension(thumbnail);
+        String extension = getFileExtension(fileName);
 
         //4.拼接新的文件名
         //相对路径===目标路径+随机文件名+扩展名
@@ -34,7 +35,7 @@ public class ImageUtil {
 
         //5.给源文件加水印后输出到目标文件
         try {
-            Thumbnails.of(thumbnail).size(200, 200)
+            Thumbnails.of(thumbnailInputStream).size(200, 200)
             .watermark(Positions.BOTTOM_RIGHT,
                     ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f)
                     .outputQuality(0.8f).toFile(dest);
@@ -50,9 +51,8 @@ public class ImageUtil {
         return nowTimeStr + rannum;
     }
     //获取输入文件流的扩展名
-    public static String getFileExtension(File thumbnail) {
-        String originalFileName = thumbnail.getName();
-        return originalFileName.substring(originalFileName.lastIndexOf("."));
+    public static String getFileExtension(String fileName) {
+        return fileName.substring(fileName.lastIndexOf("."));
     }
     //创建目标路径所涉及到的目录，
     public static void makeDirPath(String targetAddr) {

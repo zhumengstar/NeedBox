@@ -1,3 +1,78 @@
-2018-10-30 01:08:11.079 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_img, priority, create_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
-2018-10-30 01:08:11.171 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
-2018-10-30 01:08:11.245 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
+2018-10-31 03:08:43.593 [main] DEBUG com.yaya.o2o.dao.ShopDao.insertShop -==>  Preparing: INSERT INTO tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2018-10-31 03:08:43.664 [main] DEBUG com.yaya.o2o.dao.ShopDao.insertShop -==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺3(String), test1(String), test1(String), test1(String), null, null, 2018-10-31 03:08:43.545(Timestamp), 2018-10-31 03:08:43.545(Timestamp), 0(Integer), 审核中...(String)
+2018-10-31 03:08:43.684 [main] DEBUG com.yaya.o2o.dao.ShopDao.insertShop -<==    Updates: 1
+2018-10-31 03:08:44.000 [main] DEBUG com.yaya.o2o.dao.ShopDao.updateShop -==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? where shop_id=? 
+2018-10-31 03:08:44.002 [main] DEBUG com.yaya.o2o.dao.ShopDao.updateShop -==> Parameters: 测试的店铺3(String), test1(String), test1(String), test1(String), /upload/item/shop/14/2018103103084395723.jpeg(String), 2018-10-31 03:08:43.545(Timestamp), 0(Integer), 审核中...(String), 2(Integer), 1(Long), 14(Long)
+2018-10-31 03:08:44.004 [main] DEBUG com.yaya.o2o.dao.ShopDao.updateShop -<==    Updates: 1
+2018-10-31 03:15:08.208 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:15:08.288 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:15:08.378 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
+2018-10-31 03:21:39.929 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:21:39.998 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:21:40.024 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 03:25:05.239 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:25:05.331 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:25:05.391 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 03:41:02.156 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:41:02.204 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:41:02.243 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 03:45:06.805 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:45:06.861 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:45:06.890 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 03:47:20.895 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:47:20.947 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:47:20.986 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 3
+2018-10-31 03:47:40.555 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:47:40.614 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:47:40.653 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 3
+2018-10-31 03:50:08.542 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:50:08.621 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:50:08.651 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 3
+2018-10-31 03:52:23.405 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 03:52:23.461 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:52:23.498 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 3
+2018-10-31 03:54:23.122 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
+2018-10-31 03:54:23.202 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:54:23.232 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 03:54:41.759 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is not null ORDER BY priority DESC 
+2018-10-31 03:54:41.834 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 03:54:41.859 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 18:19:24.797 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 18:19:24.875 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 18:19:24.902 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 18:29:12.508 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 18:29:12.611 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 18:29:12.632 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 18:34:01.216 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategoryList -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 18:34:01.294 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategoryList -==> Parameters: 
+2018-10-31 18:34:01.319 [main] DEBUG c.y.o2o.dao.ShopCategoryDao.queryShopCategoryList -<==      Total: 2
+2018-10-31 18:39:53.197 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 18:39:53.281 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 18:39:53.306 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 19:32:25.098 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 19:32:25.157 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 19:32:25.191 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 19:33:00.743 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 19:33:00.807 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 19:33:00.827 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 19:33:22.456 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 19:33:22.523 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 19:33:22.547 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 19:33:22.557 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? ORDER BY priority DESC 
+2018-10-31 19:33:22.558 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 1(Long)
+2018-10-31 19:33:22.572 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
+2018-10-31 19:35:08.572 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 19:35:08.628 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 19:35:08.655 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 3
+2018-10-31 19:35:26.449 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 19:35:26.537 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 19:35:26.563 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 3
+2018-10-31 19:35:26.575 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? ORDER BY priority DESC 
+2018-10-31 19:35:26.576 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 1(Long)
+2018-10-31 19:35:26.578 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
+2018-10-31 19:36:17.963 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category ORDER BY priority DESC 
+2018-10-31 19:36:18.035 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-10-31 19:36:18.062 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 3
+2018-10-31 19:36:18.071 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id = ? ORDER BY priority DESC 
+2018-10-31 19:36:18.072 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 1(Long)
+2018-10-31 19:36:18.074 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 2
