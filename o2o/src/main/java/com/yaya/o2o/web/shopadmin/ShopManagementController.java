@@ -114,10 +114,6 @@ public class ShopManagementController {
         }
         //2.修改店铺信息
         if (shop != null && shop.getShopId() != null) {
-            PersonInfo owner = new PersonInfo();
-            
-            owner.setUserId(1L);
-            shop.setOwner(owner);
             ShopExecution se;
             try {
                 if(shopImg == null) {
@@ -146,7 +142,6 @@ public class ShopManagementController {
         }
         //3.返回结果
     }
-}
 
     @RequestMapping(value = "/registershop", method = RequestMethod.POST)
     @ResponseBody
@@ -182,8 +177,7 @@ public class ShopManagementController {
         }
         //2.注册店铺
         if (shop != null && shopImg != null) {
-            PersonInfo owner = new PersonInfo();
-            owner.setUserId(1L);
+            PersonInfo owner = (PersonInfo)request.getSession().getAttribute("user");
             shop.setOwner(owner);
 //            File shopImgFile = new File(PathUtil.getImgBasePath() + ImageUtil.getRandomFileName());
 //            try {
@@ -205,6 +199,13 @@ public class ShopManagementController {
                 se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
+                    //用户可操作店铺列表
+                    List<Shop> shopList = (List<Shop>)request.getSession().getAttribute("shopList");
+                    if(shopList == null || shopList.size() == 0) {
+                        shopList = new ArrayList<>();
+                    }
+                    shopList.add(se.getShop());
+                    request.getSession().setAttribute("shopList", shopList);
                 } else {
                     modelMap.put("success", false);
                     modelMap.put("errMsg", se.getStateInfo());
