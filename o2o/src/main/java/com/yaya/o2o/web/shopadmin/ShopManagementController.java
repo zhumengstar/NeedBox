@@ -58,6 +58,7 @@ public class ShopManagementController {
         }
         return modelMap;
     }
+
     @RequestMapping(value = "/registershop", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> registerShop(HttpServletRequest request) {
@@ -110,7 +111,7 @@ public class ShopManagementController {
 //                modelMap.put("errMsg", e.getMessage());
 //                return modelMap;
 //            }
-            ShopExecution se = null;
+            ShopExecution se;
             try {
                 se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
