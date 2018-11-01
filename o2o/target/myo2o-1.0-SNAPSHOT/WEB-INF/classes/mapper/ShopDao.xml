@@ -2,13 +2,94 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.yaya.o2o.dao.ShopDao">
+    <resultMap type="com.yaya.o2o.entity.Shop" id="shopMap">
+        <id column="shop_id" property="shopId"/>
+        <result column="shop_name" property="shopName"/>
+        <result column="shop_desc" property="shopDesc"/>
+        <result column="shop_addr" property="shopAddr"/>
+        <result column="phone" property="phone"/>
+        <result column="shop_img" property="shopImg"/>
+        <result column="priority" property="priority"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_edit_time" property="lastEditTime"/>
+        <result column="enable_status" property="enableStatus"/>
+        <result column="advice" property="advice"/>
+        <association property="area" column="area_id" javaType="com.yaya.o2o.entity.Area">
+            <id column="area_id" property="areaId"/>
+            <result column="area_name" property="areaName"/>
+        </association>
+        <association property="shopCategory" column="shop_category_id" javaType="com.yaya.o2o.entity.ShopCategory">
+            <id column="shop_category_id" property="shopCategoryId"/>
+            <result column="shop_category_name"  property="shopCategoryName"/>
+        </association>
+        <association property="owner" column="user_id" javaType="com.yaya.o2o.entity.PersonInfo">
+            <id column="user_id" property="userId"/>
+            <result column="name" property="name" />
+        </association>
+    </resultMap>
+    <select id="queryByShopId" resultMap="shopMap" parameterType="Long">
+        SELECT
+        s.shop_id,
+        s.shop_name,
+        s.shop_desc,
+        s.shop_addr,
+        s.phone,
+        s.shop_img,
+        s.priority,
+        s.create_time,
+        s.last_edit_time,
+        s.enable_status,
+        s.advice,
+        a.area_id,
+        a.area_name,
+        sc.shop_category_id,
+        sc.shop_category_name
+        FROM
+        tb_shop s,
+        tb_area a,
+        tb_shop_category sc
+        WHERE
+        s.area_id=a.area_id
+        AND
+        s.shop_category_id=sc.shop_category_id
+        AND
+        s.shop_id=#{shopId}
+    </select>
+
     <insert id="insertShop" useGeneratedKeys="true" keyColumn="shop_id" keyProperty="shopId">
         INSERT INTO
-        tb_shop(owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice)
-        VALUES
-        (#{owner.userId}, #{area.areaId}, #{shopCategory.shopCategoryId}, #{shopName}, #{shopDesc}, #{shopAddr}, #{phone}, #{shopImg}, #{priority}, #{createTime}, #{lastEditTime}, #{enableStatus}, #{advice})
+        tb_shop(
+        owner_id,
+        area_id,
+        shop_category_id,
+        shop_name,
+        shop_desc,
+        shop_addr,
+        phone,
+        shop_img,
+        priority,
+        create_time,
+        last_edit_time,
+        enable_status,
+        advice)
+        VALUES(
+        #{owner.userId},
+        #{area.areaId},
+        #{shopCategory.shopCategoryId},
+        #{shopName},
+        #{shopDesc},
+        #{shopAddr},
+        #{phone},
+        #{shopImg},
+        #{priority},
+        #{createTime},
+        #{lastEditTime},
+        #{enableStatus},
+        #{advice})
     </insert>
+
     <update id="updateShop" parameterType="com.yaya.o2o.entity.Shop">
         UPDATE  tb_shop
         <set>
@@ -24,6 +105,7 @@
             <if test="area != null">area_id=#{area.areaId},</if>
             <if test="shopCategory != null">shop_category_id=#{shopCategory.shopCategoryId}</if>
         </set>
-        where shop_id=#{shopId}
+        WHERE
+        shop_id=#{shopId}
     </update>
 </mapper>

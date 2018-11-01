@@ -68,4 +68,21 @@ public class ImageUtil {
                 .size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f).outputQuality(0.8f)
                 .toFile("/home/hehanyue/image/xiaohuangrennew.jpeg");
     }
+
+    //storePath是文件路径还是目录路径
+    //文件则删除该文件
+    //目录则删除目录下所有的文件
+    public static void deleteFileOrPath(String storePath) {
+        File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
+        if(fileOrPath.exists()) {
+            if(fileOrPath.isDirectory()) {
+                File files[] = fileOrPath.listFiles();
+                for (int i = 0; i < files.length; i++) {
+                    files[i].delete();
+                }
+            }
+            fileOrPath.delete();
+        }
+
+    }
 }
