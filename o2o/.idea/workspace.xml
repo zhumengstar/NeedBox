@@ -7,18 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b286d14a-fcb3-4f3d-b630-4160130b68f5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/PageCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/catalina.base_IS_UNDEFINED/log/webapps/debug.log" afterPath="$PROJECT_DIR$/catalina.base_IS_UNDEFINED/log/webapps/debug.log" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ShopDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ShopDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ShopService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ShopService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ShopServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ShopServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/ShopDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/ShopDaoTest.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/ShopServiceTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/ShopServiceTest.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/dao/ShopDao.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/dao/ShopDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShopDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ShopDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yaya/o2o/dao/ShopDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/yaya/o2o/dao/ShopDaoTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -73,8 +62,8 @@
       <file leaf-file-name="ShopServiceTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/ShopServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+            <state relative-caret-position="440">
+              <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -1133,7 +1122,7 @@
       <workItem from="1540883578741" duration="1083000" />
       <workItem from="1540911212360" duration="5257000" />
       <workItem from="1540974331198" duration="40490000" />
-      <workItem from="1541156305983" duration="15400000" />
+      <workItem from="1541156305983" duration="16001000" />
     </task>
     <servers />
   </component>
@@ -1170,7 +1159,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167559000" />
+    <option name="totallyTimeSpent" value="168160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="691" y="110" width="1663" height="810" extended-state="0" />
@@ -1686,8 +1675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/ShopServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        <state relative-caret-position="440">
+          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
           <folding />
         </state>
       </provider>
