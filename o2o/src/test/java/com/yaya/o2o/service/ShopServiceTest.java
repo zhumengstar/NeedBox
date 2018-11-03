@@ -26,6 +26,14 @@ public class ShopServiceTest extends BaseTest {
     private ShopService shopService;
 
     @Test
+    public void testGetShopList() {
+        Shop shopCondition = new Shop();
+        ShopCategory sc = new ShopCategory();
+        sc.setShopCategoryId(3L);
+        shopCondition.setShopCategory(sc);
+        ShopExecution se = shopService.getShopList(shopCondition, 0, 2);
+    }
+    @Test
     public void testModifyShop() throws ShopOperationException,FileNotFoundException {
         Shop shop = new Shop();
         shop.setShopId(1L);
