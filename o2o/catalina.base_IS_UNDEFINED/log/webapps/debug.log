@@ -14,3 +14,21 @@
 2018-11-03 22:44:29.768 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.owner_id= ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
 2018-11-03 22:44:29.820 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==> Parameters: 1(Long), 0(Integer), 5(Integer)
 2018-11-03 22:44:29.845 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -<==      Total: 5
+2018-11-03 23:49:18.078 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2018-11-03 23:49:18.139 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==> Parameters: 3(Long), 0(Integer), 2(Integer)
+2018-11-03 23:49:18.169 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -<==      Total: 2
+2018-11-03 23:49:18.175 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-11-03 23:49:18.175 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -==> Parameters: 3(Long)
+2018-11-03 23:49:18.177 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -<==      Total: 1
+2018-11-03 23:56:48.992 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2018-11-03 23:56:49.041 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==> Parameters: 3(Long), 0(Integer), 2(Integer)
+2018-11-03 23:56:49.084 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -<==      Total: 2
+2018-11-03 23:56:49.095 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-11-03 23:56:49.096 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -==> Parameters: 3(Long)
+2018-11-03 23:56:49.097 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -<==      Total: 1
+2018-11-03 23:56:56.471 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2018-11-03 23:56:56.575 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -==> Parameters: 3(Long), 0(Integer), 2(Integer)
+2018-11-03 23:56:56.637 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopList -<==      Total: 2
+2018-11-03 23:56:56.647 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -==>  Preparing: SELECT count(1) FROM tb_shop s, tb_area a, tb_shop_category sc WHERE s.shop_category_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-11-03 23:56:56.648 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -==> Parameters: 3(Long)
+2018-11-03 23:56:56.656 [main] DEBUG com.yaya.o2o.dao.ShopDao.queryShopCount -<==      Total: 1

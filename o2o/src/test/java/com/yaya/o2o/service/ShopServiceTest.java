@@ -31,8 +31,9 @@ public class ShopServiceTest extends BaseTest {
         ShopCategory sc = new ShopCategory();
         sc.setShopCategoryId(3L);
         shopCondition.setShopCategory(sc);
-        ShopExecution se = shopService.getShopList(shopCondition, 0, 2);
-        sasasasa
+        ShopExecution se = shopService.getShopList(shopCondition, 1, 2);
+        System.out.println("店铺列数(页数):" + se.getShopList().size());
+        System.out.println("店铺总数为:" + se.getCount());
     }
     @Test
     public void testModifyShop() throws ShopOperationException,FileNotFoundException {
