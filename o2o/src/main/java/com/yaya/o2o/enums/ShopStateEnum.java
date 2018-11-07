@@ -8,8 +8,16 @@ public enum ShopStateEnum {
     INNER_ERROR(-1001, "内部系统错误"),
     NULL_SHOPID(-1002,"ShopId为空"),
     NULL_SHOP(-1003, "shop信息为空");
+
     private int state;
+
     private String stateInfo;
+
+
+    private ShopStateEnum(int state, String stateInfo) {
+        this.state = state;
+        this.stateInfo = stateInfo;
+    }
 
     public int getState() {
         return state;
@@ -17,11 +25,6 @@ public enum ShopStateEnum {
 
     public String getStateInfo() {
         return stateInfo;
-    }
-
-    private ShopStateEnum(int state, String stateInfo) {
-        this.state = state;
-        this.stateInfo = stateInfo;
     }
 
     //根据传入的state返回相应的enum值

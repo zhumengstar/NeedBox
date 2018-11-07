@@ -12,5 +12,4 @@ function getQueryString(name) {
         return decodeURIComponent(r[2]);
     }
     return '';
-
 }
