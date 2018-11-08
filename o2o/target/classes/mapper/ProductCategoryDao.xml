@@ -18,6 +18,7 @@
         ORDER BY
             priority DESC
       </select>
+
     <insert id="batchInsertProductCategory" parameterType="java.util.List">
         INSERT INTO
             tb_product_category(product_category_name, priority, create_time, shop_id)
@@ -32,5 +33,13 @@
             </foreach>
     </insert>
 
+    <delete id="deleteProductCategory">
+        DELETE FROM
+            tb_product_category
+        WHERE
+            product_category_id= #{productCategoryId}
+        AND
+            shop_id=#{shopId}
+    </delete>
 
 </mapper>
