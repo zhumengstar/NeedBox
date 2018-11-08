@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yaya.o2o.dao.ProductDao">
+    <!--<select id="queryProductList" resultType="com.yaya.o2o.entity.Product" parameterType="">-->
+        <!--SELECT-->
+            <!--product_category_id,-->
+            <!--product_category_name,-->
+            <!--priority,-->
+            <!--create_time,-->
+            <!--shop_id-->
+        <!--FROM-->
+            <!--tb_product_category-->
+        <!--WHERE-->
+            <!--shop_id=#{shopId}-->
+        <!--ORDER BY-->
+            <!--priority DESC-->
+    <!--</select>-->
+    <insert id="insertProduct" parameterType="com.yaya.o2o.entity.Product" useGeneratedKeys="true" keyProperty="productId" keyColumn="product_id">
+        INSERT INTO
+            tb_product(product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id)
+          VALUES
+              (#{productName}, #{productDesc}, #{imgAddr}, #{normalPrice}, #{promotionPrice}, #{priority}, #{createTime}, #{lastEditTime}, #{enableStatus}, #{productCategory.productCategoryId}, #{shop.shopId})
+    </insert>
+</mapper>
