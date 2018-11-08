@@ -6,18 +6,31 @@
 <mapper namespace="com.yaya.o2o.dao.ProductCategoryDao">
     <select id="queryProductCategoryList" resultType="com.yaya.o2o.entity.ProductCategory" parameterType="Long">
         SELECT
-        product_category_id,
-        product_category_name,
-        priority,
-        create_time,
-        shop_id
+            product_category_id,
+            product_category_name,
+            priority,
+            create_time,
+            shop_id
         FROM
-        tb_product_category
+            tb_product_category
         WHERE
-        shop_id=#{shopId}
+            shop_id=#{shopId}
         ORDER BY
-        priority DESC
+            priority DESC
       </select>
+    <insert id="batchInsertProductCategory" parameterType="java.util.List">
+        INSERT INTO
+            tb_product_category(product_category_name, priority, create_time, shop_id)
+        VALUES
+            <foreach collection="list" item="productCategory" index="index" separator=",">
+                (
+                    #{productCategory.productCategoryName},
+                    #{productCategory.priority},
+                    #{productCategory.createTime},
+                    #{productCategory.shopId}
+                )
+            </foreach>
+    </insert>
 
 
 </mapper>

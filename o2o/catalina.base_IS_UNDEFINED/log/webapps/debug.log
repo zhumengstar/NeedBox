@@ -1,6 +1,4 @@
-2018-11-07 13:53:57.872 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? 
-2018-11-07 13:53:58.016 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
-2018-11-07 13:53:58.095 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 0
-2018-11-07 13:58:36.109 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? 
-2018-11-07 13:58:36.190 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
-2018-11-07 13:58:36.214 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 3
+2018-11-08 15:58:28.238 [main] DEBUG c.y.o.d.P.batchInsertProductCategory -==>  Preparing: INSERT INTO tb_product_category(product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
+2018-11-08 15:59:09.690 [main] DEBUG c.y.o.d.P.batchInsertProductCategory -==>  Preparing: INSERT INTO tb_product_category(product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
+2018-11-08 15:59:09.776 [main] DEBUG c.y.o.d.P.batchInsertProductCategory -==> Parameters: 类别1(String), 1(Integer), 2018-11-08 15:59:09.22(Timestamp), 1(Long), 类别2(String), 2(Integer), 2018-11-08 15:59:09.22(Timestamp), 1(Long)
+2018-11-08 15:59:09.807 [main] DEBUG c.y.o.d.P.batchInsertProductCategory -<==    Updates: 2
