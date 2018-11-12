@@ -1,7 +1,6 @@
 package com.yaya.o2o.enums;
 
-public enum ProductCategoryStateEnum {
-
+public enum ProductStateEnum {
     SUCCESS(1, "创建成功"),
     INNER_ERROR(-1001, "操作失败"),
     EMPTY_LIST(-1002, "添加数少于1");
@@ -10,7 +9,7 @@ public enum ProductCategoryStateEnum {
 
     private String stateInfo;
 
-    private ProductCategoryStateEnum(int state, String stateInfo) {
+    private ProductStateEnum(int state, String stateInfo) {
         this.state = state;
         this.stateInfo = stateInfo;
     }
@@ -23,13 +22,12 @@ public enum ProductCategoryStateEnum {
         return stateInfo;
     }
 
-    public static ProductCategoryStateEnum stateOf(int state) {
-        for (ProductCategoryStateEnum stateEnum : values()) {
+    public static ProductStateEnum stateOf(int state) {
+        for (ProductStateEnum stateEnum : values()) {
             if (stateEnum.getState() == state) {
                 return stateEnum;
             }
         }
         return null;
     }
-
 }
