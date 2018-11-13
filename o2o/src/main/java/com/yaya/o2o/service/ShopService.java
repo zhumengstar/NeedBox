@@ -1,10 +1,9 @@
 package com.yaya.o2o.service;
 
+import com.yaya.o2o.dto.ImageHolder;
 import com.yaya.o2o.dto.ShopExecution;
 import com.yaya.o2o.entity.Shop;
 import com.yaya.o2o.exceptions.ShopOperationException;
-
-import java.io.InputStream;
 
 public interface ShopService {
 
@@ -15,8 +14,8 @@ public interface ShopService {
     Shop getByShopId(long shopId);
 
     //更新店铺信息
-    ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException;
+    ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 
     //注册店铺信息,包括图片处理
-    ShopExecution addShop(Shop shop, InputStream shopImgInputSream, String fileName) throws ShopOperationException;
+    ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException;
 }

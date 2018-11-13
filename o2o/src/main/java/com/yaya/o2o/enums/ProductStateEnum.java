@@ -1,9 +1,12 @@
 package com.yaya.o2o.enums;
 
 public enum ProductStateEnum {
-    SUCCESS(1, "创建成功"),
+
+    OFFLINE(-1, "非法商品"),
+    SUCCESS(0, "操作成功"),
+    PASS(2, "通过认证"),
     INNER_ERROR(-1001, "操作失败"),
-    EMPTY_LIST(-1002, "添加数少于1");
+    EMPTY(-1002, "商品为空");
 
     private int state;
 

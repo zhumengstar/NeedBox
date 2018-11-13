@@ -1,12 +1,12 @@
 package com.yaya.o2o.util;
 
+import com.yaya.o2o.dto.ImageHolder;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -17,7 +17,7 @@ public class ImageUtil {
     private static final Random r = new Random();
     //生成缩略图
     //参数:图片文件,保存路径
-    public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr) {
+    public static String generateThumbnail(ImageHolder thumbnail, String targetAddr) {
         //1.目标目录，不存在创建
         makeDirPath(targetAddr);
 
@@ -26,7 +26,7 @@ public class ImageUtil {
         String realFileName = getRandomFileName();
         //3.获取用户上传的文件扩展名，用于拼接新的文件名
         //文件扩展名
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(thumbnail.getImageName());
 
         //4.拼接新的文件名
         //相对路径===目标路径+随机文件名+扩展名
@@ -35,7 +35,7 @@ public class ImageUtil {
 
         //5.给源文件加水印后输出到目标文件
         try {
-            Thumbnails.of(thumbnailInputStream).size(200, 200)
+            Thumbnails.of(thumbnail.getImage()).size(200, 200)
             .watermark(Positions.BOTTOM_RIGHT,
                     ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f)
                     .outputQuality(0.8f).toFile(dest);
@@ -44,6 +44,37 @@ public class ImageUtil {
         }
         return relativeAddr;
     }
+
+    //处理详情图,并返回新生成图片的相对值路径
+    public static String generateNormalImg(ImageHolder thumbnail, String targetAddr) {
+        //1.目标目录，不存在创建
+        makeDirPath(targetAddr);
+
+        //2.为了防止图片重名，不采用用户上传的文件名，系统内部采用随机命名的方式
+        //随机文件名
+        String realFileName = getRandomFileName();
+        //3.获取用户上传的文件扩展名，用于拼接新的文件名
+        //文件扩展名
+        String extension = getFileExtension(thumbnail.getImageName());
+
+        //4.拼接新的文件名
+        //相对路径===目标路径+随机文件名+扩展名
+        String relativeAddr = targetAddr + realFileName + extension;
+        File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
+
+        //5.给源文件加水印后输出到目标文件
+        try {
+            Thumbnails.of(thumbnail.getImage()).size(337, 640)
+                    .watermark(Positions.BOTTOM_RIGHT,
+                            ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f)
+                    .outputQuality(0.9f).toFile(dest);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return relativeAddr;
+    }
+
+
     //生成随机文件名，当前年月日小时分钟秒+五位随机数
     public static String getRandomFileName() {
         int rannum = r.nextInt(89999) + 10000;
