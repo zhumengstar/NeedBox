@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
@@ -56,26 +57,11 @@ public class ProductManagementController {
         MultipartHttpServletRequest multipartRequest = null;
         ImageHolder thumbnail = null;
         List<ImageHolder> productImgList = new ArrayList<>();
-        CommonsMultipartResolver multipartResolvert = new CommonsMultipartResolver(request.getSession().getServletContext());
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         try {
             //若请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
-            if(multipartResolvert.isMultipart(request)) {
-                multipartRequest = (MultipartHttpServletRequest)request;
-                //取出缩略图并构建ImageHolder对象
-                CommonsMultipartFile thumbnailFile = (CommonsMultipartFile)multipartRequest.getFile("thumbnail");
-                thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
-                //取出详情图列表并构建List<ImageHolder>列表对象,最多支持六张图片上传
-                for(int i = 0; i < IMAGEMAXCOUNT; i++) {
-                    CommonsMultipartFile productImgFile = (CommonsMultipartFile)multipartRequest.getFile("productImg" + i);
-                    if(productImgFile != null) {
-                        //若取出的第i个详情图片文件流不为空,则将其加入详情图列表
-                        ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
-                        productImgList.add(productImg);
-                    } else {
-                        //若取出的第i个详情图片文件流为空,则终止循环
-                        break;
-                    }
-                }
+            if(multipartResolver.isMultipart(request)) {
+                thumbnail = handleImage(request, thumbnail, productImgList);
             } else {
                 modelMap.put("success", false);
                 modelMap.put("errMsg", "上传图片不能为空");
@@ -122,6 +108,25 @@ public class ProductManagementController {
         return modelMap;
     }
 
+    private ImageHolder handleImage(HttpServletRequest request, ImageHolder thumbnail, List<ImageHolder> productImgList) {
+        MultipartRequest multipartRequest = (MultipartHttpServletRequest) request;
+        //取出缩略图并构建ImageHolder对象
+        CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
+        thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
+        //取出详情图列表并构建List<ImageHolder>列表对象,最多支持六张图片上传
+        for (int i = 0; i < IMAGEMAXCOUNT; i++) {
+            CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest.getFile("productImg" + i);
+            if (productImgFile != null) {
+                //若取出的第i个详情图片文件流不为空,则将其加入详情图列表
+                ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
+                productImgList.add(productImg);
+            } else {
+                //若取出的第i个详情图片文件流为空,则终止循环
+                break;
+            }
+        }
+    }
+
     @RequestMapping(value = "/getproductbyid", method = RequestMethod.GET)
     @ResponseBody
     private Map<String, Object> getProductById(@RequestParam Long productId) {
@@ -140,5 +145,42 @@ public class ProductManagementController {
             modelMap.put("errMsg", "empty productId");
         }
         return modelMap;
+    }
+
+    @RequestMapping(value = "/modifyproduct", method = RequestMethod.POST)
+    @ResponseBody
+    private Map<String, Object> modifyProduct(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<>();
+        //是商品编辑时候调用还是上下架操作的时候调用
+        //若为前者则进行验证码判断,后者则跳过验证码判断
+        boolean statusChange = HttpServletRequestUtil.getBoolean(request, "statusChange");
+        //验证码判断
+        if (!statusChange && !CodeUtil.checkVerifyCode(request)) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "输入了错误的验证码");
+            return modelMap;
+        }
+        //接收前端参数的变量的初始化,包括商品,缩略图,详情图列表实体类
+        ObjectMapper mapper = new ObjectMapper();
+        Product product = null;
+        ImageHolder thumbnail = null;
+        List<ImageHolder> productImgList = new ArrayList<>();
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+        //若请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
+        try {
+            if (multipartResolver.isMultipart(request)) {
+                MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+                //取出缩略图并构建ImageHolder对象
+                CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
+                if (thumbnail != null) {
+
+                } else {
+
+                }
+
+            }
+        } catch (Exception e) {
+
+        }
     }
 }
