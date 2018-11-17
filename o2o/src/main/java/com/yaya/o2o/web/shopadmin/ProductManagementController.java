@@ -24,6 +24,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public class ProductManagementController {
     private Map<String, Object> addProduct(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         //验证码校验
-        if(!CodeUtil.checkVerifyCode(request)) {
+        if (!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
             modelMap.put("errMsg", "输入了错误的验证码");
             return modelMap;
@@ -60,7 +61,7 @@ public class ProductManagementController {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         try {
             //若请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
-            if(multipartResolver.isMultipart(request)) {
+            if (multipartResolver.isMultipart(request)) {
                 thumbnail = handleImage(request, thumbnail, productImgList);
             } else {
                 modelMap.put("success", false);
@@ -82,7 +83,7 @@ public class ProductManagementController {
         }
 
         //若Product信息,缩略图以及详情图列表为非空,则开始进行商品添加操作
-        if(product != null && thumbnail != null && productImgList.size() > 0) {
+        if (product != null && thumbnail != null && productImgList.size() > 0) {
             try {
                 //从session中获取当前店铺的Id并赋值给product,减少对前端数据的依赖
                 Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
@@ -108,7 +109,7 @@ public class ProductManagementController {
         return modelMap;
     }
 
-    private ImageHolder handleImage(HttpServletRequest request, ImageHolder thumbnail, List<ImageHolder> productImgList) {
+    private ImageHolder handleImage(HttpServletRequest request, ImageHolder thumbnail, List<ImageHolder> productImgList) throws IOException {
         MultipartRequest multipartRequest = (MultipartHttpServletRequest) request;
         //取出缩略图并构建ImageHolder对象
         CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
@@ -125,6 +126,7 @@ public class ProductManagementController {
                 break;
             }
         }
+        return thumbnail;
     }
 
     @RequestMapping(value = "/getproductbyid", method = RequestMethod.GET)
@@ -132,7 +134,7 @@ public class ProductManagementController {
     private Map<String, Object> getProductById(@RequestParam Long productId) {
         Map<String, Object> modelMap = new HashMap<>();
         //非空判断
-        if(productId > -1) {
+        if (productId > -1) {
             //获取商品信息
             Product product = productService.getProductById(productId);
             //获取该店铺下的商品类别列表
@@ -166,21 +168,49 @@ public class ProductManagementController {
         ImageHolder thumbnail = null;
         List<ImageHolder> productImgList = new ArrayList<>();
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
-        //若请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
+        // 若请求中存在文件流，则取出相关的文件（包括缩略图和详情图）
         try {
             if (multipartResolver.isMultipart(request)) {
-                MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-                //取出缩略图并构建ImageHolder对象
-                CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
-                if (thumbnail != null) {
-
-                } else {
-
-                }
-
+                thumbnail = handleImage(request, thumbnail, productImgList);
             }
         } catch (Exception e) {
-
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.toString());
+            return modelMap;
         }
+        try {
+            String productStr = HttpServletRequestUtil.getString(request, "productStr");
+            // 尝试获取前端传过来的表单string流并将其转换成Product实体类
+            product = mapper.readValue(productStr, Product.class);
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.toString());
+            return modelMap;
+        }
+        // 非空判断
+        if (product != null) {
+            try {
+                // 从session中获取当前店铺的Id并赋值给product，减少对前端数据的依赖
+                Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+                product.setShop(currentShop);
+                // 开始进行商品信息变更操作
+                ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
+                if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
+                    modelMap.put("success", true);
+                } else {
+                    modelMap.put("success", false);
+                    modelMap.put("errMsg", pe.getStateInfo());
+                }
+            } catch (RuntimeException e) {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", e.toString());
+                return modelMap;
+            }
+
+        } else {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "请输入商品信息");
+        }
+        return modelMap;
     }
 }
