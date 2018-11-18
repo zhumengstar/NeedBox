@@ -50,7 +50,8 @@
                 and enable_status = #{productCondition.enableStatus}
             </if>
         </where>
-        ORDER BY priority DESC LIMIT #{rowIndex},#{pageSize};
+        ORDER BY priority
+        DESC LIMIT #{rowIndex},#{pageSize};
     </select>
 
     <select id="queryProductCount" resultType="int">

@@ -213,4 +213,13 @@ public class ProductManagementController {
         }
         return modelMap;
     }
+
+    @RequestMapping(value = "/getproductlistbyshop", method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String, Object> getProductListByShop(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<>();
+        //获取前台传过来的页码
+        int pageIndex = HttpServletRequestUtil.getInt(request, "pageIndex");
+
+    }
 }
