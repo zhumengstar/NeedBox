@@ -8,6 +8,10 @@ import com.yaya.o2o.exceptions.ProductOperationException;
 import java.util.List;
 
 public interface ProductService {
+
+    //获取商品列表
+    ProductExecution getProductList(Product productCondition, int pageIndex, int pageSize);
+
     //添加商品信息以及图片处理
     ProductExecution addProduct(Product product, ImageHolder thumbnail, List<ImageHolder> productImgList) throws ProductOperationException;
 
