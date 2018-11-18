@@ -220,6 +220,8 @@ public class ProductManagementController {
         Map<String, Object> modelMap = new HashMap<>();
         //获取前台传过来的页码
         int pageIndex = HttpServletRequestUtil.getInt(request, "pageIndex");
+        //获取前台传来的每页要求返回的商品数上限
+        int pageSize = HttpServletRequestUtil.getInt(request, "pageSize");
 
     }
 }
