@@ -10,8 +10,10 @@ public class ShopExecution {
     private int state;
     //状态标识
     private String stateInfo;
+
     //店铺数量
     private int count;
+
     //操作的shop(增删改店铺的时候用到)
     private Shop shop;
     //shop列表

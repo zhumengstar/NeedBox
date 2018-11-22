@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
+//因为页面都是放在WEB-INF下的,不允许外界直接访问
+//所以要定义路由
 @Controller
 @RequestMapping(value = "shopadmin", method = GET)
 public class ShopAdminController {

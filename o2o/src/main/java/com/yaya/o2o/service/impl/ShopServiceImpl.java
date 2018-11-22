@@ -19,25 +19,12 @@ import java.util.List;
 
 @Service
 public class ShopServiceImpl implements ShopService {
+
     @Autowired
     private ShopDao shopDao;
 
     @Override
-    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
-        int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
-        List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
-        int count = shopDao.queryShopCount(shopCondition);
-        ShopExecution se = new ShopExecution();
-        if(shopList != null) {
-            se.setShopList(shopList);
-            se.setCount(count);
-        } else {
-            se.setState(ShopStateEnum.INNER_ERROR.getState());
-        }
-        return se;
-    }
-    @Override
-    @Transactional
+    @Transactional//抛出RuntimeException后,事务会回滚,实质是使用了JDBC的事务来进行事务控制的
     public ShopExecution addShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
         //空值判断
         if(shop == null) {
@@ -51,16 +38,17 @@ public class ShopServiceImpl implements ShopService {
             //添加店铺信息
             int effectedNum = shopDao.insertShop(shop);
             if(effectedNum <= 0) {
+                //添加失败,抛异常
                 throw new ShopOperationException("店铺创建失败");
             } else {
                 if(thumbnail.getImage() != null) {
-                    //存储图片
+                    //添加成功,存储图片
                     try {
                         addShopImg(shop, thumbnail);
                     } catch (Exception e) {
                         throw new ShopOperationException("addShopImg error:" + e.getMessage());
                     }
-                    //更新店铺的图片地址
+                    //添加店铺的图片地址更新店铺信息
                     effectedNum = shopDao.updateShop(shop);
                     if(effectedNum <= 0) {
                         throw new ShopOperationException("更新图片地址失败");
@@ -72,10 +60,13 @@ public class ShopServiceImpl implements ShopService {
         }
         return new ShopExecution(ShopStateEnum.CHECK, shop);
     }
+
     private void addShopImg(Shop shop, ImageHolder thumbnail) {
-        //获取shop图片目录的相对值路径
+        //获取shop图片目录的子路径,即/upload/item/shop/+shopId
         String dest = PathUtil.getShopImagePath(shop.getShopId());
+        //添加图片水印===>处理为缩略图,返回缩略图目录(相对)
         String shopImgAddr = ImageUtil.generateThumbnail(thumbnail, dest);
+        //添加更新后的图片地址到Shop
         shop.setShopImg(shopImgAddr);
     }
 
@@ -86,13 +77,13 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
-
+        //首先判空
         if(shop == null || shop.getShopId() == null) {
             return new ShopExecution(ShopStateEnum.NULL_SHOP);
         } else {
             try {
                 //1.判断是否需要处理图片
-                if (thumbnail.getImage() != null && thumbnail.getImageName() != null && !thumbnail.getImageName().equals("")) {
+                if (thumbnail != null && thumbnail.getImage() != null && thumbnail.getImageName() != null && !thumbnail.getImageName().equals("")) {
                     Shop tempShop = shopDao.queryByShopId(shop.getShopId());
                     if (tempShop.getShopImg() != null) {
                         ImageUtil.deleteFileOrPath(tempShop.getShopImg());
@@ -112,5 +103,23 @@ public class ShopServiceImpl implements ShopService {
                 throw new ShopOperationException("modifyShop error:" + e.getMessage());
             }
         }
+    }
+
+    @Override
+    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
+        //将pageIndex转换成rowIndex
+        int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
+        //返回shopList列表
+        List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
+        //返回店铺总数
+        int count = shopDao.queryShopCount(shopCondition);
+        ShopExecution se = new ShopExecution();
+        if(shopList != null) {
+            se.setShopList(shopList);
+            se.setCount(count);
+        } else {
+            se.setState(ShopStateEnum.INNER_ERROR.getState());
+        }
+        return se;
     }
 }

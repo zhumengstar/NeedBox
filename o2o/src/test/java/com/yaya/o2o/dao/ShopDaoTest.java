@@ -28,15 +28,6 @@ public class ShopDaoTest extends BaseTest {
         System.out.println("店铺列表的大小:" + shopList.size());
     }
 
-
-    @Test
-    public void testQueryByShopId() {
-        long shopId = 1;
-        Shop shop = shopDao.queryByShopId(shopId);
-        System.out.println("AreaId:" + shop.getArea().getAreaId());
-        System.out.println("AreaName:" + shop.getArea().getAreaName());
-    }
-
     @Test
     public void testInsertShop() {
         Shop shop = new Shop();
@@ -72,4 +63,11 @@ public class ShopDaoTest extends BaseTest {
         assertEquals(1, effectedNum);
     }
 
+    @Test
+    public void testQueryByShopId() {
+        long shopId = 1;
+        Shop shop = shopDao.queryByShopId(shopId);
+        System.out.println("AreaId:" + shop.getArea().getAreaId());
+        System.out.println("AreaName:" + shop.getArea().getAreaName());
+    }
 }

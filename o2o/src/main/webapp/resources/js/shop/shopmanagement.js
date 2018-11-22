@@ -1,5 +1,5 @@
 $(function () {
-    var shopId = getQueryString("shopId");
+    var shopId = getQueryString('shopId');
     var shopInfoUrl = '/o2o/shopadmin/getshopmanagementinfo?shopId=' + shopId;
     $.getJSON(shopInfoUrl, function (data) {
         if(data.redirect) {
