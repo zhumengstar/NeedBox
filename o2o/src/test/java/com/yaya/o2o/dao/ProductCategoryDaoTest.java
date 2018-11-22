@@ -21,7 +21,7 @@ public class ProductCategoryDaoTest extends BaseTest {
 
     @Test
     public void testBQueryByShopId() throws Exception {
-        long shopId = 1;
+        long shopId = 1L;
         List<ProductCategory> productCategoryList = productCategoryDao.queryProductCategoryList(shopId);
         System.out.println("该店铺自定义类别数为:" + productCategoryList.size());
     }

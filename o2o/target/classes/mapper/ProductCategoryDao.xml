@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.yaya.o2o.dao.ProductCategoryDao">
+
     <select id="queryProductCategoryList" resultType="com.yaya.o2o.entity.ProductCategory" parameterType="Long">
         SELECT
             product_category_id,
@@ -11,12 +12,9 @@
             priority,
             create_time,
             shop_id
-        FROM
-            tb_product_category
-        WHERE
-            shop_id=#{shopId}
-        ORDER BY
-            priority DESC
+        FROM tb_product_category
+        WHERE shop_id=#{shopId}
+        ORDER BY priority DESC
       </select>
 
     <insert id="batchInsertProductCategory" parameterType="java.util.List">

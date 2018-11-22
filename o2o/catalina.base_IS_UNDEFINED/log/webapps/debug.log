@@ -1,7 +1,12 @@
-2018-11-20 02:10:11.914 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time, FROM tb_head_line ORDER BY priority DESC 
-2018-11-20 02:10:11.979 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==> Parameters: 
-2018-11-20 02:11:06.330 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time, FROM tb_head_line ORDER BY priority DESC 
-2018-11-20 02:11:06.401 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==> Parameters: 
-2018-11-20 02:13:17.397 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line ORDER BY priority DESC 
-2018-11-20 02:13:17.452 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==> Parameters: 
-2018-11-20 02:13:17.478 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -<==      Total: 4
+2018-11-22 22:18:46.155 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
+2018-11-22 22:18:46.243 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
+2018-11-22 22:18:46.271 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4
+2018-11-22 22:18:57.106 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
+2018-11-22 22:18:57.172 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
+2018-11-22 22:18:57.205 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4
+2018-11-22 22:39:59.502 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
+2018-11-22 22:39:59.604 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
+2018-11-22 22:39:59.641 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4
+2018-11-22 22:40:12.386 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
+2018-11-22 22:40:12.452 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
+2018-11-22 22:40:12.484 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4

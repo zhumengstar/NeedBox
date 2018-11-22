@@ -269,15 +269,15 @@ public class ShopManagementController {
         //先设置一个默认值,确保userId肯定是存在的
         user.setUserId(1L);
         user.setName("test");
-        request.getSession().setAttribute("user", user);
+        request.getSession().setAttribute("currentUser", user);
         //通过session获取用户信息
-        user = (PersonInfo)request.getSession().getAttribute("user");
+        PersonInfo currentUser = (PersonInfo)request.getSession().getAttribute("currentUser");
         try {
             Shop shopCondition = new Shop();
             shopCondition.setOwner(user);
             ShopExecution se = shopService.getShopList(shopCondition, 0, 100);
             modelMap.put("shopList", se.getShopList());
-            modelMap.put("user", user);
+            modelMap.put("currentUser", currentUser);
             modelMap.put("success", true);
         } catch (Exception e) {
             modelMap.put("success", false);

@@ -9,7 +9,7 @@ $(function () {
 			success : function(data) {
 				if (data.success) {
 					handleList(data.shopList);
-					handleUser(data.user);
+					handleUser(data.currentUser);
 				}
 			}
 		});

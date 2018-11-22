@@ -33,7 +33,6 @@ public class ProductCategoryManagementController {
         Shop shop = new Shop();
         shop.setShopId(1L);
         request.getSession().setAttribute("currentShop", shop);
-
         Shop currentShop = (Shop)request.getSession().getAttribute("currentShop");
         List<ProductCategory> list = null;
         if(currentShop != null && currentShop.getShopId() > 0) {
@@ -44,6 +43,27 @@ public class ProductCategoryManagementController {
             return new Result<List<ProductCategory>>(false, ps.getState(), ps.getStateInfo());
         }
     }
+//    @RequestMapping(value = "/getproductcategorylist", method = GET)
+//    @ResponseBody
+//    private Map<String, Object> getProductCategoryList(HttpServletRequest request) {
+//        Map<String, Object> modelMap = new HashMap<>();
+//        Shop shop = new Shop();
+//        shop.setShopId(1L);
+//        request.getSession().setAttribute("currentShop", shop);
+//        Shop currentShop = (Shop)request.getSession().getAttribute("currentShop");
+//        List<ProductCategory> list = null;
+//        if(currentShop != null && currentShop.getShopId() > 0) {
+//            list = productCategoryService.getProductCategoryList(currentShop.getShopId());
+//            modelMap.put("success", true);
+//            modelMap.put("productCategoryList", list);
+//        } else {
+//            ProductCategoryStateEnum ps = ProductCategoryStateEnum.INNER_ERROR;
+//            modelMap.put("success", false);
+//            modelMap.put("errCode", ps.getState());
+//            modelMap.put("errMsg", ps.getStateInfo());
+//        }
+//        return modelMap;
+//    }
 
     @RequestMapping(value = "/addproductcategorys", method = POST)
     @ResponseBody

@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yaya.o2o.dao.ProductDao">
+
     <resultMap id="productMap" type="com.yaya.o2o.entity.Product">
         <id column="product_id" property="productId"/>
         <result column="product_name" property="productName" />
@@ -32,6 +33,7 @@
             <result column="product_id" property="productId" />
         </collection>
     </resultMap>
+
     <select id="queryProductList" resultMap="productMap">
         SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product
         <where>
