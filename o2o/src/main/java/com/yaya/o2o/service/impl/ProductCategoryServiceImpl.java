@@ -25,6 +25,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Override
     @Transactional
     public ProductCategoryExecution batchAddProductCategory(List<ProductCategory> productCategoryList) throws ProductCategoryOperationException {
+        //首先判空
         if(productCategoryList != null || productCategoryList.size() < 0) {
             try {
                 int effectedNum = productCategoryDao.batchInsertProductCategory(productCategoryList);
@@ -44,7 +45,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Override
     @Transactional
     public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws ProductCategoryOperationException {
-        //TO DO 将此类别下的商品类别ID置空
+        //将此类别下的商品类别ID置空
         try {
             int effectedNum = productCategoryDao.deleteProductCategory(productCategoryId, shopId);
             if(effectedNum <= 0) {

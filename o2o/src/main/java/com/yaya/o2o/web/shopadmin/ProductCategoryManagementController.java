@@ -67,9 +67,11 @@ public class ProductCategoryManagementController {
 
     @RequestMapping(value = "/addproductcategorys", method = POST)
     @ResponseBody
+    //@RequestBody 将HTTP请求正文写入某个对象
     private Map<String, Object> addProductCategorys(@RequestBody List<ProductCategory> productCategoryList, HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+        //遍历这个批量的商品类别,逐一设置shopId
         for (ProductCategory pc : productCategoryList) {
             pc.setShopId(currentShop.getShopId());
         }

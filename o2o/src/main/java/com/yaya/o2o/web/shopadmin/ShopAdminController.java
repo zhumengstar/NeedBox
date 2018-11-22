@@ -28,8 +28,8 @@ public class ShopAdminController {
         return "shop/shopmanagement";
     }
 
-    @RequestMapping(value = "/productcategorymanagement", method = GET)
-    private String productCategoryManagement() {
+    @RequestMapping(value = "/productcategorymanagement")
+    public String productCategoryManagement() {
         //转发至商品类别管理页面
         return "shop/productcategorymanagement";
     }
