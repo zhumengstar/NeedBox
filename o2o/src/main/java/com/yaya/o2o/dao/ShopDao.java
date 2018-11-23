@@ -24,6 +24,7 @@ public interface ShopDao {
                              @Param("rowIndex")int rowIndex,
                              @Param("pageSize")int pageSize);
 
-    //返回queryList总数
+    //返回queryList总条数
     int queryShopCount(@Param("shopCondition")Shop shopCondition);
+
 }

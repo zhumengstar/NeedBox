@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
@@ -41,6 +40,7 @@ public class ProductManagementController {
     //支持上传商品详情图的最大数量
     private static final int IMAGEMAXCOUNT = 6;
 
+    //添加商品(处理详情图并添加)
     @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> addProduct(HttpServletRequest request) {
@@ -55,14 +55,16 @@ public class ProductManagementController {
         ObjectMapper mapper = new ObjectMapper();
         Product product = null;
         String productStr = HttpServletRequestUtil.getString(request, "productStr");
-        MultipartHttpServletRequest multipartRequest = null;
+        //保存缩略图文件流和图片名
         ImageHolder thumbnail = null;
+        //保存商品详情图文件流列表和图片名列表
         List<ImageHolder> productImgList = new ArrayList<>();
+        //文件上传解析器来解析request session的文件信息
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         try {
-            //若请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
+            //若解析出来的请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
             if (multipartResolver.isMultipart(request)) {
-                thumbnail = handleImage(request, thumbnail, productImgList);
+                thumbnail = handleImage(request, productImgList);
             } else {
                 modelMap.put("success", false);
                 modelMap.put("errMsg", "上传图片不能为空");
@@ -74,7 +76,7 @@ public class ProductManagementController {
             return modelMap;
         }
         try {
-            //尝试获取前端传过来的表单string流并将其转换成Product实体类
+            //尝试获取前端传过来的表单String流并将其转换成Product实体类生成product实例
             product = mapper.readValue(productStr, Product.class);
         } catch (Exception e) {
             modelMap.put("success", false);
@@ -87,7 +89,6 @@ public class ProductManagementController {
             try {
                 //从session中获取当前店铺的Id并赋值给product,减少对前端数据的依赖
                 Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
-
                 product.setShop(currentShop);
                 //执行添加操作
                 ProductExecution pe = productService.addProduct(product, thumbnail, productImgList);
@@ -109,11 +110,13 @@ public class ProductManagementController {
         return modelMap;
     }
 
-    private ImageHolder handleImage(HttpServletRequest request, ImageHolder thumbnail, List<ImageHolder> productImgList) throws IOException {
-        MultipartRequest multipartRequest = (MultipartHttpServletRequest) request;
+    private ImageHolder handleImage(HttpServletRequest request, List<ImageHolder> productImgList) throws IOException {
+        //将HttpServletRequest转换为MultipartHttpServletRequest
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         //取出缩略图并构建ImageHolder对象
         CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
-        thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
+        //将获取到的文件流和图片名传入到thumbnail里
+        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
         //取出详情图列表并构建List<ImageHolder>列表对象,最多支持六张图片上传
         for (int i = 0; i < IMAGEMAXCOUNT; i++) {
             CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest.getFile("productImg" + i);
@@ -154,7 +157,7 @@ public class ProductManagementController {
     private Map<String, Object> modifyProduct(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         //是商品编辑时候调用还是上下架操作的时候调用
-        //若为前者则进行验证码判断,后者则跳过验证码判断
+        //若为商品编辑则进行验证码判断,上下架操作则跳过验证码判断
         boolean statusChange = HttpServletRequestUtil.getBoolean(request, "statusChange");
         //验证码判断
         if (!statusChange && !CodeUtil.checkVerifyCode(request)) {
@@ -171,7 +174,7 @@ public class ProductManagementController {
         // 若请求中存在文件流，则取出相关的文件（包括缩略图和详情图）
         try {
             if (multipartResolver.isMultipart(request)) {
-                thumbnail = handleImage(request, thumbnail, productImgList);
+                thumbnail = handleImage(request, productImgList);
             }
         } catch (Exception e) {
             modelMap.put("success", false);

@@ -24,6 +24,7 @@
             <result column="owner_id" property="ownerId"/>
             <result column="shop_name" property="shopName"/>
         </association>
+        <!--property成员变量名 column是通过product_id联系在一起的 ofType为collection的类型-->
         <collection property="productImgList" column="product_id" ofType="com.yaya.o2o.entity.ProductImg">
             <id column="product_img_id" property="productImgId" />
             <result column="detail_img" property="imgAddr" />
@@ -76,6 +77,15 @@
         </where>
     </select>
 
+
+    
+    <insert id="insertProduct" parameterType="com.yaya.o2o.entity.Product" useGeneratedKeys="true" keyProperty="productId" keyColumn="product_id">
+        INSERT INTO
+            tb_product(product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id)
+          VALUES
+              (#{productName}, #{productDesc}, #{imgAddr}, #{normalPrice}, #{promotionPrice}, #{priority}, #{createTime}, #{lastEditTime}, #{enableStatus}, #{productCategory.productCategoryId}, #{shop.shopId})
+    </insert>
+
     <select id="queryProductById" resultMap="productMap" parameterType="Long">
         SELECT
             p.product_id,
@@ -95,26 +105,14 @@
             pm.img_desc,
             pm.priority,
             pm.create_time
-        FROM
-            tb_product p
-        LEFT JOIN
-            tb_product_img pm
-        ON
-            p.product_id=pm.product_id
-        WHERE
-            p.product_id=#{productId}
-        ORDER BY
-            pm.priority DESC
+        FROM tb_product p
+        LEFT JOIN tb_product_img pm
+        ON p.product_id=pm.product_id
+        WHERE p.product_id=#{productId}
+        ORDER BY pm.priority DESC
     </select>
-    
-    <insert id="insertProduct" parameterType="com.yaya.o2o.entity.Product" useGeneratedKeys="true" keyProperty="productId" keyColumn="product_id">
-        INSERT INTO
-            tb_product(product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id)
-          VALUES
-              (#{productName}, #{productDesc}, #{imgAddr}, #{normalPrice}, #{promotionPrice}, #{priority}, #{createTime}, #{lastEditTime}, #{enableStatus}, #{productCategory.productCategoryId}, #{shop.shopId})
-    </insert>
 
-    <update id="updateProduct" parameterType="com.yaya.o2o.entity.Product" keyProperty="product_id" useGeneratedKeys="true">
+    <update id="updateProduct" parameterType="com.yaya.o2o.entity.Product">
         UPDATE tb_product
         <set>
             <if test="productName != null">product_name=#{productName},</if>
@@ -129,9 +127,7 @@
                 product_category_id=#{productCategory.productCategoryId}
             </if>
         </set>
-        WHERE
-            product_id=#{productId}
-        AND
-            shop_id=#{shop.shopId}
+        WHERE product_id=#{productId}
+        AND shop_id=#{shop.shopId}
     </update>
 </mapper>

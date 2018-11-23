@@ -12,5 +12,4 @@ public interface HeadLineDao {
 
     //根据头条id返回唯一的头条信息
 
-
 }

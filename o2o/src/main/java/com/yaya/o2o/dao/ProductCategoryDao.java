@@ -15,4 +15,5 @@ public interface ProductCategoryDao {
 
     //删除商品类别
     int deleteProductCategory(@Param("productCategoryId")long productCategoryId, @Param("shopId")long shopId);
+
 }

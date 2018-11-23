@@ -28,13 +28,13 @@ public class ShopExecution {
         this.stateInfo = stateEnum.getStateInfo();
     }
     //店铺操作成功的时候使用的构造器
-    public ShopExecution(ShopStateEnum stateEnum,Shop shop) {
+    public ShopExecution(ShopStateEnum stateEnum, Shop shop) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
         this.shop = shop;
     }
     //店铺操作成功的时候使用的构造器
-    public ShopExecution(ShopStateEnum stateEnum,List<Shop> shopList) {
+    public ShopExecution(ShopStateEnum stateEnum, List<Shop> shopList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
         this.shopList = shopList;
