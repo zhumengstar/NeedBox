@@ -12,6 +12,8 @@ import com.yaya.o2o.service.ProductCategoryService;
 import com.yaya.o2o.service.ProductService;
 import com.yaya.o2o.util.CodeUtil;
 import com.yaya.o2o.util.HttpServletRequestUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/shopadmin")
 public class ProductManagementController {
+    private static final Logger logger = LoggerFactory.getLogger(ProductManagementController.class);
     @Autowired
     private ProductService productService;
     @Autowired
@@ -171,19 +174,20 @@ public class ProductManagementController {
         ImageHolder thumbnail = null;
         List<ImageHolder> productImgList = new ArrayList<>();
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
-        // 若请求中存在文件流，则取出相关的文件（包括缩略图和详情图）
+        // 若请求中存在文件流,则取出相关的文件（包括缩略图和详情图）
         try {
+            logger.debug("-------" + multipartResolver.isMultipart(request));
             if (multipartResolver.isMultipart(request)) {
                 thumbnail = handleImage(request, productImgList);
             }
         } catch (Exception e) {
             modelMap.put("success", false);
             modelMap.put("errMsg", e.toString());
-            return modelMap;
+            //return modelMap;
         }
         try {
             String productStr = HttpServletRequestUtil.getString(request, "productStr");
-            // 尝试获取前端传过来的表单string流并将其转换成Product实体类
+            // 尝试获取前端传过来的表单String流并将其转换成Product实体类
             product = mapper.readValue(productStr, Product.class);
         } catch (Exception e) {
             modelMap.put("success", false);
