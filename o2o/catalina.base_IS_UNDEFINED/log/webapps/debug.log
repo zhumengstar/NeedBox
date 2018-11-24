@@ -1,12 +1,8 @@
-2018-11-22 22:18:46.155 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
-2018-11-22 22:18:46.243 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
-2018-11-22 22:18:46.271 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4
-2018-11-22 22:18:57.106 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
-2018-11-22 22:18:57.172 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
-2018-11-22 22:18:57.205 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4
-2018-11-22 22:39:59.502 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
-2018-11-22 22:39:59.604 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
-2018-11-22 22:39:59.641 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4
-2018-11-22 22:40:12.386 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
-2018-11-22 22:40:12.452 [main] DEBUG c.y.o.d.P.queryProductCategoryList -==> Parameters: 1(Long)
-2018-11-22 22:40:12.484 [main] DEBUG c.y.o.d.P.queryProductCategoryList -<==      Total: 4
+2018-11-24 16:54:56.501 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==>  Preparing: UPDATE tb_product SET product_cateogry_id=null WHERE product_category_id=? 
+2018-11-24 16:54:56.563 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==> Parameters: 24(Long)
+2018-11-24 16:55:35.321 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==>  Preparing: UPDATE tb_product SET product_category_id=null WHERE product_category_id=? 
+2018-11-24 16:55:35.404 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==> Parameters: 24(Long)
+2018-11-24 16:55:35.430 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -<==    Updates: 2
+2018-11-24 17:02:20.336 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==>  Preparing: UPDATE tb_product SET product_category_id=null WHERE product_category_id=? 
+2018-11-24 17:02:20.408 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==> Parameters: 24(Long)
+2018-11-24 17:02:20.409 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -<==    Updates: 0

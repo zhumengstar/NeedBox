@@ -129,10 +129,6 @@ public class ProductManagementController {
                 ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
                 productImgList.add(productImg);
             }
-// else {
-//                //若取出的第i个详情图片文件流为空,则终止循环
-//                break;
-//            }
         }
         return thumbnail;
     }
@@ -251,7 +247,7 @@ public class ProductManagementController {
         int pageSize = HttpServletRequestUtil.getInt(request, "pageSize");
         //从当前session中获取店铺信息,主要是获取shopId
         Shop currentShop = (Shop)request.getSession().getAttribute("currentShop");
-        //控制判断
+        //空值判断
         if((pageIndex > -1)&&(pageSize > -1)&&(currentShop != null)&&(currentShop.getShopId() != null)) {
             System.out.println(currentShop.getShopId());
             //获取传入的需要检索的条件,包括是否需要从某个商品类别以及模糊查找商品名去筛选某个店铺下的商品列表

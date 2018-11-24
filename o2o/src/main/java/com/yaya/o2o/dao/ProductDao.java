@@ -23,4 +23,8 @@ public interface ProductDao {
 
     //查询对应的商品总数
     int queryProductCount(@Param("productCondition") Product productCondition);
+
+    //删除商品类别之前,将商品类别ID置为空
+    int updateProductCategoryToNull(long productCategoryId);
+
 }

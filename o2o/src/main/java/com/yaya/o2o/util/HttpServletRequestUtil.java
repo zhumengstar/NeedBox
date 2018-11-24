@@ -7,7 +7,7 @@ public class HttpServletRequestUtil {
     //从request里提取key,将key转换成整型
     public static int getInt(HttpServletRequest request, String key) {
         try {
-            return Integer.valueOf(request.getParameter(key));
+            return Integer.parseInt(request.getParameter(key));
         } catch (Exception e) {
             return -1;
         }
