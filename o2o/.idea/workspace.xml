@@ -7,18 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b286d14a-fcb3-4f3d-b630-4160130b68f5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ProductDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ProductDao.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productoperation.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productoperation.js" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/dao/ProductDao.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/dao/ProductDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/service/impl/ProductServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/service/impl/ProductServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ProductDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ProductDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/dao/ProductDao.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/dao/ProductDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/service/impl/ProductServiceImpl.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/service/impl/ProductServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/mapper/ProductDao.xml" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/mapper/ProductDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productoperation.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productoperation.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -81,8 +70,8 @@
       <file leaf-file-name="ProductManagementController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="124" column="35" lean-forward="false" selection-start-line="124" selection-start-column="35" selection-end-line="124" selection-end-column="35" />
+            <state relative-caret-position="-1125">
+              <caret line="121" column="109" lean-forward="true" selection-start-line="121" selection-start-column="109" selection-end-line="121" selection-end-column="109" />
               <folding>
                 <element signature="method#getProductById#0;class#ProductManagementController#0" expanded="false" />
               </folding>
@@ -93,8 +82,8 @@
       <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ProductServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-149">
-              <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+            <state relative-caret-position="409">
+              <caret line="126" column="73" lean-forward="true" selection-start-line="126" selection-start-column="73" selection-end-line="126" selection-end-column="73" />
               <folding>
                 <element signature="e#4040#4041#0" expanded="true" />
                 <element signature="e#4101#4102#0" expanded="true" />
@@ -1151,7 +1140,7 @@
       <workItem from="1542855951561" duration="36981000" />
       <workItem from="1542900478956" duration="251000" />
       <workItem from="1542901184679" duration="3664000" />
-      <workItem from="1542960004915" duration="29559000" />
+      <workItem from="1542960004915" duration="32300000" />
     </task>
     <servers />
   </component>
@@ -1188,7 +1177,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376522000" />
+    <option name="totallyTimeSpent" value="379263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1865" height="1080" extended-state="6" />
@@ -1282,13 +1271,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java</url>
-          <line>160</line>
+          <line>161</line>
           <properties />
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java</url>
-          <line>117</line>
+          <line>115</line>
           <properties />
           <option name="timeStamp" value="107" />
         </line-breakpoint>
@@ -1317,16 +1306,16 @@
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java</url>
-          <line>121</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ProductServiceImpl.java</url>
+          <line>128</line>
           <properties />
-          <option name="timeStamp" value="115" />
+          <option name="timeStamp" value="118" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="116" />
+      <option name="time" value="119" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1731,8 +1720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-149">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        <state relative-caret-position="409">
+          <caret line="126" column="73" lean-forward="true" selection-start-line="126" selection-start-column="73" selection-end-line="126" selection-end-column="73" />
           <folding>
             <element signature="e#4040#4041#0" expanded="true" />
             <element signature="e#4101#4102#0" expanded="true" />
@@ -1742,8 +1731,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="124" column="35" lean-forward="false" selection-start-line="124" selection-start-column="35" selection-end-line="124" selection-end-column="35" />
+        <state relative-caret-position="-1125">
+          <caret line="121" column="109" lean-forward="true" selection-start-line="121" selection-start-column="109" selection-end-line="121" selection-end-column="109" />
           <folding>
             <element signature="method#getProductById#0;class#ProductManagementController#0" expanded="false" />
           </folding>

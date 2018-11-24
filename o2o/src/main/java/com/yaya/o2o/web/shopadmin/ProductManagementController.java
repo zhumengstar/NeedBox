@@ -12,8 +12,6 @@ import com.yaya.o2o.service.ProductCategoryService;
 import com.yaya.o2o.service.ProductService;
 import com.yaya.o2o.util.CodeUtil;
 import com.yaya.o2o.util.HttpServletRequestUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +32,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/shopadmin")
 public class ProductManagementController {
-    private static final Logger logger = LoggerFactory.getLogger(ProductManagementController.class);
+    //private static final Logger logger = LoggerFactory.getLogger(ProductManagementController.class);
     @Autowired
     private ProductService productService;
     @Autowired
@@ -118,8 +116,11 @@ public class ProductManagementController {
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
         //取出缩略图并构建ImageHolder对象
         CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
-        //将获取到的文件流和图片名传入到thumbnail里
-        ImageHolder thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
+        ImageHolder thumbnail = null;
+        if(thumbnailFile != null) {
+            //将获取到的文件流和图片名传入到thumbnail里
+            thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
+        }
         //取出详情图列表并构建List<ImageHolder>列表对象,最多支持六张图片上传
         for (int i = 0; i < IMAGEMAXCOUNT; i++) {
             CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest.getFile("productImg" + i);
@@ -176,14 +177,13 @@ public class ProductManagementController {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         // 若请求中存在文件流,则取出相关的文件（包括缩略图和详情图）
         try {
-            logger.debug("-------" + multipartResolver.isMultipart(request));
             if (multipartResolver.isMultipart(request)) {
                 thumbnail = handleImage(request, productImgList);
             }
         } catch (Exception e) {
             modelMap.put("success", false);
             modelMap.put("errMsg", e.toString());
-            //return modelMap;
+            return modelMap;
         }
         try {
             String productStr = HttpServletRequestUtil.getString(request, "productStr");
