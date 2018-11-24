@@ -128,10 +128,11 @@ public class ProductManagementController {
                 //若取出的第i个详情图片文件流不为空,则将其加入详情图列表
                 ImageHolder productImg = new ImageHolder(productImgFile.getOriginalFilename(), productImgFile.getInputStream());
                 productImgList.add(productImg);
-            } else {
-                //若取出的第i个详情图片文件流为空,则终止循环
-                break;
             }
+// else {
+//                //若取出的第i个详情图片文件流为空,则终止循环
+//                break;
+//            }
         }
         return thumbnail;
     }

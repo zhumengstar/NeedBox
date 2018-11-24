@@ -159,6 +159,7 @@ public class ProductServiceImpl implements ProductService {
         //删除数据库里原有图片的信息
         productImgDao.deleteProductImgByProductId(productId);
     }
+
     @Override
     public ProductExecution getProductList(Product productCondition, int pageIndex, int pageSize) {
         int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
