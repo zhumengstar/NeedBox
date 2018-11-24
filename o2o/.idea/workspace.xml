@@ -7,25 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b286d14a-fcb3-4f3d-b630-4160130b68f5" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/HeadLineService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/HeadLineServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/FrontendController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/MainPageController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/index/index.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/catalina.base_IS_UNDEFINED/log/webapps/debug.log" afterPath="$PROJECT_DIR$/catalina.base_IS_UNDEFINED/log/webapps/debug.log" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/HeadLineDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/HeadLineDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ShopCategoryService.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ShopCategoryService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/HeadLineDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/HeadLineDao.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShopCategoryDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShopCategoryDao.xml" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/ShopCategoryDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/ShopCategoryDaoTest.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/HeadLineDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/HeadLineDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ShopCategoryDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/ShopCategoryDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/mapper/HeadLineDao.xml" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/mapper/HeadLineDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/mapper/ShopCategoryDao.xml" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/mapper/ShopCategoryDao.xml" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yaya/o2o/dao/ShopCategoryDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/yaya/o2o/dao/ShopCategoryDaoTest.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/frontend/index/index.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
@@ -98,12 +82,24 @@
       <file leaf-file-name="FrontendController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/FrontendController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
+            <state relative-caret-position="437">
               <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#381#382#0" expanded="true" />
                 <element signature="e#420#421#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopListController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="876">
+              <caret line="62" column="49" lean-forward="true" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,6 +121,31 @@
             <state relative-caret-position="-1581">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ShopDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShopDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="152" column="156" lean-forward="true" selection-start-line="152" selection-start-column="156" selection-end-line="152" selection-end-column="156" />
+              <folding>
+                <marker date="1543066738236" expanded="true" signature="1980:2676" ph="INSERT INTO tb_shop... " />
+                <marker date="1543066738236" expanded="true" signature="2816:3669" ph="UPDATE tb_shop... " />
+                <marker date="1543066738236" expanded="true" signature="3830:4470" ph="SELECT s.sho... tb_shop" />
+                <marker date="1543066738236" expanded="true" signature="4665:6520" ph="SELECT s.sho... tb_shop" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,11 +206,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html" />
         <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/ShopDaoTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/ShopServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/shopoperation.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ShopService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/PageCalculator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ShopServiceImpl.java" />
@@ -236,6 +255,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/FrontendController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java" />
       </list>
     </option>
   </component>
@@ -259,10 +280,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="933" />
-    <option name="width" value="932" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="392" />
+    <option name="y" value="96" />
+    <option name="width" value="1188" />
+    <option name="height" value="816" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1192,7 +1214,7 @@
       <workItem from="1542855951561" duration="36981000" />
       <workItem from="1542900478956" duration="251000" />
       <workItem from="1542901184679" duration="3664000" />
-      <workItem from="1542960004915" duration="47415000" />
+      <workItem from="1542960004915" duration="48791000" />
     </task>
     <servers />
   </component>
@@ -1229,10 +1251,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="394378000" />
+    <option name="totallyTimeSpent" value="395754000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="933" y="0" width="932" height="1080" extended-state="4" />
+    <frame x="392" y="96" width="1188" height="816" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1253,10 +1275,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26811594" sideWeight="0.8039687" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36894587" sideWeight="0.8039687" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35193133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23905724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1360,14 +1382,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/ImageHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/ImageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-837">
@@ -1388,27 +1402,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
           <caret line="218" column="17" lean-forward="true" selection-start-line="218" selection-start-column="17" selection-end-line="218" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="73" column="9" lean-forward="false" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="9" />
-          <folding>
-            <marker date="1542882870779" expanded="true" signature="1980:2676" ph="INSERT INTO tb_shop... " />
-            <marker date="1542882870779" expanded="true" signature="2816:3669" ph="UPDATE tb_shop... " />
-            <marker date="1542882870779" expanded="true" signature="3830:4470" ph="SELECT s.sho... tb_shop" />
-            <marker date="1542882870779" expanded="true" signature="4665:6179" ph="SELECT s.sho... tb_shop" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ShopDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1761,18 +1754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/FrontendController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-930">
@@ -1802,6 +1783,49 @@
         <state relative-caret-position="279">
           <caret line="36" column="19" lean-forward="true" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ShopDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="152" column="156" lean-forward="true" selection-start-line="152" selection-start-column="156" selection-end-line="152" selection-end-column="156" />
+          <folding>
+            <marker date="1543066738236" expanded="true" signature="1980:2676" ph="INSERT INTO tb_shop... " />
+            <marker date="1543066738236" expanded="true" signature="2816:3669" ph="UPDATE tb_shop... " />
+            <marker date="1543066738236" expanded="true" signature="3830:4470" ph="SELECT s.sho... tb_shop" />
+            <marker date="1543066738236" expanded="true" signature="4665:6520" ph="SELECT s.sho... tb_shop" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/FrontendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#420#421#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="876">
+          <caret line="62" column="49" lean-forward="true" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
