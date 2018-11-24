@@ -13,14 +13,12 @@
             enable_status,
             create_time,
             last_edit_time
-        FROM
-            tb_head_line
+        FROM tb_head_line
         <where>
             <if test="headLineCondition.enableStatus != null">
                 and enable_status=#{headLineCondition.enableStatus}
             </if>
         </where>
-        ORDER BY
-        priority DESC
+        ORDER BY priority DESC
     </select>
 </mapper>

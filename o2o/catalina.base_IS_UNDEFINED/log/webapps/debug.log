@@ -6,3 +6,9 @@
 2018-11-24 17:02:20.336 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==>  Preparing: UPDATE tb_product SET product_category_id=null WHERE product_category_id=? 
 2018-11-24 17:02:20.408 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -==> Parameters: 24(Long)
 2018-11-24 17:02:20.409 [main] DEBUG c.y.o2o.dao.ProductDao.updateProductCategoryToNull -<==    Updates: 0
+2018-11-24 17:11:15.330 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line ORDER BY priority DESC 
+2018-11-24 17:11:15.389 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -==> Parameters: 
+2018-11-24 17:11:15.412 [main] DEBUG com.yaya.o2o.dao.HeadLineDao.queryHeadLine -<==      Total: 4
+2018-11-24 17:21:43.114 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is null ORDER BY priority DESC 
+2018-11-24 17:21:43.161 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -==> Parameters: 
+2018-11-24 17:21:43.200 [main] DEBUG com.yaya.o2o.dao.ShopCategoryDao.queryShopCategory -<==      Total: 1
