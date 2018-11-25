@@ -23,8 +23,4 @@ public class MD5Util {
         }
         return builder.toString();
     }
-
-    public static void main(String[] args) {
-        System.out.println(getMD5("24865"));
-    }
 }
