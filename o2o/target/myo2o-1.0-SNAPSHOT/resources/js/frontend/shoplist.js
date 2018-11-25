@@ -3,7 +3,7 @@ $(function() {
 	//分页允许返回的最大条数,超过此数则禁止访问后台
 	var maxItems = 999;
 	//一页返回的最大条数
-	var pageSize = 3;
+	var pageSize = 5;
 	//获取店铺列表的URL
 	var listUrl = '/o2o/frontend/listshops';
 	//获取店铺类别列表以及区域列表的URL
@@ -97,8 +97,12 @@ $(function() {
 					// 加载完毕，则注销无限加载事件，以防不必要的加载
 					//		$.detachInfiniteScroll($('.infinite-scroll'));
 					// 删除加载提示符
-					$('.infinite-scroll-preloader').remove();
-				}
+					//$('.infinite-scroll-preloader').remove();
+                    //隐藏提示符
+                    $('.infinite-scroll-preloader').hide();
+                } else {
+                    $('.infinite-scroll-preloader').show();
+                }
 				//否则页码+1,继续load出新的店铺
 				pageNum += 1;
 				//加载结束,可以再次加载了
@@ -157,7 +161,7 @@ $(function() {
 	});
 
 	//需要查询的店铺名字发生变化后,重置页码,清空原先的店铺列表,按照新的名字去查询
-	$('#search').on('input', function(e) {
+	$('#search').on('change', function(e) {
 		shopName = e.target.value;
 		$('.list-div').empty();
 		pageNum = 1;
