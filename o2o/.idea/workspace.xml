@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b286d14a-fcb3-4f3d-b630-4160130b68f5" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/DESUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/EncryptPropertyPlaceholderConfigurer.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/MD5Util.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/MD5Util.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/util/MD5Util.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/util/MD5Util.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,11 +66,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MD5Util.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MD5Util.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/MD5Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="744">
-              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="248">
+              <caret line="8" column="68" lean-forward="true" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DESUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/DESUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,18 +93,40 @@
       <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            <state relative-caret-position="93">
+              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring-dao.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EncryptPropertyPlaceholderConfigurer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/EncryptPropertyPlaceholderConfigurer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="868">
+              <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AreaDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AreaDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1542775732716" expanded="true" signature="352:528" ph="SELECT area_... tb_area" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-dao.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-186">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="279">
+              <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -215,8 +253,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productcategorymanagement.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ShopAdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ProductCategoryDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ProductCategoryService.java" />
@@ -263,9 +299,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopDetailController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shoplist.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shopdetail.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/EncryptPropertyPlaceholderConfigurer.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/MD5Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/DESUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/EncryptPropertyPlaceholderConfigurer.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" />
       </list>
     </option>
   </component>
@@ -820,6 +858,25 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
+    <configuration name="DESUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.yaya.o2o.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.yaya.o2o.util.DESUtil" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="o2o" />
+      <envs />
+    </configuration>
     <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -866,31 +923,6 @@
       <option name="PACKAGE_NAME" value="com.yaya.o2o.dao" />
       <option name="MAIN_CLASS_NAME" value="com.yaya.o2o.dao.HeadLineDaoTest" />
       <option name="METHOD_NAME" value="testQueryArea" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ProductCategoryDaoTest.testBQueryByShopId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.yaya.o2o.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="o2o" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.yaya.o2o.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.yaya.o2o.dao.ProductCategoryDaoTest" />
-      <option name="METHOD_NAME" value="testBQueryByShopId" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1093,18 +1125,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.HeadLineDaoTest.testQueryArea" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ProductCategoryDaoTest.testBQueryByShopId" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testUpdateProductCategoryToNull" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ShopCategoryDaoTest.testQueryShopCategory" />
-      <item index="5" class="java.lang.String" itemvalue="Application.MD5Util" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testUpdateProductCategoryToNull" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ShopCategoryDaoTest.testQueryShopCategory" />
+      <item index="4" class="java.lang.String" itemvalue="Application.MD5Util" />
+      <item index="5" class="java.lang.String" itemvalue="Application.DESUtil" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MD5Util" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ShopCategoryDaoTest.testQueryShopCategory" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.HeadLineDaoTest.testQueryArea" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testUpdateProductCategoryToNull" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ProductCategoryDaoTest.testBQueryByShopId" />
+        <item index="0" class="java.lang.String" itemvalue="Application.DESUtil" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MD5Util" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ShopCategoryDaoTest.testQueryShopCategory" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.HeadLineDaoTest.testQueryArea" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ProductDaoTest.testUpdateProductCategoryToNull" />
       </list>
     </recent_temporary>
   </component>
@@ -1175,7 +1207,7 @@
       <workItem from="1542900478956" duration="251000" />
       <workItem from="1542901184679" duration="3664000" />
       <workItem from="1542960004915" duration="48960000" />
-      <workItem from="1543116324640" duration="31202000" />
+      <workItem from="1543116324640" duration="31864000" />
     </task>
     <servers />
   </component>
@@ -1212,7 +1244,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="427125000" />
+    <option name="totallyTimeSpent" value="427787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1865" height="1080" extended-state="6" />
@@ -1313,20 +1345,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/ProductDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="27" column="10" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/ProductDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="142" column="36" lean-forward="true" selection-start-line="142" selection-start-column="36" selection-end-line="142" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProductDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
@@ -1708,37 +1726,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/EncryptPropertyPlaceholderConfigurer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="248">
+          <caret line="8" column="68" lean-forward="true" selection-start-line="8" selection-start-column="68" selection-end-line="8" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/DESUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-186">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="363">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        <state relative-caret-position="93">
+          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/MD5Util.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/EncryptPropertyPlaceholderConfigurer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="868">
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/AreaDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1542775732716" expanded="true" signature="352:528" ph="SELECT area_... tb_area" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="11" column="32" lean-forward="false" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
