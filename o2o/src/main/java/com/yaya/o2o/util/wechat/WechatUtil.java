@@ -1,5 +1,7 @@
 package com.yaya.o2o.util.wechat;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yaya.o2o.dto.UserAccessToken;
 import org.slf4j.Logger;
@@ -24,7 +26,14 @@ public class WechatUtil {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             //将json字符串转换成相应对象
-            token = objectMapper.readValue()
+            token = objectMapper.readValue(tokenStr, UserAccessToken.class);
+        } catch (JsonParseException e) {
+            log.error("获取用户accessToken失败:" + e.getMessage());
+            e.printStackTrace();
+        } catch (JsonMappingException e) {
+            log.error("获取用户accessToken失败:" + e.getMessage());
+        } catch (IOException e) {
+            log.error("获取用户accessToken失败:" + e.getMessage());
         }
     }
 
