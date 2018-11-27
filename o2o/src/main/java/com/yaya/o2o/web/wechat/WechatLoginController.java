@@ -1,7 +1,7 @@
 package com.yaya.o2o.web.wechat;
 
-import com.yaya.o2o.dto.UserAccessToken;
-import com.yaya.o2o.dto.WechatUser;
+import com.yaya.o2o.dto.wechat.UserAccessToken;
+import com.yaya.o2o.dto.wechat.WechatUser;
 import com.yaya.o2o.util.wechat.WechatUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +13,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+/**
+ * 获取关注公众号之后的微信用户信息的接口
+ * 如果在微信浏览器里访问
+ * https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx299e19661fcdf7d2&redirect_uri=http://39.105.67.70/o2o/wechatlogin/logincheck&role_type=1&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect
+ * 这里将会获取到code,之后再可以通过code获取到access_token 进而获取到用户信息
+ */
+//用来获取已关注此微信号的用户信息并做相应处理
 @Controller
 @RequestMapping("/wechatlogin")
 public class WechatLoginController {
@@ -33,8 +41,8 @@ public class WechatLoginController {
             UserAccessToken token;
             try {
                 //通过code获取access_token
-                token = WechatUtil.getUserAccessToken(coed);
-                log.debug("weixin login token:" + token.toString());
+                token = WechatUtil.getUserAccessToken(code);
+                log.debug("weixin login token:" + token);
                 //通过token获取accessToken
                 String accessToken = token.getAccessToken();
                 //通过token获取openId
@@ -53,7 +61,7 @@ public class WechatLoginController {
         //没有的话这里可以自动创建,直接实现微信与网站的无缝对接
         if(user != null) {
             //获取到微信验证的信息后返回到指定的路由(需要自己设定)
-            return "/frontend/index";
+            return "frontend/index";
         } else {
             return null;
         }
