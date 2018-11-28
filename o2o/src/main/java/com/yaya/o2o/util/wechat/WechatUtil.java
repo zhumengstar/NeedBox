@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yaya.o2o.dto.wechat.UserAccessToken;
 import com.yaya.o2o.dto.wechat.WechatUser;
+import com.yaya.o2o.entity.PersonInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -143,5 +144,15 @@ public class WechatUtil {
             log.debug("https request error:{}", e);
         }
         return buffer.toString();
+    }
+
+    //将WechatUser里的信息转换成PersonInfo的信息并返回PersonInfo实体类
+    public static PersonInfo getPersonInfoFromRequest(WechatUser wechatUser) {
+        PersonInfo personInfo = new PersonInfo();
+        personInfo.setName(wechatUser.getNickName());
+        personInfo.setGender(wechatUser.getSex() + "");
+        personInfo.setProfileImg(wechatUser.getHeadimgurl());
+        personInfo.setEnableStatus(1);
+        return personInfo;
     }
 }
