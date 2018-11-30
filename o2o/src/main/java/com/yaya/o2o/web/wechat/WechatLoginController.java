@@ -47,7 +47,7 @@ public class WechatLoginController {
         //获取微信公众号传输过来的code,通过code可以获取access_token,进而获取用户信息
         String code = request.getParameter("code");
         //这个state可以用来传我们自定义的信息,方便程序调用,这里也可以不用
-        String roleType = request.getParameter("state");
+        String state = request.getParameter("state");
         log.debug("weixin login code: " + code);
         WechatUser user = null;
         String openId = null;
@@ -73,11 +73,12 @@ public class WechatLoginController {
             }
         }
 
+        //如果微信帐号为空,则注册微信帐号,同时注册用户信息
         if (wechatAuth == null) {
             PersonInfo personInfo = WechatUtil.getPersonInfoFromRequest(user);
             wechatAuth = new WechatAuth();
             wechatAuth.setOpenId(openId);
-            if (FRONTEND.equals(roleType)) {
+            if (FRONTEND.equals(state)) {
                 personInfo.setUserType(1);
             } else {
                 personInfo.setUserType(2);
@@ -93,7 +94,7 @@ public class WechatLoginController {
         }
 
         //若用户点击的是前端系统展示页则进入前端展示系统
-        if (FRONTEND.equals(roleType)) {
+        if (FRONTEND.equals(state)) {
             log.debug("weixin yonghu frontend... ");
             return "frontend/index";
         } else {
