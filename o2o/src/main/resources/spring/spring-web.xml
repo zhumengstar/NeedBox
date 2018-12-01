@@ -41,4 +41,28 @@
 
     <!--  4.扫描web相关的bean  -->
     <context:component-scan base-package="com.yaya.o2o.web"/>
+
+    <!-- 5.权限拦截器-->
+    <mvc:interceptors>
+        <!-- 校验是否已登录了店家管理系统的拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/shopadmin/**"/>
+            <bean id="ShopInterceptor" class="com.yaya.o2o.interceptor.shopadmin.ShopLoginInterceptor"/>
+        </mvc:interceptor>
+        <!-- 校验是否对该店铺有操作权限的拦截器 -->
+        <mvc:interceptor>
+            <mvc:mapping path="/shopadmin/**"/>
+            <!-- shoplist page -->
+            <mvc:exclude-mapping path="/shopadmin/shoplist"/>
+            <mvc:exclude-mapping path="/shopadmin/getshoplist"/>
+            <!-- shopregister page -->
+            <mvc:exclude-mapping path="/shopadmin/getshopinitinfo"/>
+            <mvc:exclude-mapping path="/shopadmin/registershop"/>
+            <mvc:exclude-mapping path="/shopadmin/shopoperation"/>
+            <!-- shopmanage page -->
+            <mvc:exclude-mapping path="/shopadmin/shopmanagement"/>
+            <mvc:exclude-mapping path="/shopadmin/getshopmanagementinfo"/>
+            <bean id="ShopPermissionInterceptor" class="com.yaya.o2o.interceptor.shopadmin.ShopPermissionInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
