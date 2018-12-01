@@ -20,5 +20,8 @@ public class LocalController {
     }
 
     //登录页路由
-    //@RequestMapping(value = "")
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    private String login() {
+        return "local/login";
+    }
 }

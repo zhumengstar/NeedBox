@@ -9,7 +9,7 @@ $(function () {
 			success : function(data) {
 				if (data.success) {
 					handleList(data.shopList);
-					handleUser(data.currentUser);
+					handleUser(data.user);
 				}
 			}
 		});
@@ -45,26 +45,4 @@ $(function () {
 			return '审核通过';
 		}
 	}
-
-
-	// $('#log-out').click(function () {
-	// 	$.ajax({
-	// 		url : "/o2o/shop/logout",
-	// 		type : "post",
-	// 		contentType : false,
-	// 		processData : false,
-	// 		cache : false,
-	// 		success : function(data) {
-	// 			if (data.success) {
-	// 				window.location.href = '/o2o/shop/ownerlogin';
-	// 			}
-	// 		},
-	// 		error : function(data, error) {
-	// 			alert(error);
-	// 		}
-	// 	});
-	// });
-    //
-    //
-	// getlist();
 });
