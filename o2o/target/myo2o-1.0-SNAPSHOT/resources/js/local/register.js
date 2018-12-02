@@ -1,5 +1,6 @@
 $(function() {
-    var registerUrl = '/o2o/local/register';
+    var registerUrl = '/o2o/local/registerlocal';
+    var usertype = getQueryString('usertype');
     $('#submit').click(function() {
         var username = $('#username').val();
         var password = $('#password').val();
@@ -41,7 +42,11 @@ $(function() {
             success : function(data) {
                 if (data.success) {
                     $.toast('提交成功！');
-                    window.location.href = '/o2o/local/login';
+                    if(usertype == 1) {
+                        window.location.href = '/o2o/local/login?usertype=' + usertype;
+                    } else {
+                        window.location.href = '/o2o/local/login?usertype=' + usertype;
+                    }
                 } else {
                     $.toast('提交失败！');
                     $('#captcha_img').click();
@@ -51,6 +56,6 @@ $(function() {
     });
 
     $('#back').click(function() {
-        window.location.href = '/o2o/local/login';
+        window.location.href = '/o2o/local/login?usertype=' + usertype;
     });
 });

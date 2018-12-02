@@ -4,6 +4,9 @@ $(function () {
     //从地址栏的URL里获取usertype
     //usertype=1则为customer,其余为shopowner
     var usertype = getQueryString('usertype');
+    if(usertype != 1 || usertype != 2) {
+        usertype = 1;
+    }
     //登录次数,三次失败后自动弹出验证码要求输入
     var loginCount = 0;
 
@@ -42,10 +45,10 @@ $(function () {
             success:function (data) {
                 if (data.success) {
                     $.toast("登录成功!");
-                    if (usertype == 1) {
-                        window.location.href = '/o2o/frontend/index';
-                    } else {
+                    if (usertype == 2) {
                         window.location.href = '/o2o/shopadmin/shoplist';
+                    } else {
+                        window.location.href = '/o2o/frontend/index';
                     }
                 } else {
                     $.toast("登录失败!" + data.errMsg);
@@ -59,6 +62,6 @@ $(function () {
     });
 
     $('#register').click(function() {
-        window.location.href = '/o2o/local/register';
+        window.location.href = '/o2o/local/register?usertype=' + usertype;
     });
 });

@@ -33,7 +33,7 @@ public class LocalAuthController {
     @Autowired
     private LocalAuthService localAuthService;
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/registerlocal", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> register(HttpServletRequest request) throws LocalAuthOperationException {
           Map<String, Object> modelMap = new HashMap<>();

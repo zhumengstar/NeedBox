@@ -29,23 +29,6 @@
         <div class="card-content">
             <div class="card-content-inner">
             (｡･∀･)ﾉﾞ嗨~你好鸭!</br>
-                我是你的盒子,高大上一点的话,你也可以叫我NeedBox,不过我还是喜欢盒盒这个称呼~哈哈哈</br>
-                官方来说,盒盒是一个专属于西安邮电大学宝宝们的校园分类信息平台哦</br>
-                关于西邮你想知道的一切,都可以从盒盒这里得到答案~比如学校里有哪些美食?价格如何?比如澡堂开放时间?有没有二手好货?等等.那么使用该平台的用户入口就好辣!</br>
-                或者,你也想成为一名店主,信息发布者,想让大家浏览到你发布的商品或信息,那么使用该平台的店家入口就可以哦~</br>
-                是不是已经迫不及待了?</br>
-                你可以选择使用微信扫一扫直接使用,方便快捷</br>
-                <table><tr> <td><img src="../resources/image/1.png" border=0></td> <td><img src="../resources/image/2.png" border=0></td> </tr></table>
-                <div class="content-block">
-                    <div class="col-45">
-                        <img src="../resources/image/1.png"  alt="用户入口" height="30"/>
-                    </div>
-                    <div class="col-10"></div>
-                    <div class="col-45">
-                        <img src="../resources/image/2.png"  alt="店家入口" height="30"/>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
