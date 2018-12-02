@@ -19,4 +19,9 @@ public class PathUtil {
         return imagePath.replace("/", seperator);
     }
 
+    public static String getPersonInfoImagePath() {
+        String personInfoImagePath = "/upload/item/personinfo/";
+        return personInfoImagePath.replace("/", seperator);
+    }
+
 }

@@ -1,16 +1,23 @@
 package com.yaya.o2o.service.impl;
 
 import com.yaya.o2o.dao.LocalAuthDao;
+import com.yaya.o2o.dao.PersonInfoDao;
+import com.yaya.o2o.dto.ImageHolder;
 import com.yaya.o2o.dto.LocalAuthExecution;
 import com.yaya.o2o.entity.LocalAuth;
+import com.yaya.o2o.entity.PersonInfo;
 import com.yaya.o2o.enums.LocalAuthStateEnum;
 import com.yaya.o2o.exceptions.LocalAuthOperationException;
 import com.yaya.o2o.service.LocalAuthService;
+import com.yaya.o2o.util.ImageUtil;
 import com.yaya.o2o.util.MD5Util;
+import com.yaya.o2o.util.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import java.io.IOException;
 import java.util.Date;
 
 @Service
@@ -18,6 +25,8 @@ public class LocalAuthServiceImpl implements LocalAuthService {
 
     @Autowired
     private LocalAuthDao localAuthDao;
+    @Autowired
+    private PersonInfoDao personInfoDao;
 
     @Override
     public LocalAuth getLocalAuthByUsernameAndPwd(String useruame, String password) {
@@ -27,6 +36,55 @@ public class LocalAuthServiceImpl implements LocalAuthService {
     @Override
     public LocalAuth getLocalAuthByUserId(long userId) {
         return localAuthDao.queryLocalByUserId(userId);
+    }
+
+    @Override
+    @Transactional
+    public LocalAuthExecution register(LocalAuth localAuth, CommonsMultipartFile profileImg) throws LocalAuthOperationException {
+        if (localAuth == null || localAuth.getPassword() == null || localAuth.getUsername() == null) {
+            return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
+        }
+        try {
+            localAuth.setCreateTime(new Date());
+            localAuth.setLastEditTime(new Date());
+            localAuth.setPassword(MD5Util.getMD5(localAuth.getPassword()));
+            if (localAuth.getPersonInfo() != null && localAuth.getPersonInfo().getUserId() == null) {
+                if (profileImg != null) {
+                    localAuth.getPersonInfo().setCreateTime(new Date());
+                    localAuth.getPersonInfo().setLastEditTime(new Date());
+                    localAuth.getPersonInfo().setEnableStatus(1);
+                    try {
+                        addProfileImg(localAuth, profileImg);
+                    } catch (Exception e) {
+                        throw new RuntimeException("addUserProfileImg error: " + e.getMessage());
+                    }
+                }
+                try {
+                    PersonInfo personInfo = localAuth.getPersonInfo();
+                    int effectedNum = personInfoDao.insertPersonInfo(personInfo);
+                    if (effectedNum <= 0) {
+                        throw new LocalAuthOperationException("添加用户信息失败");
+                    }
+                } catch (Exception e) {
+                    throw new LocalAuthOperationException("insertPersonInfo error: " + e.getMessage());
+                }
+            }
+            int effectedNum = localAuthDao.insertLocalAuth(localAuth);
+            if (effectedNum <= 0) {
+                throw new LocalAuthOperationException("帐号创建失败");
+            } else {
+                return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS, localAuth);
+            }
+        } catch (Exception e) {
+            throw new LocalAuthOperationException("insertLocalAuth error: " + e.getMessage());
+        }
+    }
+
+    private void addProfileImg(LocalAuth localAuth, CommonsMultipartFile profileImg) throws IOException {
+        String dest = PathUtil.getPersonInfoImagePath();
+        ImageHolder imageHolder = new ImageHolder(profileImg.getOriginalFilename(), profileImg.getInputStream());
+        String profileImgAddr = ImageUtil.generateThumbnail(imageHolder, dest);
+        localAuth.getPersonInfo().setProfileImg(profileImgAddr);
     }
 
     @Override

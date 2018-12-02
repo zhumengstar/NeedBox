@@ -57,4 +57,8 @@ $(function () {
             }
         });
     });
+
+    $('#register').click(function() {
+        window.location.href = '/o2o/local/register';
+    });
 });

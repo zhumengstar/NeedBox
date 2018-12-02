@@ -24,4 +24,10 @@ public class LocalController {
     private String login() {
         return "local/login";
     }
+
+    //注册页路由
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    private String register() {
+        return "local/register";
+    }
 }
