@@ -51,11 +51,17 @@ public class LocalAuthController {
         if (multipartResolver.isMultipart(request)) {
             multipartRequest = (MultipartHttpServletRequest) request;
             profileImg = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
+            if(profileImg == null) {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", "上传图片不能为空");
+                return modelMap;
+            }
         } else {
             modelMap.put("success", false);
             modelMap.put("errMsg", "上传图片不能为空");
             return modelMap;
         }
+
         try {
             localAuth = mapper.readValue(localAuthStr, LocalAuth.class);
         } catch (Exception e) {
@@ -63,12 +69,12 @@ public class LocalAuthController {
             modelMap.put("errMsg", e.toString());
             return modelMap;
         }
-        if (localAuth != null && localAuth.getUsername() != null && localAuth.getPassword() != null ) {
+        if (localAuth != null && localAuth.getUsername() != null && !localAuth.getUsername().equals("") && localAuth.getPassword() != null && !localAuth.getPassword().equals("") ) {
             try {
-                PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
-                if (user != null && localAuth.getPersonInfo() != null) {
-                    localAuth.getPersonInfo().setUserId(user.getUserId());
-                }
+//                PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
+//                if (user != null && localAuth.getPersonInfo() != null) {
+//                    localAuth.getPersonInfo().setUserId(user.getUserId());
+//                }
                 LocalAuthExecution le = localAuthService.register(localAuth, profileImg);
                 if (le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);
@@ -102,7 +108,7 @@ public class LocalAuthController {
         String username = HttpServletRequestUtil.getString(request, "username");
         String password = HttpServletRequestUtil.getString(request, "password");
         PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
-        if(username != null && password != null && user != null ) {
+        if(username != null && !username.equals("") && password != null && !password.equals("") && user != null ) {
             LocalAuth localAuth = new LocalAuth();
             localAuth.setUsername(username);
             localAuth.setPassword(password);
@@ -134,7 +140,7 @@ public class LocalAuthController {
         String password = HttpServletRequestUtil.getString(request, "password");
         String newPassword = HttpServletRequestUtil.getString(request, "newPassword");
         PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
-        if(username != null && password != null && newPassword != null && user != null && user.getUserId() != null) {
+        if(username != null && !username.equals("") && password != null && !password.equals("") && newPassword != null && !newPassword.equals("") && user != null && user.getUserId() != null) {
             try {
                 LocalAuth localAuth = localAuthService.getLocalAuthByUserId(user.getUserId());
                 //查看原先帐号,看看与输入的帐号是否一致,buyizhi则认为是非法操作
@@ -175,7 +181,7 @@ public class LocalAuthController {
         }
         String username = HttpServletRequestUtil.getString(request, "username");
         String password = HttpServletRequestUtil.getString(request, "password");
-        if(username != null && password != null) {
+        if(username != null && !username.equals("") && password != null && !password.equals("")) {
             LocalAuth localAuth = localAuthService.getLocalAuthByUsernameAndPwd(username, password);
             if(localAuth != null) {
                 modelMap.put("success", true);

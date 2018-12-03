@@ -8,7 +8,6 @@
             user_id,
             name,
             profile_img,
-            email,
             gender,
             enable_status,
             user_type,
@@ -22,7 +21,6 @@
         INSERT INTO tb_person_info(
             name,
             profile_img,
-            email,
             gender,
             enable_status,
             user_type,
@@ -31,7 +29,6 @@
         VALUES (
             #{name},
             #{profileImg},
-            #{email},
             #{gender},
             #{enableStatus},
             #{userType},

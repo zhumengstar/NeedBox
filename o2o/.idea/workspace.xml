@@ -10,16 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b286d14a-fcb3-4f3d-b630-4160130b68f5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/PersonInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/PersonInfo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/accountbind.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/accountbind.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/register.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/register.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/local/accountbind.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/local/accountbind.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/local/login.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/local/login.js" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -53,8 +50,8 @@
       <file leaf-file-name="LocalAuthController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+            <state relative-caret-position="1098">
+              <caret line="183" column="55" lean-forward="false" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,8 +62,71 @@
       <file leaf-file-name="LocalAuthServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="-527">
+              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonInfoDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/PersonInfoDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalAuthDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="changepwd.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/changepwd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="656">
+              <caret line="74" column="17" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="74" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="changepwd.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonInfoDao.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="376">
+              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+              <folding>
+                <marker date="1543830881239" expanded="true" signature="327:579" ph="SELECT user_... tb_person_info" />
+                <marker date="1543830881239" expanded="true" signature="750:1150" ph="INSERT INTO tb_person_info... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/ImageUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1426">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,8 +135,8 @@
       <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
+            <state relative-caret-position="527">
+              <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -85,13 +145,14 @@
       <file leaf-file-name="LocalAuthDao.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+            <state relative-caret-position="93">
+              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="36" />
               <folding>
-                <marker date="1543475847206" expanded="true" signature="1387:1917" ph="SELECT l.loc... tb_local_auth" />
-                <marker date="1543475847206" expanded="true" signature="2030:2522" ph="SELECT l.loc... tb_local_auth" />
-                <marker date="1543475847206" expanded="true" signature="2702:3020" ph="INSERT INTO tb_local_auth... " />
-                <marker date="1543475847206" expanded="true" signature="3078:3378" ph="UPDATE tb_local_auth... " />
+                <marker date="1543832508067" expanded="true" signature="1317:1406" ph="SELECT count... tb_local_auth" />
+                <marker date="1543832508067" expanded="true" signature="1529:2038" ph="SELECT l.loc... tb_local_auth" />
+                <marker date="1543832508067" expanded="true" signature="2151:2622" ph="SELECT l.loc... tb_local_auth" />
+                <marker date="1543832508067" expanded="true" signature="2802:3120" ph="INSERT INTO tb_local_auth... " />
+                <marker date="1543832508067" expanded="true" signature="3178:3478" ph="UPDATE tb_local_auth... " />
               </folding>
             </state>
           </provider>
@@ -120,8 +181,8 @@
       <file leaf-file-name="LocalAuthStateEnum.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+            <state relative-caret-position="186">
+              <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -143,9 +204,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>upda</find>
-      <find>modi</find>
-      <find>data.s</find>
       <find>temp</find>
       <find>form</find>
       <find>tem</find>
@@ -173,6 +231,9 @@
       <find>changeps</find>
       <find>changep</find>
       <find>user</find>
+      <find>EMAIL</find>
+      <find>getLocal</find>
+      <find>word</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -192,14 +253,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/WeChatAuthServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/PersonInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/PersonInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/wechat/WechatUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/LocalAuthDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/exceptions/LocalAuthOperationException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/LocalAuthExecution.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/LocalAuthServiceTest.java" />
@@ -233,16 +291,19 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanagement.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/accountbind.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/accountbind.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/login.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/PersonInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/register.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java" />
       </list>
     </option>
   </component>
@@ -266,7 +327,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="933" />
     <option name="width" value="932" />
     <option name="height" value="1080" />
@@ -1313,7 +1374,7 @@
       <workItem from="1543370043110" duration="9082000" />
       <workItem from="1543462234487" duration="29398000" />
       <workItem from="1543590430240" duration="30739000" />
-      <workItem from="1543717059903" duration="31434000" />
+      <workItem from="1543717059903" duration="35962000" />
     </task>
     <servers />
   </component>
@@ -1350,10 +1411,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="573945000" />
+    <option name="totallyTimeSpent" value="578473000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1865" height="1080" extended-state="6" />
+    <frame x="0" y="0" width="1865" height="1080" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1454,47 +1515,27 @@
           <properties />
           <option name="timeStamp" value="149" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java</url>
+          <line>38</line>
+          <properties />
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="154" />
+      <option name="time" value="158" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/WechatAuth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/ProductCategoryStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/ShopStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/ProductStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/WechatAuthStateEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="62">
@@ -1762,14 +1803,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/changepwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="74" column="17" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="74" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WechatAuthDao.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1302">
@@ -1778,14 +1811,6 @@
             <marker date="1543339488016" expanded="true" signature="1264:1639" ph="SELECT w.wec... tb_wechat_auth" />
             <marker date="1543339488016" expanded="true" signature="1819:1990" ph="INSERT INTO tb_wechat_auth... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="19" column="9" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="19" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1805,35 +1830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
-          <folding>
-            <marker date="1543475847206" expanded="true" signature="1387:1917" ph="SELECT l.loc... tb_local_auth" />
-            <marker date="1543475847206" expanded="true" signature="2030:2522" ph="SELECT l.loc... tb_local_auth" />
-            <marker date="1543475847206" expanded="true" signature="2702:3020" ph="INSERT INTO tb_local_auth... " />
-            <marker date="1543475847206" expanded="true" signature="3078:3378" ph="UPDATE tb_local_auth... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/wechat/WechatUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-806">
@@ -1850,14 +1846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -1866,10 +1854,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <marker date="1543830881239" expanded="true" signature="327:579" ph="SELECT user_... tb_person_info" />
+            <marker date="1543830881239" expanded="true" signature="750:1150" ph="INSERT INTO tb_person_info... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-4.3.18.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/changepwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="74" column="17" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="74" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <marker date="1543832508067" expanded="true" signature="1317:1406" ph="SELECT count... tb_local_auth" />
+            <marker date="1543832508067" expanded="true" signature="1529:2038" ph="SELECT l.loc... tb_local_auth" />
+            <marker date="1543832508067" expanded="true" signature="2151:2622" ph="SELECT l.loc... tb_local_auth" />
+            <marker date="1543832508067" expanded="true" signature="2802:3120" ph="INSERT INTO tb_local_auth... " />
+            <marker date="1543832508067" expanded="true" signature="3178:3478" ph="UPDATE tb_local_auth... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/PersonInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/ImageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1426">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="74" column="24" lean-forward="true" selection-start-line="74" selection-start-column="24" selection-end-line="74" selection-end-column="24" />
+        <state relative-caret-position="1098">
+          <caret line="183" column="55" lean-forward="false" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1878,8 +1955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="42" column="38" lean-forward="false" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+        <state relative-caret-position="-527">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
           <folding />
         </state>
       </provider>

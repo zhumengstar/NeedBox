@@ -13,7 +13,6 @@
             <id column="user_id" property="userId"/>
             <result column="name" property="name"/>
             <result column="gender" property="gender"/>
-            <result column="email" property="email"/>
             <result column="profile_img" property="profileImg"/>
             <result column="user_type" property="userType"/>
             <result column="create_time" property="createTime"/>
@@ -21,6 +20,13 @@
             <result column="enable_status" property="enableStatus"/>
         </association>
     </resultMap>
+
+    <select id="queryLocalByUserName" parameterType="String" resultType="Integer">
+        SELECT
+            count(*)
+        FROM tb_local_auth
+        WHERE username=#{username}
+    </select>
 
     <select id="queryLocalByUserNameAndPwd" parameterType="String" resultMap="localAuthResultMap">
         SELECT
@@ -32,7 +38,6 @@
             p.user_id,
             p.name,
             p.gender,
-            p.email,
             p.profile_img,
             p.user_type,
             p.create_time,
@@ -55,7 +60,6 @@
             p.user_id,
             p.name,
             p.gender,
-            p.email,
             p.profile_img,
             p.user_type,
             p.create_time,

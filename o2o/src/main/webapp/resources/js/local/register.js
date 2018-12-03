@@ -39,7 +39,7 @@ $(function() {
                     $.toast('提交成功！');
                     window.location.href = '/o2o/local/login';
                 } else {
-                    $.toast('提交失败！');
+                    $.toast('提交失败！' + data.errMsg);
                     $('#captcha_img').click();
                 }
             }

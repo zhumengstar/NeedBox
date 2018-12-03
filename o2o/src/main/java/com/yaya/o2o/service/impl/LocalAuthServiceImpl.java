@@ -41,8 +41,12 @@ public class LocalAuthServiceImpl implements LocalAuthService {
     @Override
     @Transactional
     public LocalAuthExecution register(LocalAuth localAuth, CommonsMultipartFile profileImg) throws LocalAuthOperationException {
-        if (localAuth == null || localAuth.getPassword() == null || localAuth.getUsername() == null) {
+        if (localAuth == null || localAuth.getPassword() == null || localAuth.getPassword().equals("") || localAuth.getUsername() == null || localAuth.getUsername().equals("")) {
             return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
+        }
+        int usernameCount = localAuthDao.queryLocalByUserName(localAuth.getUsername());
+        if(usernameCount != 0) {
+            return new LocalAuthExecution(LocalAuthStateEnum.ONLY_ONE_LOCALAUTH);
         }
         try {
             localAuth.setCreateTime(new Date());
@@ -50,6 +54,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
             localAuth.setPassword(MD5Util.getMD5(localAuth.getPassword()));
             if (localAuth.getPersonInfo() != null && localAuth.getPersonInfo().getUserId() == null) {
                 if (profileImg != null) {
+                    localAuth.getPersonInfo().setUserType(1);
                     localAuth.getPersonInfo().setCreateTime(new Date());
                     localAuth.getPersonInfo().setLastEditTime(new Date());
                     localAuth.getPersonInfo().setEnableStatus(1);
@@ -91,7 +96,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
     @Transactional
     public LocalAuthExecution bindLocalAuth(LocalAuth localAuth) throws LocalAuthOperationException {
         //空值判断,传入的localAuth帐号密码,用户信息特别是userId不能为空
-        if(localAuth == null || localAuth.getUsername() == null || localAuth.getPassword() == null || localAuth.getPersonInfo() == null || localAuth.getPersonInfo().getUserId() == null) {
+        if(localAuth == null || localAuth.getUsername() == null || localAuth.getUsername().equals("") || localAuth.getPassword() == null || localAuth.getPassword().equals("") || localAuth.getPersonInfo() == null || localAuth.getPersonInfo().getUserId() == null) {
             return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
         }
         //查询此用户是否已经绑定过平台帐号
@@ -122,7 +127,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
     @Transactional
     public LocalAuthExecution modifyLocalAuth(Long userId, String username, String password, String newPassword) throws LocalAuthOperationException {
         //非空判断
-        if(userId == null || username == null || password == null || newPassword == null) {
+        if(userId == null || username == null || username.equals("") || password == null || password.equals("") || newPassword == null || newPassword.equals("")) {
             return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
         }
 

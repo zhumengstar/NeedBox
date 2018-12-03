@@ -23,4 +23,6 @@ public interface LocalAuthDao {
                         @Param("password") String password,
                         @Param("newPassword") String newPassword,
                         @Param("lastEditTime") Date lastEditTime);
+
+    int queryLocalByUserName(@Param("username") String username);
 }
