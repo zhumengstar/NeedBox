@@ -26,6 +26,7 @@
                         <i class="icon icon-form-name"></i>
                     </div>
                     <div class="item-inner">
+                        <div class="item-title label">用户名</div>
                         <div class="item-input">
                             <input type="text" id="username" placeholder="用户名">
                         </div>
@@ -35,9 +36,10 @@
             <li>
                 <div class="item-content">
                     <div class="item-media">
-                        <i class="icon icon-form-email"></i>
+                        <i class="icon icon-form-password"></i>
                     </div>
                     <div class="item-inner">
+                        <div class="item-title label">密码</div>
                         <div class="item-input">
                             <input type="password" id="password" placeholder="密码">
                         </div>
@@ -47,7 +49,7 @@
             <li id="verifyPart" hidden="true">
                 <div class="item-content">
                     <div class="item-media">
-                        <i class="icon icon-form-email"></i>
+                        <i class="icon icon-form-edit"></i>
                     </div>
                     <div class="item-inner">
                         <label for="j_captcha" class="item-title label">验证码</label> <input
@@ -57,7 +59,7 @@
                             <img id="captcha_img" alt="点击更换" title="点击更换"
                                  onclick="changeVerifyCode(this)" src="../Kaptcha" />
                         </div>
-                    </div   >
+                    </div>
                 </div>
             </li>
         </ul>
@@ -65,7 +67,7 @@
     <div class="content-block">
         <div class="row">
             <div class="col-50">
-                <a href="#" class="button button-big button-fill button-success" id="register">注册</a>
+                <a href="/o2o/local/register" class="button button-big button-fill button-success">注册</a>
             </div>
             <div class="col-50">
                 <a href="#" class="button button-big button-fill" id="submit">提交</a>

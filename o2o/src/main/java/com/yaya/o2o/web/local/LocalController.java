@@ -14,9 +14,9 @@ public class LocalController {
     }
 
     //修改密码页路由
-    @RequestMapping(value = "/changepsw", method = RequestMethod.GET)
+    @RequestMapping(value = "/changepwd", method = RequestMethod.GET)
     private String changepsw() {
-        return "local/changepsw";
+        return "local/changepwd";
     }
 
     //登录页路由

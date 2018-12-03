@@ -1,6 +1,5 @@
 $(function() {
     var registerUrl = '/o2o/local/registerlocal';
-    var usertype = getQueryString('usertype');
     $('#submit').click(function() {
         var username = $('#username').val();
         var password = $('#password').val();
@@ -14,7 +13,7 @@ $(function() {
             $.toast('请输入验证码！');
             return;
         }
-        if(newPassword != confirmPassword) {
+        if(password != confirmPassword) {
             $.toast('两次输入的新密码不一致!');
             return;
         }
@@ -42,20 +41,12 @@ $(function() {
             success : function(data) {
                 if (data.success) {
                     $.toast('提交成功！');
-                    if(usertype == 1) {
-                        window.location.href = '/o2o/local/login?usertype=' + usertype;
-                    } else {
-                        window.location.href = '/o2o/local/login?usertype=' + usertype;
-                    }
+                    window.location.href = '/o2o/local/login';
                 } else {
                     $.toast('提交失败！');
                     $('#captcha_img').click();
                 }
             }
         });
-    });
-
-    $('#back').click(function() {
-        window.location.href = '/o2o/local/login?usertype=' + usertype;
     });
 });

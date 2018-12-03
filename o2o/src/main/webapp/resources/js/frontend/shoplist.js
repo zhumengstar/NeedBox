@@ -29,7 +29,7 @@ $(function() {
 				//获取从后台返回过来的店铺类别列表
 				var shopCategoryList = data.shopCategoryList;
 				var html = '';
-				html += '<a href="#" class="button" data-category-id=""> 全部类别  </a>';
+				html += '<a href="#" class="button" data-category-id="">全部类别</a>';
 				//遍历店铺类别列表,拼接出a标签集
 				shopCategoryList.map(function(item, index) {
 					html += '<a href="#" class="button" data-category-id='

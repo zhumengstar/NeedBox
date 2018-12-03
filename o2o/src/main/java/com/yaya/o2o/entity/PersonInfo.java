@@ -10,7 +10,7 @@ public class PersonInfo {
     private String gender; //性别
     private Integer enableStatus; //状态
     private Integer userType; //用户标识
-    //1.顾客 2.商家 3.超级管理员
+    //1.用户 0.超级管理员
     private Date createTime; //创建时间
     private Date lastEditTime; //最近操作时间
 

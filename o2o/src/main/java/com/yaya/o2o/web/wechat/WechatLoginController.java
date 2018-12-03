@@ -33,8 +33,6 @@ import java.io.IOException;
 public class WechatLoginController {
 
     private static Logger log = LoggerFactory.getLogger(WechatLoginController.class);
-    private static final String FRONTEND = "1";
-    private static final String SHOPEND = "2";
 
     @Autowired
     private PersonInfoService personInfoService;
@@ -78,11 +76,7 @@ public class WechatLoginController {
             PersonInfo personInfo = WechatUtil.getPersonInfoFromRequest(user);
             wechatAuth = new WechatAuth();
             wechatAuth.setOpenId(openId);
-            if (FRONTEND.equals(state)) {
-                personInfo.setUserType(1);
-            } else {
-                personInfo.setUserType(2);
-            }
+            personInfo.setUserType(1);
             wechatAuth.setPersonInfo(personInfo);
             WechatAuthExecution we = weChatAuthService.register(wechatAuth);
             if (we.getState() != WechatAuthStateEnum.SUCCESS.getState()) {
@@ -92,15 +86,6 @@ public class WechatLoginController {
                 request.getSession().setAttribute("user", personInfo);
             }
         }
-
-        //若用户点击的是前端系统展示页则进入前端展示系统
-        if (FRONTEND.equals(state)) {
-            log.debug("weixin yonghu frontend... ");
-            return "frontend/index";
-        } else {
-            log.debug("weixin dianjia shop...");
-            return "shop/shoplist";
-        }
+        return "frontend/index";
     }
-
 }

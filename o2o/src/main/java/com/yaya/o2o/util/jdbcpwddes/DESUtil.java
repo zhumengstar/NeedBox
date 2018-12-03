@@ -1,4 +1,4 @@
-package com.yaya.o2o.util.jdbcpswdes;
+package com.yaya.o2o.util.jdbcpwddes;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

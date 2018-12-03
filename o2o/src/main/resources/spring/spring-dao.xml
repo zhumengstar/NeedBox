@@ -10,7 +10,7 @@
     <!-- 配置整合mybatis过程 -->
 
     <!-- 1.配置数据库相关参数properties的属性: ${url} -->
-    <bean class="com.yaya.o2o.util.jdbcpswdes.EncryptPropertyPlaceholderConfigurer">
+    <bean class="com.yaya.o2o.util.jdbcpwddes.EncryptPropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
                 <value>classpath:jdbc.properties</value>

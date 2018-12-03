@@ -1,4 +1,4 @@
-package com.yaya.o2o.util.jdbcpswdes;
+package com.yaya.o2o.util.jdbcpwddes;
 
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 

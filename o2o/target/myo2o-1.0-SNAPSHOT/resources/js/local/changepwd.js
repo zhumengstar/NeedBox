@@ -8,8 +8,14 @@ $(function () {
         var password = $('#password').val();
         var newPassword = $('#newPassword').val();
         var confirmPassword = $('#confirmPassword').val();
+        var verifyCodeActual = $('#j_captcha').val();
+        if(!verifyCodeActual) {
+            $.toast('请输入验证码!');
+            return;
+        }
         if(newPassword != confirmPassword) {
             $.toast('两次输入的新密码不一致!');
+            $('#captcha_img').click();
             return;
         }
 
@@ -17,12 +23,6 @@ $(function () {
         formData.append("username", username);
         formData.append("password", password);
         formData.append("newPassword", newPassword);
-
-        var verifyCodeActual = $('#j_captcha').val();
-        if(!verifyCodeActual) {
-            $.toast('请输入验证码!');
-            return;
-        }
         formData.append("verifyCodeActual", verifyCodeActual);
 
         $.ajax({
@@ -35,11 +35,7 @@ $(function () {
             success: function (data) {
                 if (data.success) {
                     $.toast("提交成功!");
-                    if (usertype == 1) {
-                        window.location.href = '/o2o/frontend/index';
-                    } else {
-                        window.location.href = '/o2o/shopadmin/shoplist';
-                    }
+                    window.location.href = '/o2o/local/login';
                 } else {
                     $.toast("提交失败!" + data.errMsg);
                     $('#captcha_img').click();
@@ -47,8 +43,4 @@ $(function () {
             }
         });
     });
-    
-    $('#back').click(function () {
-        window.location.href = '/o2o/shopadmin/shoplist';
-    })
-})
+});
