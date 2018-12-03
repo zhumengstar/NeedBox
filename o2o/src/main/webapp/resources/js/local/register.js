@@ -4,8 +4,6 @@ $(function() {
         var username = $('#username').val();
         var password = $('#password').val();
         var confirmPassword = $('#confirmPassword').val();
-        var phone = $('#phone').val();
-        var email = $('#email').val();
         var name = $('#name').val();
         var thumbnail = $('#small-img')[0].files[0];
         var verifyCodeActual = $('#j_captcha').val();
@@ -21,8 +19,6 @@ $(function() {
         var personInfo = {};
         localAuth.username = username;
         localAuth.password = password;
-        personInfo.phone = phone;
-        personInfo.email = email;
         personInfo.name = name;
         localAuth.personInfo = personInfo;
         console.log(thumbnail);

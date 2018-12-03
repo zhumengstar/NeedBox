@@ -6,10 +6,15 @@ $(function () {
         //获取输入的帐号和密码
         var username = $('#username').val();
         var password = $('#password').val();
+        var confirmPassword = $('#confirmPassword').val();
         var verifyCodeActual = $('#j_captcha').val();
-        var needVerify = false;
         if(!verifyCodeActual) {
             $.toast('请输入验证码!');
+            return;
+        }
+        if(password != confirmPassword) {
+            $.toast('两次输入的新密码不一致!');
+            $('#captcha_img').click();
             return;
         }
         //访问后台,绑定账号

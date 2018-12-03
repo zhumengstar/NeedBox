@@ -63,7 +63,7 @@ public class LocalAuthController {
             modelMap.put("errMsg", e.toString());
             return modelMap;
         }
-        if (localAuth != null && localAuth.getPassword() != null && localAuth.getUsername() != null) {
+        if (localAuth != null && localAuth.getUsername() != null && localAuth.getPassword() != null ) {
             try {
                 PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
                 if (user != null && localAuth.getPersonInfo() != null) {
@@ -94,15 +94,12 @@ public class LocalAuthController {
     @ResponseBody
     private Map<String, Object> bindLocalAuth(HttpServletRequest request, HttpServletResponse response) {
         Map<String, Object> modelMap = new HashMap<>();
-        //验证码校验
         if (!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "输入了错误的验证码");
+            modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
-        //获取输入的帐号
         String username = HttpServletRequestUtil.getString(request, "username");
-        //获取输入的密码
         String password = HttpServletRequestUtil.getString(request, "password");
         PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
         if(username != null && password != null && user != null ) {
@@ -130,11 +127,10 @@ public class LocalAuthController {
         Map<String, Object> modelMap = new HashMap<>();
         if(!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "输入了错误的验证码");
+            modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
         String username = HttpServletRequestUtil.getString(request, "username");
-        //获取输入的密码
         String password = HttpServletRequestUtil.getString(request, "password");
         String newPassword = HttpServletRequestUtil.getString(request, "newPassword");
         PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
@@ -144,11 +140,11 @@ public class LocalAuthController {
                 //查看原先帐号,看看与输入的帐号是否一致,buyizhi则认为是非法操作
                 if(localAuth == null || !localAuth.getUsername().equals(username)) {
                     modelMap.put("success", false);
-                    modelMap.put("errMsg", "输入的帐号非本次登录的帐号");
+                    modelMap.put("errMsg", "输入的帐号非当前登录的帐号");
                     return modelMap;
                 }
-            //修改平台帐号的用户密码
-            LocalAuthExecution le = localAuthService.modifyLocalAuth(user.getUserId(), username, password, newPassword);
+                //修改平台帐号的用户密码
+                LocalAuthExecution le = localAuthService.modifyLocalAuth(user.getUserId(), username, password, newPassword);
                 if(le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);
                 } else {
@@ -162,7 +158,7 @@ public class LocalAuthController {
             }
         } else {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "请输入密码");
+            modelMap.put("errMsg", "请输入相应信息");
         }
         return modelMap;
     }
@@ -174,11 +170,10 @@ public class LocalAuthController {
         boolean needVerify = HttpServletRequestUtil.getBoolean(request, "needVerify");
         if(needVerify && !CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "输入了错误的验证码");
+            modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
         String username = HttpServletRequestUtil.getString(request, "username");
-        //获取输入的密码
         String password = HttpServletRequestUtil.getString(request, "password");
         if(username != null && password != null) {
             LocalAuth localAuth = localAuthService.getLocalAuthByUsernameAndPwd(username, password);

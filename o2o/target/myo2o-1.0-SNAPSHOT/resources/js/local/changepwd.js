@@ -13,6 +13,11 @@ $(function () {
             $.toast('请输入验证码!');
             return;
         }
+        if(newPassword != password) {
+            $.toast('新密码不能和原密码相同!');
+            $('#captcha_img').click();
+            return;
+        }
         if(newPassword != confirmPassword) {
             $.toast('两次输入的新密码不一致!');
             $('#captcha_img').click();

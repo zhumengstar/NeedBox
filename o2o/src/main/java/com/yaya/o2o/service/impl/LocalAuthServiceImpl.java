@@ -56,7 +56,7 @@ public class LocalAuthServiceImpl implements LocalAuthService {
                     try {
                         addProfileImg(localAuth, profileImg);
                     } catch (Exception e) {
-                        throw new RuntimeException("addUserProfileImg error: " + e.getMessage());
+                        throw new LocalAuthOperationException("addUserProfileImg error: " + e.getMessage());
                     }
                 }
                 try {
@@ -120,22 +120,23 @@ public class LocalAuthServiceImpl implements LocalAuthService {
 
     @Override
     @Transactional
-    public LocalAuthExecution modifyLocalAuth(Long userId, String userName, String password, String newPassword) throws LocalAuthOperationException {
+    public LocalAuthExecution modifyLocalAuth(Long userId, String username, String password, String newPassword) throws LocalAuthOperationException {
         //非空判断
-        if(userId != null && userName != null && password != null && newPassword != null && !password.equals(newPassword)) {
-            try {
-                //更新密码
-                int  effectedNum = localAuthDao.updateLocalAuth(userId, userName, MD5Util.getMD5(password), MD5Util.getMD5(newPassword), new Date());
-                //判断是否成功
-                if(effectedNum <= 0) {
-                    throw new LocalAuthOperationException("更新密码失败");
-                }
-            return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS);
-            } catch (Exception e) {
-                throw new LocalAuthOperationException("更新密码失败:" + e.toString());
-            }
-        } else {
+        if(userId == null || username == null || password == null || newPassword == null) {
             return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
+        }
+
+        try {
+            //更新密码
+            int effectedNum = localAuthDao.updateLocalAuth(userId, username, MD5Util.getMD5(password), MD5Util.getMD5(newPassword), new Date());
+            //判断是否成功
+            if(effectedNum <= 0) {
+                throw new LocalAuthOperationException("更新密码失败");
+            } else {
+                return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS);
+            }
+        } catch (Exception e) {
+            throw new LocalAuthOperationException("updateLocalAuth error:" + e.toString());
         }
     }
 }

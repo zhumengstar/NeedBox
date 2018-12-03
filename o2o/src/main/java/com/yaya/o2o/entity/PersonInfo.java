@@ -6,7 +6,6 @@ public class PersonInfo {
     private Long userId; //用户id
     private String name; //用户名
     private String profileImg; //头像
-    private String email; //用户邮箱
     private String gender; //性别
     private Integer enableStatus; //状态
     private Integer userType; //用户标识
@@ -36,14 +35,6 @@ public class PersonInfo {
 
     public void setProfileImg(String profileImg) {
         this.profileImg = profileImg;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getGender() {
