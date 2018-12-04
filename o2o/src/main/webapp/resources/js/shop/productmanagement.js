@@ -17,7 +17,7 @@ $(function() {
 				//商品名称,优先级,上下架,编辑按钮
 				//预览
 				productList.map(function(item, index) {
-
+					console.log(item);
 					var textOp = "下架";
 					var contraryStatus = 0;
 					if (item.enableStatus == 0) {
@@ -64,11 +64,13 @@ $(function() {
 	//将class为product-wrap里面的a标签绑定上点击的时间
 	$('.product-wrap').on('click', 'a', function(e) {
 		var target = $(e.currentTarget);
+		console.log(target);
 		if (target.hasClass('edit')) {
 			//如果有class edit则点击就进入店铺信息编辑页面,并带有productId参数
 			window.location.href = '/o2o/shopadmin/productoperation?productId=' + e.currentTarget.dataset.id;
 		} else if (target.hasClass('status')) {
-			//如果有class status则调用后台功能上/下架相关商品,并带有productId参数
+			//如果有class status则调用后台功能上/下架相关商品,并带有productId参数\
+			console.log(e.currentTarget.dataset.status);
 			changeItemStatus(e.currentTarget.dataset.id, e.currentTarget.dataset.status);
 		} else if (target.hasClass('preview')) {
 			//如果有class preview则去前台展示系统该商品详情页预览商品情况
@@ -82,7 +84,7 @@ $(function() {
         var product = {};
         product.productId = id;
         product.enableStatus = enableStatus;
-        $.confirm(product.enableStatus==0 ? '确定要将该商品上架吗?':'确定要将该商品下架吗?', function() {
+        $.confirm(product.enableStatus==1 ? '确定要将该商品上架吗?':'确定要将该商品下架吗?', function() {
             //上下架相关商品
         	$.ajax({
                 url : statusUrl,

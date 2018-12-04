@@ -13,6 +13,7 @@ $(function() {
         }
         if(password != confirmPassword) {
             $.toast('两次输入的新密码不一致!');
+            $('#captcha_img').click();
             return;
         }
         var localAuth = {};

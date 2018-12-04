@@ -28,19 +28,10 @@ public class MainPageController {
     @ResponseBody
     private Map<String, Object> listMainPageInfo() {
         Map<String, Object> modelMap = new HashMap<>();
-        List<ShopCategory> shopCategoryList = new ArrayList<>();
-        try {
-            //获取一级店铺类别列表(即parentId为空的ShopCategory)
-            shopCategoryList = shopCategoryService.getShopCategoryList(null);
-            modelMap.put("shopCategoryList", shopCategoryList);
-        } catch (Exception e) {
-            modelMap.put("success", false);
-            modelMap.put("errMsg", e.getMessage());
-            return modelMap;
-        }
+
+        //获取状态为可用(1)的头条列表
         List<HeadLine> headLineList = new ArrayList<>();
         try {
-            //获取状态为可用(1)的头条列表
             HeadLine headLineCondition = new HeadLine();
             headLineCondition.setEnableStatus(1);
             headLineList = headLineService.getHeadLineList(headLineCondition);
@@ -50,6 +41,18 @@ public class MainPageController {
             modelMap.put("errMsg", e.getMessage());
             return modelMap;
         }
+
+        //获取一级店铺类别列表(即parentId为空的ShopCategory)
+        List<ShopCategory> shopCategoryList = new ArrayList<>();
+        try {
+            shopCategoryList = shopCategoryService.getShopCategoryList(null);
+            modelMap.put("shopCategoryList", shopCategoryList);
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        }
+
         modelMap.put("success", true);
         return modelMap;
     }

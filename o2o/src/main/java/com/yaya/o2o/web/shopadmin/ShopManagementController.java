@@ -69,7 +69,6 @@ public class ShopManagementController {
 
     //注册店铺
     @RequestMapping(value = "/registershop", method = RequestMethod.POST)
-    //将controller方法返回的对象通过适当的转换器转换为指定的格式之后,写入到response对象的body区,通常用来返回JSON数据
     @ResponseBody
     //前端传来的request参数 Http请求头中的所有信息都封装在里面,通过这个对象的方法可以获得请求头中的所有信息
     private Map<String, Object> registerShop(HttpServletRequest request) {
@@ -105,6 +104,11 @@ public class ShopManagementController {
             MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
             //使用multipartHttpServletRequest的getFile方法得到这个文件流
             shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
+            if(shopImg == null) {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", "上传图片不能为空");
+                return modelMap;
+            }
         } else {
             //没有文件流就报错
             modelMap.put("success", false);
@@ -112,7 +116,7 @@ public class ShopManagementController {
             return modelMap;
         }
         //2.注册店铺
-        if (shop != null && shopImg != null) {
+        if (shop != null && shopImg != null && shop.getShopName() != null && !shop.getShopName().equals("") && shop.getShopAddr() != null && !shop.getShopAddr().equals("") && shop.getPhone() != null && !shop.getPhone().equals("")) {
             //通过session获取用户登录后的用户信息,并set进owner
             PersonInfo owner = (PersonInfo)request.getSession().getAttribute("user");
             shop.setOwner(owner);
@@ -162,7 +166,7 @@ public class ShopManagementController {
         } else {
             //shop为空或shopImg为空就报错
             modelMap.put("success", false);
-            modelMap.put("errMsg", "请输入店铺信息");
+            modelMap.put("errMsg", "店铺名称,详细地址和联系电话都要填写哦~");
             return modelMap;
         }
         //3.返回结果
@@ -226,7 +230,7 @@ public class ShopManagementController {
             shopImg = (CommonsMultipartFile) multipartHttpServletRequest.getFile("shopImg");
         }
         //2.修改店铺信息
-        if (shop != null && shop.getShopId() != null) {
+        if (shop != null && shop.getShopId() != null && shop.getShopName() != null && !shop.getShopName().equals("") && shop.getShopAddr() != null && !shop.getShopAddr().equals("") && shop.getPhone() != null && !shop.getPhone().equals("")) {
             ShopExecution se;
             try {
                 //shopImg为空,不修改图片
@@ -254,7 +258,7 @@ public class ShopManagementController {
             return modelMap;
         } else {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "请输入店铺Id");
+            modelMap.put("errMsg", "店铺名称,详细地址和联系电话都要填写哦~");
             return modelMap;
         }
         //3.返回结果

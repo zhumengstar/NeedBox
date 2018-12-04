@@ -69,12 +69,8 @@ public class LocalAuthController {
             modelMap.put("errMsg", e.toString());
             return modelMap;
         }
-        if (localAuth != null && localAuth.getUsername() != null && !localAuth.getUsername().equals("") && localAuth.getPassword() != null && !localAuth.getPassword().equals("") ) {
+        if (localAuth != null && localAuth.getUsername() != null && !localAuth.getUsername().equals("") && localAuth.getPassword() != null && !localAuth.getPassword().equals("") && localAuth.getPersonInfo().getName() != null && !localAuth.getPersonInfo().getName().equals("")) {
             try {
-//                PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
-//                if (user != null && localAuth.getPersonInfo() != null) {
-//                    localAuth.getPersonInfo().setUserId(user.getUserId());
-//                }
                 LocalAuthExecution le = localAuthService.register(localAuth, profileImg);
                 if (le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);

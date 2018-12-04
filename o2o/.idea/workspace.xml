@@ -10,14 +10,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b286d14a-fcb3-4f3d-b630-4160130b68f5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ProductDetailController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/productdetail.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/productdetail.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/productdetail.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/o2o/o2o.war" afterPath="$PROJECT_DIR$/out/artifacts/o2o/o2o.war" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/MainPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/MainPageController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ShopManagementController.java" afterPath="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ShopManagementController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shopdetail.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shopdetail.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shoplist.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shoplist.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productcategorymanagement.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productcategorymanagement.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productmanagement.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productmanagement.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productoperation.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productoperation.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanagement.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanagement.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/index/index.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/index.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/shopdetail/shopdetail.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/shopdetail.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/shoplist/shoplist.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/shoplist.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shopdetail.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shopdetail.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shoplist.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shoplist.js" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productcategorymanagement.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productcategorymanagement.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productmanagement.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productmanagement.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productoperation.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productoperation.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/frontend/MainPageController.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/frontend/MainPageController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/frontend/ShopListController.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/frontend/ShopListController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/local/LocalAuthController.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/local/LocalAuthController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/shopadmin/ProductManagementController.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/shopadmin/ProductManagementController.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/shopadmin/ShopManagementController.class" afterPath="$PROJECT_DIR$/target/classes/com/yaya/o2o/web/shopadmin/ShopManagementController.class" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/frontend/MainPageController.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/frontend/MainPageController.class" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/frontend/ShopListController.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/frontend/ShopListController.class" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/local/LocalAuthController.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/local/LocalAuthController.class" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.class" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/shopadmin/ProductManagementController.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/shopadmin/ProductManagementController.class" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/shopadmin/ShopManagementController.class" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/classes/com/yaya/o2o/web/shopadmin/ShopManagementController.class" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/frontend/index.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/frontend/index.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/frontend/shopdetail.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/frontend/shopdetail.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/frontend/shoplist.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/frontend/shoplist.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/productcategorymanagement.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/productcategorymanagement.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/productmanagement.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/productmanagement.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/productoperation.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/productoperation.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/shoplist.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/shoplist.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/shopmanagement.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/shopmanagement.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/shopoperation.html" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/html/shop/shopoperation.html" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/index.jsp" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/css/frontend/index/index.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/css/frontend/shopdetail/shopdetail.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/css/frontend/shoplist/shoplist.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/frontend/index.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/frontend/index.js" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/frontend/shopdetail.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/frontend/shopdetail.js" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/frontend/shoplist.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/frontend/shoplist.js" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/local/changepwd.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/local/changepwd.js" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/local/register.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/local/register.js" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productcategorymanagement.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productcategorymanagement.js" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productmanagement.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productmanagement.js" />
+      <change beforePath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productoperation.js" afterPath="$PROJECT_DIR$/target/myo2o-1.0-SNAPSHOT/resources/js/shop/productoperation.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,142 +107,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LocalAuthController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java">
+      <file leaf-file-name="productdetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/productdetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1098">
-              <caret line="183" column="55" lean-forward="false" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocalAuthServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-527">
-              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+            <state relative-caret-position="439">
+              <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PersonInfoDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/PersonInfoDao.java">
+      <file leaf-file-name="productdetail.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/frontend/productdetail.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state relative-caret-position="124">
+              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocalAuthDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java">
+      <file leaf-file-name="productdetail.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/productdetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="changepwd.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/changepwd.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="74" column="17" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="74" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="changepwd.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonInfoDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-              <folding>
-                <marker date="1543830881239" expanded="true" signature="327:579" ph="SELECT user_... tb_person_info" />
-                <marker date="1543830881239" expanded="true" signature="750:1150" ph="INSERT INTO tb_person_info... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/ImageUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1426">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocalAuthDao.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="36" />
-              <folding>
-                <marker date="1543832508067" expanded="true" signature="1317:1406" ph="SELECT count... tb_local_auth" />
-                <marker date="1543832508067" expanded="true" signature="1529:2038" ph="SELECT l.loc... tb_local_auth" />
-                <marker date="1543832508067" expanded="true" signature="2151:2622" ph="SELECT l.loc... tb_local_auth" />
-                <marker date="1543832508067" expanded="true" signature="2802:3120" ph="INSERT INTO tb_local_auth... " />
-                <marker date="1543832508067" expanded="true" signature="3178:3478" ph="UPDATE tb_local_auth... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WechatUser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/wechat/WechatUser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-806">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersonInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/PersonInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LocalAuthStateEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+            <state relative-caret-position="496">
+              <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -204,10 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>temp</find>
-      <find>form</find>
-      <find>tem</find>
-      <find>delete</find>
       <find>Conditon</find>
       <find>href</find>
       <find>shoplis</find>
@@ -231,9 +176,13 @@
       <find>changeps</find>
       <find>changep</find>
       <find>user</find>
-      <find>EMAIL</find>
       <find>getLocal</find>
       <find>word</find>
+      <find>EMAIL</find>
+      <find>商</find>
+      <find>change</find>
+      <find>e.currentTarget.dataset.status</find>
+      <find>Session</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -253,57 +202,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/WeChatAuthServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/PersonInfoService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/PersonInfoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/wechat/WechatUtil.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/dao/LocalAuthDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/exceptions/LocalAuthOperationException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/LocalAuthExecution.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/yaya/o2o/service/LocalAuthServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/common/common.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/shoplist.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/logout.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/changepsw.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepsw.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/interceptor/shopadmin/ShopLoginInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/interceptor/shopadmin/ShopPermissionInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ShopManagementController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/LocalAuthService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/PathUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ShopAdminController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/shop/shoplist.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/Shop.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/wechat/WechatLoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/logout.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shoplist.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/changepwd.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/login.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shopdetail.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productmanagement.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productcategorymanagement.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productoperation.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanagement.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/accountbind.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/accountbind.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/login.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/PersonInfo.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/register.html" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shopdetail.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shoplist.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/MainPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shoplist.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shopdetail.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ProductDetailController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanagement.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productmanagement.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ShopManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productmanagement.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productoperation.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/MyController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productoperation.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productcategorymanagement.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ProductCategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/shop/productcategorymanagement.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/frontend/productdetail.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/productdetail.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/frontend/productdetail.js" />
       </list>
     </option>
   </component>
@@ -327,7 +276,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="933" />
     <option name="width" value="932" />
     <option name="height" value="1080" />
@@ -492,9 +441,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -568,86 +516,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="yaya" type="462c0819:PsiDirectoryNode" />
               <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
               <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-              <item name="shopadmin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
@@ -728,55 +597,7 @@
               <item name="yaya" type="462c0819:PsiDirectoryNode" />
               <item name="o2o" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="shopadmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="superadmin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="yaya" type="462c0819:PsiDirectoryNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
@@ -833,16 +654,7 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
@@ -861,7 +673,7 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
@@ -900,30 +712,11 @@
               <item name="html" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="o2o" type="b2602c69:ProjectViewProjectNode" />
-              <item name="o2o" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -936,10 +729,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="/register&#9;FILE&#9;file:///home/hehanyue/Java/o2o-1.0/o2o/src/main/webapp/resources/js/local/register.js&#10;register&#9;PSI&#9;JAVA://com.yaya.o2o.web.local.LocalAuthController#register&#10;getShopL&#9;PSI&#9;JAVA://com.yaya.o2o.web.shopadmin.ShopManagementController#getShopList&#10;change&#9;null&#9;null&#10;shopCond&#9;null&#9;null&#10;request.getString&#9;null&#9;null&#10;getString&#9;null&#9;null&#10;addShop&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="listproductdetailpageinfo&#9;PSI&#9;JAVA://com.yaya.o2o.web.frontend.ProductDetailController#listProductDetailPageInfo&#10;getproductcategorylist&#9;PSI&#9;JAVA://com.yaya.o2o.web.shopadmin.ProductCategoryManagementController#getProductCategoryList&#10;/register&#9;FILE&#9;file:///home/hehanyue/Java/o2o-1.0/o2o/src/main/webapp/resources/js/local/register.js&#10;register&#9;PSI&#9;JAVA://com.yaya.o2o.web.local.LocalAuthController#register&#10;getShopL&#9;PSI&#9;JAVA://com.yaya.o2o.web.shopadmin.ShopManagementController#getShopList&#10;change&#9;null&#9;null&#10;shopCond&#9;null&#9;null&#10;request.getString&#9;null&#9;null&#10;getString&#9;null&#9;null&#10;addShop&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/resources/css/frontend" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/image" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/js/local" />
       <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop" />
@@ -949,11 +743,11 @@
       <recent name="com.yaya.o2o" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend" />
       <recent name="$PROJECT_DIR$/src/main/webapp/resources/js/frontend" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/resources/css/frontend" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/resources/css" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1374,7 +1168,8 @@
       <workItem from="1543370043110" duration="9082000" />
       <workItem from="1543462234487" duration="29398000" />
       <workItem from="1543590430240" duration="30739000" />
-      <workItem from="1543717059903" duration="35962000" />
+      <workItem from="1543717059903" duration="61319000" />
+      <workItem from="1543912159897" duration="3275000" />
     </task>
     <servers />
   </component>
@@ -1411,10 +1206,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="578473000" />
+    <option name="totallyTimeSpent" value="607105000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1865" height="1080" extended-state="7" />
+    <frame x="0" y="0" width="1865" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1497,118 +1292,192 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopDetailController.java</url>
-          <line>58</line>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java</url>
+          <line>47</line>
           <properties />
-          <option name="timeStamp" value="136" />
+          <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/interceptor/shopadmin/ShopLoginInterceptor.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/interceptor/shopadmin/ShopPermissionInterceptor.java</url>
-          <line>13</line>
-          <properties />
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ProductServiceImpl.java</url>
           <line>38</line>
           <properties />
-          <option name="timeStamp" value="154" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java</url>
-          <line>43</line>
-          <properties />
-          <option name="timeStamp" value="155" />
+          <option name="timeStamp" value="166" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="158" />
+      <option name="time" value="170" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/WechatAuthStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/exceptions/LocalAuthOperationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/exceptions/ProductCategoryOperationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/exceptions/ProductOperationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/exceptions/WechatAuthOperationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/exceptions/ShopOperationException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/interceptor/shopadmin/ShopLoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/AreaServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/FrontendController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2759">
+          <caret line="39" column="51" lean-forward="false" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="42" column="62" lean-forward="true" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shoplist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ShopDetailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1085">
+          <caret line="56" column="17" lean-forward="true" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shopdetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2325">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shoplist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shopdetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="23" column="26" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/shop/shoplist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/shop/shopmanagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1209">
+          <caret line="35" column="111" lean-forward="true" selection-start-line="35" selection-start-column="111" selection-end-line="35" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1209">
+          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-4.3.18.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-4.3.18.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ShopServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ShopManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2263">
+          <caret line="118" column="213" lean-forward="true" selection-start-line="118" selection-start-column="213" selection-end-line="118" selection-end-column="213" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="120" column="136" lean-forward="true" selection-start-line="120" selection-start-column="136" selection-end-line="120" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productmanagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="44" column="107" lean-forward="true" selection-start-line="44" selection-start-column="107" selection-end-line="44" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productoperation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2542">
+          <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1331">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1618,345 +1487,205 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="66" column="27" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="66" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/WeChatAuthService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/wechat/UserAccessToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/wechat/WechatUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="147" column="0" lean-forward="true" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/wechat/SignUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1178">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/wechat/WechatController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-331">
-          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
+        <state relative-caret-position="-744">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/wechat/WechatLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="88" column="32" lean-forward="true" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
+        <state relative-caret-position="434">
+          <caret line="14" column="49" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/index.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/wechat/WechatController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-961">
-          <caret line="8" column="49" lean-forward="true" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        <state relative-caret-position="341">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/superadmin/AreaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="22" column="65" lean-forward="true" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+        <state relative-caret-position="186">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/MyController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/shop/productmanagement.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="86" column="71" lean-forward="false" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/Shop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ShopCategoryDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#855#856#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
+            <marker date="1543128348841" expanded="true" signature="308:1046" ph="SELECT shop_... tb_shop_category" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/shoplist.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/ProductCategoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="175" column="36" lean-forward="true" selection-start-line="175" selection-start-column="36" selection-end-line="175" selection-end-column="36" />
+        <state relative-caret-position="206">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring-web-4.3.18.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/shop/shopoperation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/ProductCategoryExecution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductManagementController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="93" column="27" lean-forward="false" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/logout.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/shop/productoperation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="92" column="34" lean-forward="true" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="61" column="26" lean-forward="true" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shoplist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-868">
-          <caret line="74" column="22" lean-forward="true" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/shopdetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2697">
-          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/shop/shoplist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-93">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="434">
+          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productcategorymanagement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="78" lean-forward="false" selection-start-line="33" selection-start-column="78" selection-end-line="33" selection-end-column="78" />
+        <state relative-caret-position="1116">
+          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productmanagement.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ProductCategoryDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="33" column="45" lean-forward="false" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <folding>
+            <marker date="1542904350544" expanded="true" signature="344:581" ph="SELECT produ... tb_product_category" />
+            <marker date="1542904350544" expanded="true" signature="1340:1457" ph="DELETE FROM tb_product_category... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ProductCategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="31" column="38" lean-forward="false" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/shop/productcategorymanagement.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
-          <caret line="44" column="94" lean-forward="false" selection-start-line="44" selection-start-column="94" selection-end-line="44" selection-end-column="94" />
-          <folding />
+          <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/productoperation.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/shopadmin/ProductCategoryManagementController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="153" column="70" lean-forward="false" selection-start-line="153" selection-start-column="70" selection-end-line="153" selection-end-column="70" />
+        <state relative-caret-position="1550">
+          <caret line="67" column="56" lean-forward="false" selection-start-line="67" selection-start-column="56" selection-end-line="67" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shoplist.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="34" column="70" lean-forward="false" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+        <state relative-caret-position="2232">
+          <caret line="89" column="39" lean-forward="false" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopmanagement.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/frontend/ProductDetailController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="496">
-          <caret line="31" column="70" lean-forward="false" selection-start-line="31" selection-start-column="70" selection-end-line="31" selection-end-column="70" />
+          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/shop/shopoperation.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/frontend/productdetail.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="138" column="114" lean-forward="true" selection-start-line="138" selection-start-column="114" selection-end-line="138" selection-end-column="114" />
+        <state relative-caret-position="124">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/accountbind.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/frontend/productdetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-651">
-          <caret line="54" column="60" lean-forward="false" selection-start-line="54" selection-start-column="60" selection-end-line="54" selection-end-column="60" />
+        <state relative-caret-position="439">
+          <caret line="49" column="38" lean-forward="true" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/WechatAuthDao.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/frontend/productdetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1302">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <marker date="1543339488016" expanded="true" signature="1264:1639" ph="SELECT w.wec... tb_wechat_auth" />
-            <marker date="1543339488016" expanded="true" signature="1819:1990" ph="INSERT INTO tb_wechat_auth... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/accountbind.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-279">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-155">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dto/wechat/WechatUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-806">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/entity/PersonInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="37" column="5" lean-forward="false" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="61" column="16" lean-forward="true" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PersonInfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-          <folding>
-            <marker date="1543830881239" expanded="true" signature="327:579" ph="SELECT user_... tb_person_info" />
-            <marker date="1543830881239" expanded="true" signature="750:1150" ph="INSERT INTO tb_person_info... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/spring-aop-4.3.18.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/html/local/changepwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="74" column="17" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="74" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/changepwd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/LocalAuthDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="36" />
-          <folding>
-            <marker date="1543832508067" expanded="true" signature="1317:1406" ph="SELECT count... tb_local_auth" />
-            <marker date="1543832508067" expanded="true" signature="1529:2038" ph="SELECT l.loc... tb_local_auth" />
-            <marker date="1543832508067" expanded="true" signature="2151:2622" ph="SELECT l.loc... tb_local_auth" />
-            <marker date="1543832508067" expanded="true" signature="2802:3120" ph="INSERT INTO tb_local_auth... " />
-            <marker date="1543832508067" expanded="true" signature="3178:3478" ph="UPDATE tb_local_auth... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/LocalAuthDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="26" column="65" lean-forward="false" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/dao/PersonInfoDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/enums/LocalAuthStateEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/util/ImageUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1426">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/local/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="51" lean-forward="false" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/web/local/LocalAuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="183" column="55" lean-forward="false" selection-start-line="183" selection-start-column="55" selection-end-line="183" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/yaya/o2o/service/impl/LocalAuthServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-527">
-          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+        <state relative-caret-position="496">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding />
         </state>
       </provider>

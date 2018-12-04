@@ -1,8 +1,6 @@
 $(function () {
     //修改平台密码的controller url
     var url = '/o2o/local/changelocalpwd';
-    //从地址栏的URL里获取usertype
-    var usertype = getQueryString('usertype');
     $('#submit').click(function () {
         var username = $('#username').val();
         var password = $('#password').val();

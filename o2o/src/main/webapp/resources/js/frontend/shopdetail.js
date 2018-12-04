@@ -2,15 +2,14 @@ $(function() {
 	var loading = false;
 	var maxItems = 20;
 	var pageSize = 5;
+	var pageNum = 1;
 
+    var searchDivUrl = '/o2o/frontend/listshopdetailpageinfo?shopId=' + shopId;
 	var listUrl = '/o2o/frontend/listproductsbyshop';
 
-	var pageNum = 1;
-	var shopId = getQueryString('shopId');
+    var shopId = getQueryString('shopId');
 	var productCategoryId = '';
 	var productName = '';
-
-	var searchDivUrl = '/o2o/frontend/listshopdetailpageinfo?shopId=' + shopId;
 
 	getSearchDivData();
 	addItems(pageSize, pageNum);

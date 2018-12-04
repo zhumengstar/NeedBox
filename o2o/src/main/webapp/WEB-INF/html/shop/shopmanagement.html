@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>商店管理</title>
+        <title>店铺管理</title>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <link rel="shortcut icon" href="/favicon.ico">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -14,13 +14,17 @@
     </head>
 <body>
     <header class="bar bar-nav">
-        <h1 class="title">商店管理</h1>
+        <a class="button button-link button-nav pull-left" external href="#"
+           onclick="javascript :history.back(-1);" data-transition='slide-out'>
+            <span class="icon icon-left"></span> 返回
+        </a>
+        <h1 class="title">店铺管理</h1>
     </header>
     <div class="content">
         <div class="content-block">
             <div class="row">
                 <div class="col-50 mb">
-                    <a id="shopInfo" href="/o2o/shopadmin/shopoperation" class="button button-big button-fill">商铺信息</a>
+                    <a id="shopInfo" href="/o2o/shopadmin/shopoperation" class="button button-big button-fill">修改信息</a>
                 </div>
                 <div class="col-50 mb">
                     <a href="/o2o/shopadmin/productmanagement" class="button button-big button-fill">商品管理</a>
@@ -29,7 +33,7 @@
                     <a href="/o2o/shopadmin/productcategorymanagement" class="button button-big button-fill">类别管理</a>
                 </div>
                 <div class="col-50 mb">
-                    <a href="#" onclick="javascript:history.back(-1);" class="button button-big button-fill button-success">返回列表</a>
+                    <a href="/o2o/frontend/index" class="button button-big button-fill button-success">返回首页</a>
                 </div>
             </div>
         </div>

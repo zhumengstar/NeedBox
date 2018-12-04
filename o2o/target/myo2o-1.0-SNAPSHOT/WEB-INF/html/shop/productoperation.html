@@ -16,6 +16,10 @@
 </head>
 <body>
 <header class="bar bar-nav">
+    <a class="button button-link button-nav pull-left" external href="#"
+       onclick="javascript :history.back(-1);" data-transition='slide-out'>
+        <span class="icon icon-left"></span> 返回
+    </a>
     <h1 class="title">商品编辑</h1>
 </header>
 <div class="content">
@@ -56,7 +60,7 @@
                     <div class="item-inner">
                         <div class="item-title label">优先级</div>
                         <div class="item-input">
-                            <input type="number" id="priority" placeholder="数字越大越排前面">
+                            <input type="number" id="priority" placeholder="必填,数字越大越排前面">
                         </div>
                     </div>
                 </div>
@@ -93,7 +97,7 @@
                         <i class="icon icon-form-email"></i>
                     </div>
                     <div class="item-inner">
-                        <div class="item-title label">缩略图</div>
+                        <div class="item-title label">商品缩略图</div>
                         <div class="item-input">
                             <input type="file" id="small-img">
                         </div>
@@ -106,7 +110,7 @@
                         <i class="icon icon-form-email"></i>
                     </div>
                     <div class="item-inner detail-img-div">
-                        <div class="item-title label">详情图片</div>
+                        <div class="item-title label">商品详情图</div>
                         <div class="item-input" id="detail-img">
                             <input type="file" class="detail-img">
                             <!-- <input type="file" class="detail-img" id="detail-img-1">
@@ -150,8 +154,8 @@
     <div class="content-block">
         <div class="row">
             <div class="col-50">
-                <a href="/o2o/shopadmin/productmanage"
-                   class="button button-big button-fill button-success" id="back">返回商品管理</a>
+                <a href="/o2o/frontend/index"
+                   class="button button-big button-fill button-success" id="back">返回首页</a>
             </div>
             <div class="col-50">
                 <a href="#" class="button button-big button-fill" id="submit">提交</a>

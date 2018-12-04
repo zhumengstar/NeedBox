@@ -56,7 +56,7 @@ $(function() {
     function getCategory() {
         $.getJSON(categoryUrl, function(data) {
             if (data.success) {
-                var productCategoryList = data.data;
+                var productCategoryList = data.productCategoryList;
                 var optionHtml = '';
                 productCategoryList.map(function(item, index) {
                     optionHtml += '<option data-value="'

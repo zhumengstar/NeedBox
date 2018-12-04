@@ -7,7 +7,7 @@ $(function() {
     function getList() {
         $.getJSON(listUrl, function (data) {
             if (data.success) {
-                var dataList = data.data;
+                var dataList = data.productCategoryList;
                 $('.category-wrap').html('');
                 var tempHtml = '';
                 dataList.map(function (item, index) {

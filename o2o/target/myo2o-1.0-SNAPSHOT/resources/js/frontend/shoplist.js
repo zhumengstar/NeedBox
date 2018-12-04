@@ -1,36 +1,31 @@
 $(function() {
 	var loading = false;
-	//分页允许返回的最大条数,超过此数则禁止访问后台
 	var maxItems = 999;
-	//一页返回的最大条数
 	var pageSize = 5;
-	//获取店铺列表的URL
-	var listUrl = '/o2o/frontend/listshops';
-	//获取店铺类别列表以及区域列表的URL
-	var searchDivUrl = '/o2o/frontend/listshopspageinfo';
-	//页码
 	var pageNum = 1;
+    //获取店铺类别列表以及区域列表的URL
+	var searchDivUrl = '/o2o/frontend/listshopspageinfo';
+    //获取店铺列表的URL
+    var listUrl = '/o2o/frontend/listshops';
 	//从地址栏URL里尝试获取... id
 	var parentId = getQueryString('parentId');
 	var areaId = '';
 	var shopCategoryId = '';
 	var shopName = '';
-	//渲染出店铺类别列表以及区域列表以供搜索
+
+    //获取店铺类别列表以及区域列表信息
 	getSearchDivData();
 	//预先加载10条店铺信息
 	addItems(pageSize, pageNum);
 
-	//获取店铺类别列表以及区域列表信息
 	function getSearchDivData() {
 		//如果传入了parentId,则取出此一级类别下的所有二级类别
 		var url = searchDivUrl + '?' + 'parentId=' + parentId;
 		$.getJSON(url, function(data) {
 			if (data.success) {
-				//获取从后台返回过来的店铺类别列表
 				var shopCategoryList = data.shopCategoryList;
 				var html = '';
 				html += '<a href="#" class="button" data-category-id="">全部类别</a>';
-				//遍历店铺类别列表,拼接出a标签集
 				shopCategoryList.map(function(item, index) {
 					html += '<a href="#" class="button" data-category-id='
 						+ item.shopCategoryId
@@ -38,18 +33,15 @@ $(function() {
 						+ item.shopCategoryName
 						+ '</a>';
 				});
-				//将拼接好的类别标签嵌入前台的html组件里
 				$('#shoplist-search-div').html(html);
+
 				var selectOptions = '<option value="">全部街道</option>';
-				//获取后台返回过来的区域信息列表
 				var areaList = data.areaList;
-				//遍历区域信息列表,拼接出option标签集
 				areaList.map(function(item, index) {
 					selectOptions += '<option value="'
 							+ item.areaId + '">'
 							+ item.areaName + '</option>';
 				});
-				//将标签集添加进area列表里
 				$('#area-search').html(selectOptions);
 			}
 		});
@@ -63,13 +55,11 @@ $(function() {
 				+ '&shopCategoryId=' + shopCategoryId + '&shopName=' + shopName;
 		//设定加载符,若还在后台数据则不能再次访问后台,避免多次重复加载
 		loading = true;
-		//访问后台获取相应查询条件下的店铺列表
 		$.getJSON(url, function(data) {
 			if (data.success) {
 				//获取当前查询条件下店铺的总数
 				maxItems = data.count;
 				var html = '';
-				//遍历店铺列表,拼接出卡片集合
 				data.shopList.map(function(item, index) {
 					html += '' + '<div class="card" data-shop-id="'
 							+ item.shopId + '">' + '<div class="card-header">'
@@ -88,7 +78,6 @@ $(function() {
 							+ '更新</p>' + '<span>点击查看</span>' + '</div>'
 							+ '</div>';
 				});
-				//将卡片集合添加到目标HTML组件里
 				$('.list-div').append(html);
 				//获取目前未知已显示的卡片总数,包含之前已经加载的
 				var total = $('.list-div .card').length;

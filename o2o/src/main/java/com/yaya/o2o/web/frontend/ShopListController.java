@@ -30,7 +30,7 @@ public class ShopListController {
     @Autowired
     private ShopService shopService;
 
-    //返回商品列表页里的ShopCategory列表(二级或一级),一级区域信息列表
+    //返回商店列表页里的ShopCategory列表(二级或一级),一级区域信息列表
     @RequestMapping(value = "/listshopspageinfo", method = GET)
     @ResponseBody
     private Map<String, Object> listShopsPageInfo(HttpServletRequest request) {
@@ -38,7 +38,6 @@ public class ShopListController {
         //试着从前端请求(首页)中获取parentId
         long parentId = HttpServletRequestUtil.getLong(request, "parentId");
         List<ShopCategory> shopCategoryList = null;
-
         if(parentId != -1) {
             //点击了某一大类
             //如果parentId存在,则取出该一级ShopCategory下的二级ShopCategory列表

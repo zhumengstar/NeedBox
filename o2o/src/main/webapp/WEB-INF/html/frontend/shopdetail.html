@@ -13,7 +13,7 @@
 <link rel="stylesheet"
 	href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 <link rel="stylesheet"
-	href="../resources/css/frontend/shopdetail/shopdetail.css">
+	href="../resources/css/frontend/shopdetail.css">
 </head>
 <body>
 	<div class="page-group">
@@ -111,13 +111,16 @@
 		<div class="panel panel-right panel-reveal" id="panel-left-demo">
 			<div class="content-block">
 				<p>
-					<a href="/o2o/frontend/myrecord" class="close-panel">消费记录</a>
+					<a href="/o2o/shopadmin/shoplist" class="close-panel">我要开店</a>
 				</p>
 				<p>
-					<a href="/o2o/frontend/mypoint" class="close-panel">我的积分</a>
+					<a href="/o2o/local/accountbind" class="close-panel">绑定账号</a>
 				</p>
 				<p>
-					<a href="/o2o/frontend/pointrecord" class="close-panel">积分兑换记录</a>
+					<a href="/o2o/local/changepwd" class="close-panel">修改密码</a>
+				</p>
+				<p>
+					<a href="#" class="close-panel" id="log-out">退出系统</a>
 				</p>
 				<!-- Click on link with "close-panel" class will close panel -->
 			</div>
@@ -135,5 +138,7 @@
 		src='../resources/js/common/common.js' charset='utf-8'></script>
 	<script type='text/javascript'
 		src='../resources/js/frontend/shopdetail.js' charset='utf-8'></script>
+	<script type='text/javascript'
+			src='../resources/js/local/logout.js' charset='utf-8'></script>
 </body>
 </html>

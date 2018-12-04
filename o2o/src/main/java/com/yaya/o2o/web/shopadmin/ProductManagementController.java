@@ -49,7 +49,7 @@ public class ProductManagementController {
         //验证码校验
         if (!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "输入了错误的验证码");
+            modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
         //接收前端参数的变量的初始化,包括商品,缩略图,详情图列表实体类
@@ -66,6 +66,11 @@ public class ProductManagementController {
             //若解析出来的请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
             if (multipartResolver.isMultipart(request)) {
                 thumbnail = handleImage(request, productImgList);
+                if(thumbnail == null) {
+                    modelMap.put("success", false);
+                    modelMap.put("errMsg", "商品缩略图不能为空");
+                    return modelMap;
+                }
             } else {
                 modelMap.put("success", false);
                 modelMap.put("errMsg", "上传图片不能为空");
@@ -86,7 +91,7 @@ public class ProductManagementController {
         }
 
         //若Product信息,缩略图以及详情图列表为非空,则开始进行商品添加操作
-        if (product != null && thumbnail != null && productImgList.size() > 0) {
+        if (product != null && product.getProductName() != null && !product.getProductName().equals("") && product.getPriority() != null && !product.getPriority().equals("")) {
             try {
                 //从session中获取当前店铺的Id并赋值给product,减少对前端数据的依赖
                 Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
@@ -106,7 +111,7 @@ public class ProductManagementController {
             }
         } else {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "请输入商品信息");
+            modelMap.put("errMsg", "商品名称和优先级都要填写哦~");
         }
         return modelMap;
     }
@@ -163,7 +168,7 @@ public class ProductManagementController {
         //验证码判断
         if (!statusChange && !CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "输入了错误的验证码");
+            modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
         //接收前端参数的变量的初始化,包括商品,缩略图,详情图列表实体类
@@ -191,29 +196,51 @@ public class ProductManagementController {
             modelMap.put("errMsg", e.toString());
             return modelMap;
         }
-        // 非空判断
-        if (product != null) {
-            try {
-                // 从session中获取当前店铺的Id并赋值给product，减少对前端数据的依赖
-                Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
-                product.setShop(currentShop);
-                // 开始进行商品信息变更操作
-                ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
-                if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
-                    modelMap.put("success", true);
-                } else {
+        if(statusChange) {
+            if(product != null && product.getProductId() != null) {
+                try {
+                    // 从session中获取当前店铺的Id并赋值给product，减少对前端数据的依赖
+                    Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+                    product.setShop(currentShop);
+                    // 开始进行商品信息变更操作
+                    ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
+                    if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
+                        modelMap.put("success", true);
+                    } else {
+                        modelMap.put("success", false);
+                        modelMap.put("errMsg", pe.getStateInfo());
+                    }
+                } catch (RuntimeException e) {
                     modelMap.put("success", false);
-                    modelMap.put("errMsg", pe.getStateInfo());
+                    modelMap.put("errMsg", e.toString());
+                    return modelMap;
                 }
-            } catch (RuntimeException e) {
-                modelMap.put("success", false);
-                modelMap.put("errMsg", e.toString());
-                return modelMap;
             }
-
         } else {
-            modelMap.put("success", false);
-            modelMap.put("errMsg", "请输入商品信息");
+            // 非空判断
+            if (product != null && product.getProductName() != null && !product.getProductName().equals("") && product.getPriority() != null && !product.getPriority().equals("")) {
+                try {
+                    // 从session中获取当前店铺的Id并赋值给product，减少对前端数据的依赖
+                    Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+                    product.setShop(currentShop);
+                    // 开始进行商品信息变更操作
+                    ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
+                    if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
+                        modelMap.put("success", true);
+                    } else {
+                        modelMap.put("success", false);
+                        modelMap.put("errMsg", pe.getStateInfo());
+                    }
+                } catch (RuntimeException e) {
+                    modelMap.put("success", false);
+                    modelMap.put("errMsg", e.toString());
+                    return modelMap;
+                }
+
+            } else {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", "商品名称和优先级都要填写哦~");
+            }
         }
         return modelMap;
     }
