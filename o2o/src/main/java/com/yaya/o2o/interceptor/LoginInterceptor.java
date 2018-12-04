@@ -1,4 +1,4 @@
-package com.yaya.o2o.interceptor.shopadmin;
+package com.yaya.o2o.interceptor;
 
 import com.yaya.o2o.entity.PersonInfo;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
-public class ShopLoginInterceptor extends HandlerInterceptorAdapter {
+public class LoginInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -26,7 +26,7 @@ public class ShopLoginInterceptor extends HandlerInterceptorAdapter {
         PrintWriter out = response.getWriter();
         out.println("<html>");
         out.println("<script>");
-        out.println("window.open('" + request.getContextPath() + "/local/login?usertype=2','_self')");
+        out.println("window.open('" + request.getContextPath() + "/local/login','_self')");
         out.println("</script>");
         out.println("</html>");
         return false;
