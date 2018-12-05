@@ -8,16 +8,16 @@ $(function () {
         var confirmPassword = $('#confirmPassword').val();
         var verifyCodeActual = $('#j_captcha').val();
         if(!verifyCodeActual) {
-            $.toast('请输入验证码!');
+            $.toast('提交失败！请输入验证码');
             return;
         }
         if(newPassword == password) {
-            $.toast('新密码不能和原密码相同!');
+            $.toast('提交失败！新密码不能和原密码相同');
             $('#captcha_img').click();
             return;
         }
         if(newPassword != confirmPassword) {
-            $.toast('两次输入的新密码不一致!');
+            $.toast('提交失败！两次输入的新密码不一致');
             $('#captcha_img').click();
             return;
         }
@@ -37,10 +37,10 @@ $(function () {
             cache: false,
             success: function (data) {
                 if (data.success) {
-                    $.toast("提交成功!");
+                    $.toast("提交成功！");
                     window.location.href = '/o2o/local/login';
                 } else {
-                    $.toast("提交失败!" + data.errMsg);
+                    $.toast("提交失败！" + data.errMsg);
                     $('#captcha_img').click();
                 }
             }

@@ -39,54 +39,57 @@ public class LocalAuthController {
           Map<String, Object> modelMap = new HashMap<>();
         if (!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "输入了错误的验证码");
+            modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
+        String localAuthStr = HttpServletRequestUtil.getString(request, "localAuthStr");
         ObjectMapper mapper = new ObjectMapper();
         LocalAuth localAuth = null;
-        String localAuthStr = HttpServletRequestUtil.getString(request, "localAuthStr");
-        MultipartHttpServletRequest multipartRequest = null;
-        CommonsMultipartFile profileImg = null;
-        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
-        if (multipartResolver.isMultipart(request)) {
-            multipartRequest = (MultipartHttpServletRequest) request;
-            profileImg = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
-            if(profileImg == null) {
-                modelMap.put("success", false);
-                modelMap.put("errMsg", "上传图片不能为空");
-                return modelMap;
-            }
-        } else {
-            modelMap.put("success", false);
-            modelMap.put("errMsg", "上传图片不能为空");
-            return modelMap;
-        }
-
         try {
             localAuth = mapper.readValue(localAuthStr, LocalAuth.class);
         } catch (Exception e) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", e.toString());
+            modelMap.put("errMsg", e.getMessage());
             return modelMap;
         }
-        if (localAuth != null && localAuth.getUsername() != null && !localAuth.getUsername().equals("") && localAuth.getPassword() != null && !localAuth.getPassword().equals("") && localAuth.getPersonInfo().getName() != null && !localAuth.getPersonInfo().getName().equals("")) {
-            try {
-                LocalAuthExecution le = localAuthService.register(localAuth, profileImg);
-                if (le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
-                    modelMap.put("success", true);
-                } else {
-                    modelMap.put("success", false);
-                    modelMap.put("errMsg", le.getStateInfo());
-                }
-            } catch (Exception e) {
-                modelMap.put("success", false);
-                modelMap.put("errMsg", e.toString());
-                return modelMap;
-            }
-
-        } else {
+        if (localAuth == null || localAuth.getUsername() == null || localAuth.getUsername().equals("") || localAuth.getPassword() == null || localAuth.getPassword().equals("") || localAuth.getPersonInfo().getName() == null || localAuth.getPersonInfo().getName().equals("")) {
             modelMap.put("success", false);
             modelMap.put("errMsg", "请输入注册信息");
+            return modelMap;
+        }
+        CommonsMultipartFile profileImg = null;
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+        try {
+            if (commonsMultipartResolver.isMultipart(request)) {
+                MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+                profileImg = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
+            }
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        }
+        if (profileImg == null) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "请上传头像");
+            return modelMap;
+        }
+        try {
+            LocalAuthExecution le = localAuthService.register(localAuth, profileImg);
+            if (le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
+                modelMap.put("success", true);
+            } else {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", le.getStateInfo());
+            }
+        } catch (LocalAuthOperationException e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
         }
         return modelMap;
     }
@@ -104,11 +107,21 @@ public class LocalAuthController {
         String username = HttpServletRequestUtil.getString(request, "username");
         String password = HttpServletRequestUtil.getString(request, "password");
         PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
-        if(username != null && !username.equals("") && password != null && !password.equals("") && user != null ) {
-            LocalAuth localAuth = new LocalAuth();
-            localAuth.setUsername(username);
-            localAuth.setPassword(password);
-            localAuth.setPersonInfo(user);
+        if(user == null || user.getUserId() == null) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "当前用户信息失效，请退出系统后重试");
+            return modelMap;
+        }
+        if(username == null || username.equals("") || password == null || password.equals("")) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "请输入绑定信息");
+            return modelMap;
+        }
+        LocalAuth localAuth = new LocalAuth();
+        localAuth.setUsername(username);
+        localAuth.setPassword(password);
+        localAuth.setPersonInfo(user);
+        try {
             LocalAuthExecution le = localAuthService.bindLocalAuth(localAuth);
             if(le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
                 modelMap.put("success", true);
@@ -116,9 +129,12 @@ public class LocalAuthController {
                 modelMap.put("success", false);
                 modelMap.put("errMsg", le.getStateInfo());
             }
-        } else {
+        } catch (LocalAuthOperationException e) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "用户名和密码均不能为空");
+            modelMap.put("errMsg", e.getMessage());
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
         }
         return modelMap;
     }
@@ -136,31 +152,34 @@ public class LocalAuthController {
         String password = HttpServletRequestUtil.getString(request, "password");
         String newPassword = HttpServletRequestUtil.getString(request, "newPassword");
         PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
-        if(username != null && !username.equals("") && password != null && !password.equals("") && newPassword != null && !newPassword.equals("") && user != null && user.getUserId() != null) {
-            try {
-                LocalAuth localAuth = localAuthService.getLocalAuthByUserId(user.getUserId());
-                //查看原先帐号,看看与输入的帐号是否一致,buyizhi则认为是非法操作
-                if(localAuth == null || !localAuth.getUsername().equals(username)) {
-                    modelMap.put("success", false);
-                    modelMap.put("errMsg", "输入的帐号非当前登录的帐号");
-                    return modelMap;
-                }
-                //修改平台帐号的用户密码
-                LocalAuthExecution le = localAuthService.modifyLocalAuth(user.getUserId(), username, password, newPassword);
-                if(le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
-                    modelMap.put("success", true);
-                } else {
-                    modelMap.put("success", false);
-                    modelMap.put("errMsg", le.getStateInfo());
-                }
-            } catch (LocalAuthOperationException e) {
+        if(user == null || user.getUserId() == null) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "当前用户信息失效，请退出系统后重试");
+            return modelMap;
+        }
+        if(username == null || username.equals("") || password == null || password.equals("") || newPassword == null || newPassword.equals("")) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "请输入修改信息");
+            return modelMap;
+        }
+        try {
+            LocalAuth localAuth = localAuthService.getLocalAuthByUserId(user.getUserId());
+            if (localAuth == null || !localAuth.getUsername().equals(username)) {
                 modelMap.put("success", false);
-                modelMap.put("errMsg", e.toString());
+                modelMap.put("errMsg", "请输入当前登录帐号");
                 return modelMap;
             }
-        } else {
+            LocalAuthExecution le = localAuthService.modifyLocalAuth(user.getUserId(), username, password, newPassword);
+            if(le.getState() == LocalAuthStateEnum.SUCCESS.getState()) {
+                modelMap.put("success", true);
+            } else {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", "修改密码失败");
+            }
+        } catch (LocalAuthOperationException e) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "请输入相应信息");
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
         }
         return modelMap;
     }
@@ -177,7 +196,12 @@ public class LocalAuthController {
         }
         String username = HttpServletRequestUtil.getString(request, "username");
         String password = HttpServletRequestUtil.getString(request, "password");
-        if(username != null && !username.equals("") && password != null && !password.equals("")) {
+        if(username == null || username.equals("") || password == null || password.equals("")) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "请输入登录信息");
+            return modelMap;
+        }
+        try {
             LocalAuth localAuth = localAuthService.getLocalAuthByUsernameAndPwd(username, password);
             if(localAuth != null) {
                 modelMap.put("success", true);
@@ -186,9 +210,12 @@ public class LocalAuthController {
                 modelMap.put("success", false);
                 modelMap.put("errMsg", "用户名或密码错误");
             }
-        } else {
+        } catch (LocalAuthOperationException e) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "用户名和密码均不能为空");
+            modelMap.put("errMsg", e.getMessage());
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
         }
         return modelMap;
     }

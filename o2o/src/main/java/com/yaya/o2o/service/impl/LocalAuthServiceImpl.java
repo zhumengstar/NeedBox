@@ -41,46 +41,38 @@ public class LocalAuthServiceImpl implements LocalAuthService {
     @Override
     @Transactional
     public LocalAuthExecution register(LocalAuth localAuth, CommonsMultipartFile profileImg) throws LocalAuthOperationException {
-        if (localAuth == null || localAuth.getPassword() == null || localAuth.getPassword().equals("") || localAuth.getUsername() == null || localAuth.getUsername().equals("")) {
-            return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
-        }
         int usernameCount = localAuthDao.queryLocalByUserName(localAuth.getUsername());
         if(usernameCount != 0) {
-            return new LocalAuthExecution(LocalAuthStateEnum.ONLY_ONE_LOCALAUTH);
+            throw new LocalAuthOperationException("该用户名已经被注册了");
         }
         try {
             localAuth.setCreateTime(new Date());
             localAuth.setLastEditTime(new Date());
             localAuth.setPassword(MD5Util.getMD5(localAuth.getPassword()));
-            if (localAuth.getPersonInfo() != null && localAuth.getPersonInfo().getUserId() == null) {
-                if (profileImg != null) {
-                    localAuth.getPersonInfo().setUserType(1);
-                    localAuth.getPersonInfo().setCreateTime(new Date());
-                    localAuth.getPersonInfo().setLastEditTime(new Date());
-                    localAuth.getPersonInfo().setEnableStatus(1);
-                    try {
-                        addProfileImg(localAuth, profileImg);
-                    } catch (Exception e) {
-                        throw new LocalAuthOperationException("addUserProfileImg error: " + e.getMessage());
-                    }
+            localAuth.getPersonInfo().setUserType(1);
+            localAuth.getPersonInfo().setCreateTime(new Date());
+            localAuth.getPersonInfo().setLastEditTime(new Date());
+            localAuth.getPersonInfo().setEnableStatus(1);
+            try {
+                addProfileImg(localAuth, profileImg);
+            } catch (Exception e) {
+                throw new LocalAuthOperationException("添加头像失败");
+            }
+            try {
+                PersonInfo personInfo = localAuth.getPersonInfo();
+                int effectedNum = personInfoDao.insertPersonInfo(personInfo);
+                if (effectedNum <= 0) {
+                    throw new LocalAuthOperationException("添加用户信息失败");
                 }
-                try {
-                    PersonInfo personInfo = localAuth.getPersonInfo();
-                    int effectedNum = personInfoDao.insertPersonInfo(personInfo);
-                    if (effectedNum <= 0) {
-                        throw new LocalAuthOperationException("添加用户信息失败");
-                    }
-                } catch (Exception e) {
+            } catch (Exception e) {
                     throw new LocalAuthOperationException("insertPersonInfo error: " + e.getMessage());
-                }
             }
             int effectedNum = localAuthDao.insertLocalAuth(localAuth);
             if (effectedNum <= 0) {
-                throw new LocalAuthOperationException("帐号创建失败");
-            } else {
-                return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS, localAuth);
+                throw new LocalAuthOperationException("注册帐号失败");
             }
-        } catch (Exception e) {
+            return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS, localAuth);
+        } catch (LocalAuthOperationException e) {
             throw new LocalAuthOperationException("insertLocalAuth error: " + e.getMessage());
         }
     }
@@ -95,29 +87,22 @@ public class LocalAuthServiceImpl implements LocalAuthService {
     @Override
     @Transactional
     public LocalAuthExecution bindLocalAuth(LocalAuth localAuth) throws LocalAuthOperationException {
-        //空值判断,传入的localAuth帐号密码,用户信息特别是userId不能为空
-        if(localAuth == null || localAuth.getUsername() == null || localAuth.getUsername().equals("") || localAuth.getPassword() == null || localAuth.getPassword().equals("") || localAuth.getPersonInfo() == null || localAuth.getPersonInfo().getUserId() == null) {
-            return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
-        }
         //查询此用户是否已经绑定过平台帐号
         LocalAuth tempAuth = localAuthDao.queryLocalByUserId(localAuth.getPersonInfo().getUserId());
         //如果绑定过则直接退出,以保证平台帐号的唯一性
-        if(tempAuth != null) {
-            return new LocalAuthExecution(LocalAuthStateEnum.ONLY_ONE_ACCOUNT);
+        if (tempAuth != null) {
+            throw new LocalAuthOperationException("您已经绑定过平台账号了");
         }
         try {
             //如果之前没有绑定过平台账号,则创建一个平台帐号与该用户绑定
             localAuth.setCreateTime(new Date());
             localAuth.setLastEditTime(new Date());
-            //对密码进行MD5加密
             localAuth.setPassword(MD5Util.getMD5(localAuth.getPassword()));
             int effectedNum = localAuthDao.insertLocalAuth(localAuth);
-            //判断创建是否成功
             if(effectedNum <= 0) {
-                throw new LocalAuthOperationException("账号绑定失败");
-            } else {
-                return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS, localAuth);
+                throw new LocalAuthOperationException("绑定账号失败");
             }
+            return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS, localAuth);
         } catch (Exception e) {
             throw new LocalAuthOperationException("insetLocalAuth error:" + e.getMessage());
         }
@@ -126,22 +111,14 @@ public class LocalAuthServiceImpl implements LocalAuthService {
     @Override
     @Transactional
     public LocalAuthExecution modifyLocalAuth(Long userId, String username, String password, String newPassword) throws LocalAuthOperationException {
-        //非空判断
-        if(userId == null || username == null || username.equals("") || password == null || password.equals("") || newPassword == null || newPassword.equals("")) {
-            return new LocalAuthExecution(LocalAuthStateEnum.NULL_AUTH_INFO);
-        }
-
         try {
-            //更新密码
             int effectedNum = localAuthDao.updateLocalAuth(userId, username, MD5Util.getMD5(password), MD5Util.getMD5(newPassword), new Date());
-            //判断是否成功
             if(effectedNum <= 0) {
-                throw new LocalAuthOperationException("更新密码失败");
-            } else {
-                return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS);
+                throw new LocalAuthOperationException("修改密码失败");
             }
+            return new LocalAuthExecution(LocalAuthStateEnum.SUCCESS);
         } catch (Exception e) {
-            throw new LocalAuthOperationException("updateLocalAuth error:" + e.toString());
+            throw new LocalAuthOperationException("updateLocalAuth error:" + e.getMessage());
         }
     }
 }

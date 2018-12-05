@@ -11,7 +11,7 @@ $(function () {
         //如果登录三次都失败
         if(loginCount >= 3) {
             if(!verifyCodeActual) {
-                $.toast('请输入验证码!');
+                $.toast('提交失败！请输入验证码');
                 return;
             } else {
                 needVerify = true;
@@ -31,10 +31,10 @@ $(function () {
             },
             success:function (data) {
                 if (data.success) {
-                    $.toast("登录成功!");
+                    $.toast("登录成功！");
                     window.location.href = '/o2o/frontend/index';
                 } else {
-                    $.toast("登录失败!" + data.errMsg);
+                    $.toast("登录失败！" + data.errMsg);
                     loginCount++;
                     if (loginCount >= 3) {
                         $('#verifyPart').show();
