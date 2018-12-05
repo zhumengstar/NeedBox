@@ -140,12 +140,13 @@ public class ProductManagementController {
 
     @RequestMapping(value = "/getproductbyid", method = RequestMethod.GET)
     @ResponseBody
-    private Map<String, Object> getProductById(@RequestParam Long productId) {
+    private Map<String, Object> getProductById(@RequestParam Long productId, HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         //非空判断
         if (productId > -1) {
             //获取商品信息
             Product product = productService.getProductById(productId);
+
             //获取该店铺下的商品类别列表
             List<ProductCategory> productCategoryList = productCategoryService.getProductCategoryList(product.getShop().getShopId());
             modelMap.put("product", product);
