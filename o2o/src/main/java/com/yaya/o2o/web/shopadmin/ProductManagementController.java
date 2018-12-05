@@ -46,87 +46,73 @@ public class ProductManagementController {
     @ResponseBody
     private Map<String, Object> addProduct(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
-        //验证码校验
         if (!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
             modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
-        //接收前端参数的变量的初始化,包括商品,缩略图,详情图列表实体类
+        String productStr = HttpServletRequestUtil.getString(request, "productStr");
         ObjectMapper mapper = new ObjectMapper();
         Product product = null;
-        String productStr = HttpServletRequestUtil.getString(request, "productStr");
-        //保存缩略图文件流和图片名
-        ImageHolder thumbnail = null;
-        //保存商品详情图文件流列表和图片名列表
-        List<ImageHolder> productImgList = new ArrayList<>();
-        //文件上传解析器来解析request session的文件信息
-        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         try {
-            //若解析出来的请求中存在文件流,则取出相关的文件(包括缩略图和详情图)
-            if (multipartResolver.isMultipart(request)) {
-                thumbnail = handleImage(request, productImgList);
-                if(thumbnail == null) {
-                    modelMap.put("success", false);
-                    modelMap.put("errMsg", "商品缩略图不能为空");
-                    return modelMap;
-                }
-            } else {
-                modelMap.put("success", false);
-                modelMap.put("errMsg", "上传图片不能为空");
-                return modelMap;
-            }
-        } catch (Exception e) {
-            modelMap.put("success", false);
-            modelMap.put("errMsg", e.toString());
-            return modelMap;
-        }
-        try {
-            //尝试获取前端传过来的表单String流并将其转换成Product实体类生成product实例
             product = mapper.readValue(productStr, Product.class);
         } catch (Exception e) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", e.toString());
+            modelMap.put("errMsg", e.getMessage());
             return modelMap;
         }
-
-        //若Product信息,缩略图以及详情图列表为非空,则开始进行商品添加操作
-        if (product != null && product.getProductName() != null && !product.getProductName().equals("") && product.getPriority() != null && !product.getPriority().equals("")) {
-            try {
-                //从session中获取当前店铺的Id并赋值给product,减少对前端数据的依赖
-                Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
-                product.setShop(currentShop);
-                //执行添加操作
-                ProductExecution pe = productService.addProduct(product, thumbnail, productImgList);
-                if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
-                    modelMap.put("success", true);
-                } else {
-                    modelMap.put("success", false);
-                    modelMap.put("errMsg", pe.getStateInfo());
-                }
-            } catch (ProductOperationException e) {
-                modelMap.put("success", false);
-                modelMap.put("errMsg", e.toString());
-                return modelMap;
-            }
-        } else {
+        if (product == null || product.getProductName() == null || product.getProductName().equals("") || product.getPriority() == null || product.getPriority().equals("")) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "商品名称和优先级都要填写哦~");
+            modelMap.put("errMsg", "请输入商品信息");
+            return modelMap;
+        }
+        ImageHolder thumbnail = null;
+        List<ImageHolder> productImgList = new ArrayList<>();
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
+        try {
+            if (multipartResolver.isMultipart(request)) {
+                thumbnail = handleImage(request, productImgList);
+            }
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        }
+        if(thumbnail == null) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "请上传商品缩略图");
+            return modelMap;
+        }
+        try {
+            ProductExecution pe = null;
+            Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+            product.setShop(currentShop);
+            pe = productService.addProduct(product, thumbnail, productImgList);
+            if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
+                modelMap.put("success", true);
+            } else {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", pe.getStateInfo());
+            }
+        } catch (ProductOperationException e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
         }
         return modelMap;
     }
 
     private ImageHolder handleImage(HttpServletRequest request, List<ImageHolder> productImgList) throws IOException {
-        //将HttpServletRequest转换为MultipartHttpServletRequest
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-        //取出缩略图并构建ImageHolder对象
         CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
         ImageHolder thumbnail = null;
         if(thumbnailFile != null) {
-            //将获取到的文件流和图片名传入到thumbnail里
             thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(), thumbnailFile.getInputStream());
         }
-        //取出详情图列表并构建List<ImageHolder>列表对象,最多支持六张图片上传
         for (int i = 0; i < IMAGEMAXCOUNT; i++) {
             CommonsMultipartFile productImgFile = (CommonsMultipartFile) multipartRequest.getFile("productImg" + i);
             if (productImgFile != null) {
@@ -142,19 +128,20 @@ public class ProductManagementController {
     @ResponseBody
     private Map<String, Object> getProductById(@RequestParam Long productId, HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
-        //非空判断
-        if (productId > -1) {
-            //获取商品信息
-            Product product = productService.getProductById(productId);
-
-            //获取该店铺下的商品类别列表
-            List<ProductCategory> productCategoryList = productCategoryService.getProductCategoryList(product.getShop().getShopId());
-            modelMap.put("product", product);
-            modelMap.put("productCategoryList", productCategoryList);
-            modelMap.put("success", true);
-        } else {
+        try {
+            if (productId > 0) {
+                Product product = productService.getProductById(productId);
+                List<ProductCategory> productCategoryList = productCategoryService.getProductCategoryList(product.getShop().getShopId());
+                modelMap.put("product", product);
+                modelMap.put("productCategoryList", productCategoryList);
+                modelMap.put("success", true);
+            } else {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", "productId不合法");
+            }
+        } catch (Exception e) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "empty productId");
+            modelMap.put("errMsg", e.getMessage());
         }
         return modelMap;
     }
@@ -172,76 +159,63 @@ public class ProductManagementController {
             modelMap.put("errMsg", "验证码错误");
             return modelMap;
         }
-        //接收前端参数的变量的初始化,包括商品,缩略图,详情图列表实体类
+        String productStr = HttpServletRequestUtil.getString(request, "productStr");
         ObjectMapper mapper = new ObjectMapper();
         Product product = null;
+        try {
+            product = mapper.readValue(productStr, Product.class);
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        }
+        if (product == null || product.getProductId() == null) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "没有获取到商品信息");
+            return modelMap;
+        }
+        Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+//        if (product.getShop().getShopId() != currentShop.getShopId()) {
+        if(productService.getProductById(product.getProductId()).getShop().getShopId() != currentShop.getShopId()) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "该商品非当前可操作店铺");
+            return modelMap;
+        }
+        if (!statusChange && (product.getProductName() == null || product.getProductName().equals("") || product.getPriority() == null || product.getPriority().equals(""))) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", "请输入商品信息");
+            return modelMap;
+        }
         ImageHolder thumbnail = null;
         List<ImageHolder> productImgList = new ArrayList<>();
-        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
-        // 若请求中存在文件流,则取出相关的文件（包括缩略图和详情图）
+        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         try {
-            if (multipartResolver.isMultipart(request)) {
+            if (commonsMultipartResolver.isMultipart(request)) {
                 thumbnail = handleImage(request, productImgList);
             }
         } catch (Exception e) {
             modelMap.put("success", false);
-            modelMap.put("errMsg", e.toString());
+            modelMap.put("errMsg", e.getMessage());
             return modelMap;
         }
         try {
-            String productStr = HttpServletRequestUtil.getString(request, "productStr");
-            // 尝试获取前端传过来的表单String流并将其转换成Product实体类
-            product = mapper.readValue(productStr, Product.class);
-        } catch (Exception e) {
-            modelMap.put("success", false);
-            modelMap.put("errMsg", e.toString());
-            return modelMap;
-        }
-        if(statusChange) {
-            if(product != null && product.getProductId() != null) {
-                try {
-                    // 从session中获取当前店铺的Id并赋值给product，减少对前端数据的依赖
-                    Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
-                    product.setShop(currentShop);
-                    // 开始进行商品信息变更操作
-                    ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
-                    if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
-                        modelMap.put("success", true);
-                    } else {
-                        modelMap.put("success", false);
-                        modelMap.put("errMsg", pe.getStateInfo());
-                    }
-                } catch (RuntimeException e) {
-                    modelMap.put("success", false);
-                    modelMap.put("errMsg", e.toString());
-                    return modelMap;
-                }
-            }
-        } else {
-            // 非空判断
-            if (product != null && product.getProductName() != null && !product.getProductName().equals("") && product.getPriority() != null && !product.getPriority().equals("")) {
-                try {
-                    // 从session中获取当前店铺的Id并赋值给product，减少对前端数据的依赖
-                    Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
-                    product.setShop(currentShop);
-                    // 开始进行商品信息变更操作
-                    ProductExecution pe = productService.modifyProduct(product, thumbnail, productImgList);
-                    if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
-                        modelMap.put("success", true);
-                    } else {
-                        modelMap.put("success", false);
-                        modelMap.put("errMsg", pe.getStateInfo());
-                    }
-                } catch (RuntimeException e) {
-                    modelMap.put("success", false);
-                    modelMap.put("errMsg", e.toString());
-                    return modelMap;
-                }
-
+            ProductExecution pe = null;
+            product.setShop(currentShop);
+            pe = productService.modifyProduct(product, thumbnail, productImgList);
+            if (pe.getState() == ProductStateEnum.SUCCESS.getState()) {
+                modelMap.put("success", true);
             } else {
                 modelMap.put("success", false);
-                modelMap.put("errMsg", "商品名称和优先级都要填写哦~");
+                modelMap.put("errMsg", pe.getStateInfo());
             }
+        } catch (ProductOperationException e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
+        } catch (Exception e) {
+            modelMap.put("success", false);
+            modelMap.put("errMsg", e.getMessage());
+            return modelMap;
         }
         return modelMap;
     }
@@ -287,9 +261,11 @@ public class ProductManagementController {
             ProductExecution pe = productService.getProductList(productCondition, pageIndex, pageSize);
             modelMap.put("productList", pe.getProductList());
             modelMap.put("count", pe.getCount());
+            modelMap.put("currentShopId", currentShop.getShopId());
             modelMap.put("success", true);
         } else {
             modelMap.put("success", false);
+            modelMap.put("currentShopId", currentShop.getShopId());
             modelMap.put("errMsg", "empty pageSize or pageIndex or shopId");
         }
         return modelMap;

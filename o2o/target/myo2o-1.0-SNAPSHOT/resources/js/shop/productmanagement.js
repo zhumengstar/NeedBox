@@ -3,6 +3,7 @@ $(function() {
 	var listUrl = '/o2o/shopadmin/getproductlistbyshop?pageIndex=1&pageSize=999';
 	//商品下架URL
 	var statusUrl = '/o2o/shopadmin/modifyproduct';
+	var shopId;
 
 	getList();
 
@@ -10,6 +11,7 @@ $(function() {
 	function getList() {
 		//从后台获取此店铺的商品列表
 		$.getJSON(listUrl, function(data) {
+			shopId = data.currentShopId;
 			if (data.success) {
 				var productList = data.productList;
 				var tempHtml = '';
@@ -78,13 +80,16 @@ $(function() {
 		}
 	});
 
+    $('#back').click(function() {
+        window.location.href = '/o2o/shopadmin/shopmanagement?shopId=' + shopId;
+    });
 
     function changeItemStatus(id, enableStatus) {
     	//定义product json对象并添加productId以及状态
         var product = {};
         product.productId = id;
         product.enableStatus = enableStatus;
-        $.confirm(product.enableStatus==1 ? '确定要将该商品上架吗?':'确定要将该商品下架吗?', function() {
+        $.confirm(product.enableStatus==1 ? '确定要将该商品上架吗？':'确定要将该商品下架吗？', function() {
             //上下架相关商品
         	$.ajax({
                 url : statusUrl,

@@ -1,5 +1,5 @@
 $(function () {
-    $('#log-out').click(function () {
+    $('#logout').click(function () {
         //清除session
         $.ajax({
             url : "/o2o/local/logout",

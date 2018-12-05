@@ -2,10 +2,12 @@ $(function() {
     var listUrl = '/o2o/shopadmin/getproductcategorylist';
     var addUrl = '/o2o/shopadmin/addproductcategorys';
     var deleteUrl = '/o2o/shopadmin/removeproductcategory';
+    var shopId;
     getList();
 
     function getList() {
         $.getJSON(listUrl, function (data) {
+            shopId = data.currentShopId;
             if (data.success) {
                 var dataList = data.productCategoryList;
                 $('.category-wrap').html('');
@@ -55,10 +57,10 @@ $(function() {
             contentType: 'application/json',
             success: function (data) {
                 if (data.success) {
-                    $.toast('提交成功!');
+                    $.toast('提交成功！');
                     getList();
                 } else {
-                    $.toast('提交失败!');
+                    $.toast('提交失败！' + data.errMsg);
                 }
             }
         });
@@ -72,7 +74,7 @@ $(function() {
 
 	$('.category-wrap').on('click', '.row-product-category.now .delete', function(e) {
         var target = e.currentTarget;
-        $.confirm('确定删除吗?', function() {
+        $.confirm('确定要删除吗？', function() {
             $.ajax({
                 url : deleteUrl,
                 type : 'POST',
@@ -82,13 +84,16 @@ $(function() {
                 dataType : 'json',
                 success : function(data) {
                     if (data.success) {
-                        $.toast('删除成功!');
+                        $.toast('删除成功！');
                         getList();
                     } else {
-                        $.toast('删除失败!');
+                        $.toast('删除失败！' + data.errMsg);
                     }
                 }
             });
         });
+    });
+    $('#back').click(function() {
+        window.location.href = '/o2o/shopadmin/shopmanagement?shopId=' + shopId;
     });
 });

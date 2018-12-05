@@ -49,10 +49,11 @@ public class ProductCategoryManagementController {
             list = productCategoryService.getProductCategoryList(currentShop.getShopId());
             modelMap.put("success", true);
             modelMap.put("productCategoryList", list);
+            modelMap.put("currentShopId", currentShop.getShopId());
         } else {
             ProductCategoryStateEnum ps = ProductCategoryStateEnum.INNER_ERROR;
             modelMap.put("success", false);
-            modelMap.put("errCode", ps.getState());
+            modelMap.put("currentShopId", currentShop.getShopId());
             modelMap.put("errMsg", ps.getStateInfo());
         }
         return modelMap;
@@ -68,7 +69,7 @@ public class ProductCategoryManagementController {
         for (ProductCategory pc : productCategoryList) {
             pc.setShopId(currentShop.getShopId());
         }
-        if(productCategoryList != null || productCategoryList.size() > 0) {
+        if(productCategoryList != null && productCategoryList.size() > 0) {
             try {
                 ProductCategoryExecution pe = productCategoryService.batchAddProductCategory(productCategoryList);
                 if(pe.getState() == ProductCategoryStateEnum.SUCCESS.getState()) {
@@ -79,7 +80,11 @@ public class ProductCategoryManagementController {
                 }
             } catch (ProductCategoryOperationException e) {
                 modelMap.put("success", false);
-                modelMap.put("errMsg", e.toString());
+                modelMap.put("errMsg", e.getMessage());
+                return modelMap;
+            } catch (Exception e) {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", e.getMessage());
                 return modelMap;
             }
         } else {
@@ -93,7 +98,7 @@ public class ProductCategoryManagementController {
     @ResponseBody
     private Map<String, Object> removeProductCategory(Long productCategoryId, HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
-        if(productCategoryId != null || productCategoryId > 0 ) {
+        if(productCategoryId != null && productCategoryId > 0 ) {
             try {
                 Shop currentShop = (Shop)request.getSession().getAttribute("currentShop");
                 ProductCategoryExecution pe = productCategoryService.deleteProductCategory(productCategoryId, currentShop.getShopId());
@@ -103,9 +108,13 @@ public class ProductCategoryManagementController {
                     modelMap.put("success", false);
                     modelMap.put("errMsg", pe.getStateInfo());
                 }
+            } catch (ProductCategoryOperationException e) {
+                modelMap.put("success", false);
+                modelMap.put("errMsg", e.getMessage());
+                return modelMap;
             } catch (Exception e) {
                 modelMap.put("success", false);
-                modelMap.put("errMsg", e.toString());
+                modelMap.put("errMsg", e.getMessage());
                 return modelMap;
             }
         } else {
@@ -114,5 +123,4 @@ public class ProductCategoryManagementController {
         }
         return modelMap;
     }
-
 }

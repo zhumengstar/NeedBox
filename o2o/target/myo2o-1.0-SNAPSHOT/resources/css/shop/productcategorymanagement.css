@@ -14,3 +14,6 @@
     white-space: nowrap;
     overflow-x: scroll;
 }
+.mb {
+    margin-bottom: .5rem;
+}

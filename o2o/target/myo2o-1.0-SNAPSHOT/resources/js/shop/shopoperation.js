@@ -88,7 +88,7 @@ $(function () {
         formData.append('shopStr', JSON.stringify(shop));
         var verifyCodeActual = $('#j_captcha').val();
         if (!verifyCodeActual) {
-            $.toast('请输入验证码!');
+            $.toast('提交失败！请输入验证码');
             return;
         }
         formData.append('verifyCodeActual', verifyCodeActual);
@@ -101,9 +101,14 @@ $(function () {
             cache: false,
             success: function (data) {
                 if (data.success) {
-                    $.toast('提交成功!');
+                    $.toast('提交成功！');
+                    if(!isEdit) {
+                        window.location.href = '/o2o/shopadmin/shoplist';
+                    } else {
+                        window.location.href = '/o2o/shopadmin/shopmanagement?shopId=' + shopId;
+                    }
                 } else {
-                    $.toast('提交失败!' + data.errMsg);
+                    $.toast('提交失败！' + data.errMsg);
                 }
                 $('#captcha_img').click();
             }

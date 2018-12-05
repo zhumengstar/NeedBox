@@ -5,6 +5,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.PrintWriter;
 import java.util.List;
 
 public class ShopPermissionInterceptor extends HandlerInterceptorAdapter {
@@ -24,6 +25,12 @@ public class ShopPermissionInterceptor extends HandlerInterceptorAdapter {
                 }
             }
         }
+        PrintWriter out = response.getWriter();
+        out.println("<html>");
+        out.println("<script>");
+        out.println("window.open('" + request.getContextPath() + "/shopadmin/shoplist','_self')");
+        out.println("</script>");
+        out.println("</html>");
         return false;
     }
 }
