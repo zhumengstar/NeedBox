@@ -1,4 +1,4 @@
-package com.yaya.o2o.interceptor.shopadmin;
+package com.yaya.o2o.interceptor;
 
 import com.yaya.o2o.entity.Shop;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

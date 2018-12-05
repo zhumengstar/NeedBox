@@ -293,7 +293,7 @@ public class ShopManagementController {
         //获取店铺ID
         long shopId = HttpServletRequestUtil.getLong(request, "shopId");
         //如果前端没有传来shopId
-        if(shopId < 0) {
+        if(shopId <= 0) {
             //从session中获取
             Object currentShopObj = request.getSession().getAttribute("currentShop");
             //还是获取不到,重定向到之前的店铺列表页面
