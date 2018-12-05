@@ -4,10 +4,10 @@ $(function() {
 	var pageSize = 5;
 	var pageNum = 1;
 
+    var shopId = getQueryString('shopId');
     var searchDivUrl = '/o2o/frontend/listshopdetailpageinfo?shopId=' + shopId;
 	var listUrl = '/o2o/frontend/listproductsbyshop';
 
-    var shopId = getQueryString('shopId');
 	var productCategoryId = '';
 	var productName = '';
 
@@ -19,6 +19,7 @@ $(function() {
 		$.getJSON(url, function(data) {
 			if (data.success) {
 				var shop = data.shop;
+				console.log(shop);
 				$('#shop-cover-pic').attr('src', shop.shopImg);
 				$('#shop-update-time').html(new Date(shop.lastEditTime).Format("yyyy-MM-dd"));
 				$('#shop-name').html(shop.shopName);
