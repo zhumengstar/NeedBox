@@ -38,13 +38,11 @@ public class ImageUtil {
 
         //5.给源文件加水印后输出到目标文件
         try {
-            Thumbnails.of(thumbnail.getImage()).size(200, 200)//图片大小
+            Thumbnails.of(thumbnail.getImage()).scale(0.7f)//图片大小
                     //添加水印
                     .watermark(Positions.BOTTOM_RIGHT,//水印位置---右下
                             //水印路径,水印透明度
-                            ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f)
-                    //图片压缩80%
-                    .outputQuality(0.8f)
+                            ImageIO.read(new File(basePath + "watermark.png")), 1.0f)
                     //输出到目标文件
                     .toFile(dest);
         } catch (IOException e) {
@@ -75,13 +73,11 @@ public class ImageUtil {
 
         //5.给源文件加水印后输出到目标文件
         try {
-            Thumbnails.of(thumbnail.getImage()).size(337, 640)//图片大小
+            Thumbnails.of(thumbnail.getImage()).scale(0.7f)//图片大小
                     //添加水印
                     .watermark(Positions.BOTTOM_RIGHT,//水印位置---右下
                             //水印路径,水印透明度
-                            ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f)
-                    //图片压缩80%
-                    .outputQuality(0.9f)
+                            ImageIO.read(new File(basePath + "watermark.png")), 1.0f)
                     //输出到目标文件
                     .toFile(dest);
         } catch (IOException e) {
@@ -128,12 +124,5 @@ public class ImageUtil {
             }
             fileOrPath.delete();
         }
-    }
-
-    public static void main(String[] args) throws IOException {
-        System.out.println(basePath);
-        Thumbnails.of(new File("/home/hehanyue/image/xiaohuangren.jpeg"))
-                .size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f).outputQuality(0.8f)
-                .toFile("/home/hehanyue/image/xiaohuangrennew.jpeg");
     }
 }

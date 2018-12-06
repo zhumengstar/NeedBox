@@ -10,23 +10,15 @@ $(function() {
 			$('#product-time').text(new Date(product.lastEditTime).Format("yyyy-MM-dd"));
 			$('#product-name').text(product.productName);
 			$('#product-desc').text(product.productDesc);
-            if (product.normalPrice != undefined
-                && product.promotionPirce != undefined) {
+            if (product.normalPrice != undefined && product.promotionPrice != undefined) {
                 $('#price').show();
-                $('#normalPrice').text(
-                    '<del>' + '￥' + product.normalPrice
-                    + '</del>');
-                $('#promotionPrice').text(
-                    '￥' + product.promotionPirce);
-            } else if (product.normalPrice != undefined
-                && product.promotionPirce == undefined) {
+                $('#normalPrice').html('<del>' + '￥' + product.normalPrice + '</del>');
+                $('#promotionPrice').text('￥' + product.promotionPrice);
+            } else if (product.normalPrice != undefined && product.promotionPrice == undefined) {
                 $('#price').show();
-                $('#promotionPrice').text(
-                    '￥' + product.normalPrice);
-            } else if (product.normalPrice == undefined
-                && product.promotionPirce != undefined) {
-                $('#promotionPrice').text(
-                    '￥' + product.promotionPrice);
+                $('#promotionPrice').text('￥' + product.normalPrice);
+            } else if (product.normalPrice == undefined && product.promotionPrice != undefined) {
+                $('#promotionPrice').text('￥' + product.promotionPrice);
             }
 			var imgListHtml = '';
 			product.productImgList.map(function(item, index) {
