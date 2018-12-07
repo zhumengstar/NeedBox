@@ -6,23 +6,21 @@ $(function() {
 		if (data.success) {
 			var product = data.product;
 			console.log(product);
-			$('#product-img').attr('src', product.imgAddr);
+            $('#product-img').attr('src', product.imgAddr);
 			$('#product-time').text(new Date(product.lastEditTime).Format("yyyy-MM-dd"));
 			$('#product-name').text(product.productName);
 			$('#product-desc').text(product.productDesc);
-            if (product.normalPrice != null && product.promotionPrice != null) {
+            if (product.normalPrice != "" && product.promotionPrice != "") {
                 $('#price').show();
-                $('#normalPrice').html('<del>' + '￥' + product.normalPrice + '</del>');
-                $('#promotionPrice').text('￥' + product.promotionPrice);
-            } else if (product.normalPrice != null && product.promotionPrice == null) {
+                $('#normal-price').html('<del>' + '￥' + product.normalPrice + '</del>');
+                $('#promotion-price').text('￥' + product.promotionPrice);
+            } else if (product.normalPrice != "" && product.promotionPrice == "") {
                 $('#price').show();
-                $('#promotionPrice').text('￥' + product.normalPrice);
-            } else if (product.normalPrice == null && product.promotionPrice != null) {
+                $('#promotion-price').text('￥' + product.normalPrice);
+            } else if (product.normalPrice == "" && product.promotionPrice != "") {
                 $('#price').show();
-                $('#promotionPrice').text('￥' + product.promotionPrice);
-            } else if (product.normalPrice == null && product.promotionPrice == null) {
-                $('#price').show();
-			}
+                $('#promotion-price').text('￥' + product.promotionPrice);
+            }
 			var imgListHtml = '';
 			product.productImgList.map(function(item, index) {
                 imgListHtml += '<div><img src="' + item.imgAddr + '" width="100%"/></div>';
