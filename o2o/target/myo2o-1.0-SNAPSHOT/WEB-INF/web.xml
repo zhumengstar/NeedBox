@@ -14,7 +14,7 @@
         <!-- 是否有边框 -->
         <init-param>
             <param-name>kaptcha.border</param-name>
-            <param-value>no</param-value>
+            <param-value>yes</param-value>
         </init-param>
         <!-- 干扰线颜色 -->
         <init-param>
@@ -24,27 +24,27 @@
         <!-- 图片宽度 -->
         <init-param>
             <param-name>kaptcha.image.width</param-name>
-            <param-value>135</param-value>
+            <param-value>110</param-value>
         </init-param>
         <!-- 图片高度 -->
         <init-param>
             <param-name>kaptcha.image.height</param-name>
-            <param-value>50</param-value>
+            <param-value>48</param-value>
         </init-param>
         <!-- 字体 -->
         <init-param>
             <param-name>kaptcha.textproducer.font.names</param-name>
-            <param-value>Arial</param-value>
+            <param-value>Courier</param-value>
         </init-param>
         <!-- 字体颜色 -->
         <init-param>
             <param-name>kaptcha.textproducer.font.color</param-name>
-            <param-value>red</param-value>
+            <param-value>blue</param-value>
         </init-param>
         <!-- 字体大小 -->
         <init-param>
             <param-name>kaptcha.textproducer.font.size</param-name>
-            <param-value>43</param-value>
+            <param-value>40</param-value>
         </init-param>
         <!-- 字符个数 -->
         <init-param>
@@ -54,7 +54,7 @@
         <!-- 使用哪些字符生成验证码 -->
         <init-param>
             <param-name>kaptcha.textproducer.char.string</param-name>
-            <param-value>ACDEFGKPRSTWX345679</param-value>
+            <param-value>012345679</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>

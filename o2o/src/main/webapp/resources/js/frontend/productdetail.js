@@ -10,16 +10,19 @@ $(function() {
 			$('#product-time').text(new Date(product.lastEditTime).Format("yyyy-MM-dd"));
 			$('#product-name').text(product.productName);
 			$('#product-desc').text(product.productDesc);
-            if (product.normalPrice != undefined && product.promotionPrice != undefined) {
+            if (product.normalPrice != null && product.promotionPrice != null) {
                 $('#price').show();
                 $('#normalPrice').html('<del>' + '￥' + product.normalPrice + '</del>');
                 $('#promotionPrice').text('￥' + product.promotionPrice);
-            } else if (product.normalPrice != undefined && product.promotionPrice == undefined) {
+            } else if (product.normalPrice != null && product.promotionPrice == null) {
                 $('#price').show();
                 $('#promotionPrice').text('￥' + product.normalPrice);
-            } else if (product.normalPrice == undefined && product.promotionPrice != undefined) {
+            } else if (product.normalPrice == null && product.promotionPrice != null) {
+                $('#price').show();
                 $('#promotionPrice').text('￥' + product.promotionPrice);
-            }
+            } else if (product.normalPrice == null && product.promotionPrice == null) {
+                $('#price').show();
+			}
 			var imgListHtml = '';
 			product.productImgList.map(function(item, index) {
                 imgListHtml += '<div><img src="' + item.imgAddr + '" width="100%"/></div>';

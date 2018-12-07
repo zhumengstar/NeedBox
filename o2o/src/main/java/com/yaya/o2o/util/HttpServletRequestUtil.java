@@ -40,6 +40,10 @@ public class HttpServletRequestUtil {
     public static String getString(HttpServletRequest request, String key) {
         try {
             String result = request.getParameter(key);
+            //如果从request获取到的字符是iso-8859-1格式的，就转为utf-8
+            if(result.equals(new String(result.getBytes("iso-8859-1"), "iso-8859-1"))) {
+                result = new String(result.getBytes("iso-8859-1"),"utf-8");
+            }
             //判断request里属性值是否为空
             if(result != null) {
                 //不为空就trim处理
